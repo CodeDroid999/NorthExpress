@@ -29,34 +29,23 @@ const Footer = () => {
                 className="animate_top w-1/2 lg:w-1/4"
               >
                 <a href="index.html" className="relative">
-                  <Image
-                    width={110}
-                    height={80}
-                    src="/images/logo/logo-light.svg"
-                    alt="Logo"
-                    className="dark:hidden"
-                  />
-                  <Image
-                    width={110}
-                    height={80}
-                    src="/images/logo/logo-dark.svg"
-                    alt="Logo"
-                    className="hidden dark:block"
-                  />
+                  <span className="text-2xl font-extrabold w-full text-blue-800 border-blue-800 dark:text-gray-100 dark:border-gray-100">NorthExpress</span>
+
                 </a>
 
                 <p className="mb-10 mt-5">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  At North Express, we are redefining the luxury transport, and
+                  setting new standards of excellence and reliability.
                 </p>
 
                 <p className="mb-1.5 text-sectiontitle uppercase tracking-[5px]">
-                  contact
+                  Contact
                 </p>
                 <a
                   href="#"
                   className="text-itemtitle font-medium text-black dark:text-white"
                 >
-                  hello@solid.com
+                  hello@northexpress.com
                 </a>
               </motion.div>
 
@@ -301,7 +290,7 @@ const Footer = () => {
               className="animate_top"
             >
               <p>
-                &copy; {new Date().getFullYear()} Solid. All rights reserved
+                &copy; {new Date().getFullYear()} NorthExpress. All rights reserved
               </p>
             </motion.div>
 
