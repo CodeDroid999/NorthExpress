@@ -36,16 +36,16 @@ const AccountDropdown = () => {
             {isOpen && (
                 <div className="absolute shadow-2xl right-0 top-12 mt-2 min-w-[10rem] rounded-lg bg-gray-100 p-2">
                     <div className="w-100 flex flex-col">
-                        <Link href="#" className="w-100 border border-gray-500 pl-2 hover:text-primary underline">
+                        <Link href="auth/signup" className="w-100 border border-gray-500 pl-2 hover:text-primary underline">
                             <div className="flex justify-items-center align-middle ">Sign up </div>
                         </Link>
-                        <Link href="#" className="w-100 border border-gray-500 pl-2 hover:text-primary underline">
+                        <Link href="/auth/signin" className="w-100 border border-gray-500 pl-2 hover:text-primary underline">
                             <div className="flex justify-items-center align-middle ">Log in </div>
                         </Link>
-                        <Link href="#" className="w-100 border border-gray-500 pl-2 hover:text-primary underline">
+                        <Link href="book-a-ticket" className="w-100 border border-gray-500 pl-2 hover:text-primary underline">
                             <div className="flex justify-items-center align-middle ">Book a ticket </div>
                         </Link>
-                        <Link href="#" className="w-100 border border-gray-500 pl-2 hover:text-primary underline">
+                        <Link href="/support" className="w-100 border border-gray-500 pl-2 hover:text-primary underline">
                             <div className="flex justify-items-center align-middle ">Support</div>
                         </Link>
 
