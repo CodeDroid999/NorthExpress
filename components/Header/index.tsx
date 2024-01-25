@@ -38,20 +38,21 @@ const Header = () => {
       <div className="relative mx-auto max-w-c-1390 items-center justify-between px-4 md:px-8 xl:flex 2xl:px-0">
         <div className="flex w-full items-center justify-between xl:w-1/4">
           <a href="/">
-            <Image
-              src="/images/logo/logo-dark.svg"
+            {/*} <Image
+              src="/images/logo/North-Express-logo.png"
               alt="logo"
-              width={119.03}
+              width={30}
               height={30}
               className="hidden w-full dark:block"
             />
             <Image
-              src="/images/logo/logo-light.svg"
+              src="/images/logo/North-Express-logo.png"
               alt="logo"
-              width={119.03}
+              width={30}
               height={30}
               className="w-full dark:hidden"
-            />
+            /> */}
+            <span className="text-2xl font-extrabold w-full text-blue-800 border-blue-800 dark:text-gray-100 dark:border-gray-100">NorthExpress</span>
           </a>
 
           {/* <!-- Hamburger Toggle BTN --> */}
@@ -146,7 +147,6 @@ const Header = () => {
           </nav>
 
           <div className="mt-7 flex items-center gap-6 xl:mt-0">
-            <ThemeToggler />
             <AccountDropdown />
           </div>
         </div>
