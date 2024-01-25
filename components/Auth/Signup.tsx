@@ -58,7 +58,7 @@ const Signup = () => {
             <div className="flex items-center gap-8">
               <button
                 aria-label="signup with google"
-                className="text-body-color dark:text-body-color-dark dark:shadow-two mb-6 flex w-full items-center justify-center rounded-sm border border-stroke bg-[#f8f8f8] px-6 py-3 text-base outline-none transition-all duration-300 hover:border-primary hover:bg-primary/5 hover:text-primary dark:border-transparent dark:bg-[#2C303B] dark:hover:border-primary dark:hover:bg-primary/5 dark:hover:text-primary dark:hover:shadow-none"
+                className="text-body-color dark:text-body-color-dark dark:shadow-two mb-6 flex w-full items-center justify-center rounded-sm border border-stroke bg-[#f8f8f8] px-6 py-3 text-base outline-none transition-all duration-300 hover:border-primary hover:bg-primary/5 hover:text-primary underline dark:border-transparent dark:bg-[#2C303B] dark:hover:border-primary dark:hover:bg-primary/5 dark:hover:text-primary underline dark:hover:shadow-none"
               >
                 <span className="mr-3">
                   <svg
@@ -98,7 +98,7 @@ const Signup = () => {
 
               <button
                 aria-label="signup with github"
-                className="text-body-color dark:text-body-color-dark dark:shadow-two mb-6 flex w-full items-center justify-center rounded-sm border border-stroke bg-[#f8f8f8] px-6 py-3 text-base outline-none transition-all duration-300 hover:border-primary hover:bg-primary/5 hover:text-primary dark:border-transparent dark:bg-[#2C303B] dark:hover:border-primary dark:hover:bg-primary/5 dark:hover:text-primary dark:hover:shadow-none"
+                className="text-body-color dark:text-body-color-dark dark:shadow-two mb-6 flex w-full items-center justify-center rounded-sm border border-stroke bg-[#f8f8f8] px-6 py-3 text-base outline-none transition-all duration-300 hover:border-primary hover:bg-primary/5 hover:text-primary underline dark:border-transparent dark:bg-[#2C303B] dark:hover:border-primary dark:hover:bg-primary/5 dark:hover:text-primary underline dark:hover:shadow-none"
               >
                 <span className="mr-3">
                   <svg
@@ -229,7 +229,7 @@ const Signup = () => {
                 <p>
                   Already have an account?{" "}
                   <Link
-                    className="text-black hover:text-primary dark:text-white dark:hover:text-primary"
+                    className="text-black hover:text-primary underline dark:text-white dark:hover:text-primary underline"
                     href="/auth/signin"
                   >
                     Sign In

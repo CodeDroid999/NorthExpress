@@ -107,12 +107,12 @@ const SharePost = () => {
           <li>
             <a
               href="#"
-              className="pr-2 duration-300 ease-in-out hover:text-primary"
+              className="pr-2 duration-300 ease-in-out hover:text-primary underline"
             >
               #business
             </a>
 
-            <a href="#" className="duration-300 ease-in-out hover:text-primary">
+            <a href="#" className="duration-300 ease-in-out hover:text-primary underline">
               #saas
             </a>
           </li>

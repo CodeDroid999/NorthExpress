@@ -146,7 +146,7 @@ const About = () => {
               <div>
                 <a
                   href="#"
-                  className="group mt-7.5 inline-flex items-center gap-2.5 text-black hover:text-primary dark:text-white dark:hover:text-primary"
+                  className="group mt-7.5 inline-flex items-center gap-2.5 text-black hover:text-primary underline dark:text-white dark:hover:text-primary underline"
                 >
                   <span className="duration-300 group-hover:pr-2">
                     Know More

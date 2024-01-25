@@ -53,19 +53,19 @@ const SingleBlogPage = async () => {
                 </h4>
 
                 <ul>
-                  <li className="mb-3 transition-all duration-300 last:mb-0 hover:text-primary">
+                  <li className="mb-3 transition-all duration-300 last:mb-0 hover:text-primary underline">
                     <a href="#">Blog</a>
                   </li>
-                  <li className="mb-3 transition-all duration-300 last:mb-0 hover:text-primary">
+                  <li className="mb-3 transition-all duration-300 last:mb-0 hover:text-primary underline">
                     <a href="#">Events</a>
                   </li>
-                  <li className="mb-3 transition-all duration-300 last:mb-0 hover:text-primary">
+                  <li className="mb-3 transition-all duration-300 last:mb-0 hover:text-primary underline">
                     <a href="#">Grids</a>
                   </li>
-                  <li className="mb-3 transition-all duration-300 last:mb-0 hover:text-primary">
+                  <li className="mb-3 transition-all duration-300 last:mb-0 hover:text-primary underline">
                     <a href="#">News</a>
                   </li>
-                  <li className="mb-3 transition-all duration-300 last:mb-0 hover:text-primary">
+                  <li className="mb-3 transition-all duration-300 last:mb-0 hover:text-primary underline">
                     <a href="#">Rounded</a>
                   </li>
                 </ul>
