@@ -27,16 +27,23 @@ export default function Avatar() {
   }
 
   return (
-    <div className=" relative inline-flex justify-end ">
-      <span onClick={toggleMainDropdown}>
-        <Image
-          src={user?.profilePicture || profile}
-          alt="profile"
-          width={25}
-          height={25}
-          className="h-[1.6rem] w-[1.6rem] cursor-pointer rounded-full object-cover"
-        />
-      </span>
+    <div className="relative">
+      <div onClick={toggleMainDropdown} className="flex items-center justify-center border border-gray-100 shadow-inner rounded-full bg-transparent px-2.5 py-2.5 text-regular text-white duration-300 ease-in-out hover:bg-primary"      >
+        <span className="mr-2">Account</span>
+
+        <div className="inline-flex justify-end ">
+          <span onClick={toggleMainDropdown}>
+            <Image
+              src={user?.profilePicture || profile}
+              alt="profile"
+              width={25}
+              height={25}
+              className="h-[1.6rem] w-[1.6rem] cursor-pointer rounded-full object-cover"
+            />
+          </span>
+        </div>
+      </div>
+
 
       {isMainDropdownOpen && (
         <div className="absolute right-0 top-8 mt-2 min-w-[15rem] rounded-lg bg-white p-2  shadow-md ">

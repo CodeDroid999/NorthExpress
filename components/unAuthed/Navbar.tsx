@@ -6,7 +6,7 @@ import { useState } from 'react';
 
 import MobileNavbar from './MobileNav';
 import logo from 'public/sync-my-socials-logo.png'
-import AccountDropdown from './AccountDropdown';
+import Avatar from 'components/layout/Avatar';
 
 
 const CustomNavbar = () => {
@@ -57,8 +57,7 @@ const CustomNavbar = () => {
           >
             Parcels
           </Link>
-          <AccountDropdown />
-
+          <Avatar />
         </div>
       </div>
 
