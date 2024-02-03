@@ -11,7 +11,7 @@ import type { SharedPageProps } from 'pages/_app'
 import React from 'react'
 import PopularCountries from 'components/Become-a-tutor/PopularCountriesSection'
 import Features from 'components/home/Features'
-import HeroArea from 'components/Become-a-tutor/HeroSection'
+import HeroArea from 'components/Homepage/HeroSection'
 
 
 export default function home() {

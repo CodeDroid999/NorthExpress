@@ -1,4 +1,4 @@
-import Home from 'components/unAuthed/HomeSection';
+import Home from 'components/layout-copy/HomeSection';
 import CustomNavbar from 'components/unAuthed/Navbar';
 import Image from 'next/image'
 import Link from 'next/link';
