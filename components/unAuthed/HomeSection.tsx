@@ -11,8 +11,8 @@ const HeroArea: React.FC = () => {
                 <div className="img-box">
                     <Image
                         src="https://i.postimg.cc/156hSWwZ/sewan.png"
-                        width={200}
-                        height={400}
+                        width={1440}
+                        height={600}
                         alt="" />
                 </div>
             </div>
