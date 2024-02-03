@@ -2,6 +2,7 @@ import React from 'react';
 import Alert from './Alert';
 import CustomNavbar from './Navbar';
 import Image from 'next/image';
+import Navbar from './Navbar';
 
 const Home: React.FC = () => {
     return (
@@ -19,7 +20,7 @@ const Home: React.FC = () => {
                 <Alert />
             </div>
             <div className="header_bottom">
-                <CustomNavbar />
+                <Navbar />
             </div>
         </header>
     );
