@@ -12,13 +12,13 @@ type Props = {
 
 const Alert = ({ preview }: Props) => {
     return (
-        <div className="mx-auto">
-            <div className="bg-gray-100 pt-1 pb-1 container">
+        <div className="mx-auto bg-gray-100 ">
+            <div className=" pt-1 pb-1 container w-11/12">
                 <div className="flex justify-content-between">
                     <a href="https://maps.app.goo.gl/RR6QXHVEXpAxqWVz6" className="contact_link1">
                         <FontAwesomeIcon icon={faLocationDot} size="2x" style={{ color: '#e8b602' }} />
                         <span className="pl-2">
-                            Munuku, Juba </span>
+                            Eldoret, Kenya </span>
                     </a>
                     <a href="https://wa.me/0719230590" className="contact_link2">
                         <FontAwesomeIcon icon={faPhone} size="2x" style={{ color: '#e8b602' }} />
