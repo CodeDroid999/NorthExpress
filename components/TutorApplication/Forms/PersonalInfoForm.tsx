@@ -368,7 +368,7 @@ export default function InfoForm({ handleNextStep }: Props) {
                     Academic Experience
                 </p>
                 <p className="mb-1 p-2 rounded bg-blue-100 text-blue-600 md:text-sm">
-                    Note: You do not need to have any prior experience as a teacher to work at QualityUnitedWriters. Please be 100% truthful about your past work experience. Misrepresenting your work experience will result in your application being rejected or your account being banned in the future.
+                    Note: You do not need to have any prior experience as a teacher to work at NorthExpress. Please be 100% truthful about your past work experience. Misrepresenting your work experience will result in your application being rejected or your account being banned in the future.
                 </p>
                 <div className="row">
                     <div className="row flex justify-between col-md-12 col-sm-12 flex-col">

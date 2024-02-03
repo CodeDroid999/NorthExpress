@@ -218,7 +218,7 @@ export default function Footer() {
                 className="md:h-[200px] md:w-[100%] h-[40px] w-[40px]"
                 id="customfontsize"
               />
-              <h4 className="font-semibold text-gray-100 pt-3">© 2023 QualityUnitedWriters</h4>
+              <h4 className="font-semibold text-gray-100 pt-3">© 2023 NorthExpress</h4>
               <div className="text-gray-100 flex space-x-1 pt-3">
                 <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#fcfcfc">
 
@@ -253,7 +253,7 @@ export default function Footer() {
       <div className="row md:justify-between justify-center  border border-white mt-4 px-2 py-2">
         <div className="col-md-6 flex md:justify-between justify-center">
           <p className="text-md text-gray-100 pt-2 text-right">
-            © 2023 QualityUnitedWriters. All rights reserved.
+            © 2023 NorthExpress. All rights reserved.
           </p>
         </div>
         <div className="col-md-6 flex md:items-right justify-center space-x-4 md:space-x-2 md:pt-0 pt-2">

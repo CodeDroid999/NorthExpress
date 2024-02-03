@@ -116,7 +116,7 @@ export default function LogIn() {
   return (
     <AuthLayout>
       <Head>
-        <title>QualityUnitedWriters - Your Academic Research and Project Partner</title>
+        <title>NorthExpress - Your Academic Research and Project Partner</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta
@@ -127,11 +127,11 @@ export default function LogIn() {
           name="keywords"
           content="Academic writing services, Expert academic writers, Professional research assistance, High-quality research papers, Academic project support, Thesis and dissertation help, Essay writing service, Top-rated tutors, Academic success tips, Homework assistance, Online tutoring, Quality writing solutions, Best essay writers, Custom research papers, Academic support platform, Tutoring for students, Research paper editing, Writing and editing services, Academic guidance, Homework help for students"
         />
-        <meta name="author" content="QualityUnitedWriters" />
+        <meta name="author" content="NorthExpress" />
         <meta name="robots" content="index, follow" />
         <meta
           property="og:title"
-          content="QualityUnitedWriters - Your Academic Research and Project Partner"
+          content="NorthExpress - Your Academic Research and Project Partner"
         />
         <meta
           property="og:description"

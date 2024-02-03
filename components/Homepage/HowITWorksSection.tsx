@@ -8,7 +8,7 @@ const HowItWorksSection = () => {
                 How it works
             </h1>
             <p className=" text-center text-lg">
-                Thousands of college students have used QualityUnitedWriters as their secret weapon to make their life easier.
+                Thousands of college students have used NorthExpress as their secret weapon to make their life easier.
                 <br></br>Now it is your turn.                        </p>
             <StudentSteps />
         </div>

@@ -13,7 +13,7 @@ export default function Footer() {
     <div>
       <footer className="bg-gray-950 px-2 py-2">
         <div className="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:pt-20">
-         
+
           <div className="mt-2 grid gap-y-2 sm:mt-6 sm:flex sm:items-center sm:justify-center sm:gap-y-0">
             <div className="flex flex-col items-center justify-center">
               <div className="mb-1">
@@ -27,7 +27,7 @@ export default function Footer() {
                 />
               </div>
               <p className="font-bold text-sm text-gray-400">
-                © 2022 QualityUnitedWriters. All rights reserved.
+                © 2022 NorthExpress. All rights reserved.
               </p>
             </div>
 

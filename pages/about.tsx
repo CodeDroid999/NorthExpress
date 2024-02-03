@@ -17,13 +17,13 @@ const About: React.FC = () => {
                         <h1 className="text-blue-800 text-xl">About Us</h1>
 
                         <p className="pt-1 pb-2 text-lg">
-                            Welcome to QualityUnitedWriters, where academic excellence meets professional writing services.
+                            Welcome to NorthExpress, where academic excellence meets professional writing services.
                         </p>
 
                         <h2 className="text-orange-400 font-semibold">Our Mission</h2>
 
                         <p className="pt-1 pb-2 text-lg">
-                            At QualityUnitedWriters, our mission is to empower students on their educational journey by providing high-quality writing assistance.
+                            At NorthExpress, our mission is to empower students on their educational journey by providing high-quality writing assistance.
                         </p>
 
                         <h2 className="text-orange-400 font-semibold">Who We Are</h2>
@@ -35,7 +35,7 @@ const About: React.FC = () => {
                         <h2 className="text-orange-400 font-semibold">Why Choose Us?</h2>
 
                         <p className="pt-1 pb-2 text-lg">
-                            QualityUnitedWriters stands out for its commitment to excellence, timely delivery, and personalized approach to every students needs.
+                            NorthExpress stands out for its commitment to excellence, timely delivery, and personalized approach to every students needs.
                         </p>
                         <h2 className="text-orange-400 font-semibold">How to get started?</h2>
                         <Steps />

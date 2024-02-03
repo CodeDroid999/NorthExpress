@@ -126,7 +126,7 @@ export default function ManageApplicationDetailsPage() {
                     <div className="row mt-2">
                         <div className="flex col-md-8 col-sm-12 flex-col">
                             <label htmlFor="How did you hear about us?" className="mb-2 text-sm font-medium text-gray-700">
-                                Channel of Advertisement they learnt about QualityUnitedWriters
+                                Channel of Advertisement they learnt about NorthExpress
                             </label>
                             <p className="rounded-lg border bg-gray-50 px-1 py-2 font-medium">{application.howHeard}</p>
                         </div>
