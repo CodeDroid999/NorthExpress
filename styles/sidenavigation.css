@@ -1,0 +1,46 @@
+/* SideNav.css */
+
+.sidenav {
+    height: 100%; /* Full-height sidebar */
+    width: 250px; /* Set the width of the sidebar */
+    position: fixed; /* Fixed position on the page */
+    z-index: 1; /* Stay on top of everything */
+    top: 0; /* Position from the top */
+    left: 0; /* Position from the left */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px; /* Add padding at the top */
+  }
+  
+  /* Style links inside the sidebar */
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #818181;
+    display: block;
+  }
+  
+  /* Change color on hover */
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+  
+  /* Style the close button */
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 36px;
+    margin-left: 200px;
+  }
+  
+  /* Add media query for responsiveness - hide sidebar on small screens */
+  @media screen and (max-height: 450px) {
+    .sidenav {
+      padding-top: 15px;
+    }
+    .sidenav a {
+      font-size: 16px;
+    }
+  }
+  

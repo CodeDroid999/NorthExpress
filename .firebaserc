@@ -1,5 +1,9 @@
 {
   "projects": {
-    "default": "northexpresskenya"
-  }
+    "default": "northexpresskenya",
+    "staging": "qualityunitedwriters",
+    "production": "qualityunitedwriters-999"
+  },
+  "targets": {},
+  "etags": {}
 }
