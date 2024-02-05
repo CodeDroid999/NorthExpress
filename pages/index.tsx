@@ -8,10 +8,11 @@ import { getAllPosts, getClient, getSettings } from 'lib/sanity.client'
 import { Post, Settings } from 'lib/sanity.queries'
 import Head from 'next/head'
 import type { SharedPageProps } from 'pages/_app'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import PopularCountries from 'components/Become-a-tutor/PopularCountriesSection'
 import Features from 'components/home/Features'
 import HeroArea from 'components/unAuthed/HomeSection'
+import { UserAuth } from 'context/AuthContext'
 
 
 export default function Home() {
@@ -42,6 +43,8 @@ export default function Home() {
         <meta name="og:url" property="og:url" content="https://www.qualityunitedswriters.com" />
       </Head>
       <HeroArea />
+
+
       <StatsCounter />
       <Features />
       <div className="container pb-3">

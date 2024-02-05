@@ -29,7 +29,7 @@ const HeroArea: React.FC = () => {
                         <h4 className="mb-4.5 text-lg font-medium text-white">
                             🔥 North Express - Travel with comfort.
                         </h4>
-                        <h1 className="mb-2 pr-16 text-5xl font-bold text-white xl:text-hero ">
+                        <h1 className="mb-1 pr-16 text-3xl font-bold text-white xl:text-hero ">
                             Comfortable. Efficient. Affordable .
                         </h1>
                         <p className="text-white">

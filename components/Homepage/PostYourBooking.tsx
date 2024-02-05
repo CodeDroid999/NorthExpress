@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import toast from 'react-hot-toast';
 import { UserAuth } from 'context/AuthContext';
 import { db } from '../../firebase';
 import {
     addDoc,
     collection,
-    getDocs,
     serverTimestamp,
+    getDoc,
+    doc,
 } from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
 import router from 'next/router';
@@ -18,199 +19,167 @@ interface Props {
 
 export default function PostYourBooking() {
     const { user } = UserAuth();
-    const userId = user?.userId;
+    const currentDate = new Date().toISOString().split('T')[0];
+    const auth = getAuth();
+    const [userId, setUserId] = useState<string | null>(null);
+    const [selectedFromCounty, setSelectedFromCounty] = useState('');
+    const [selectedToCounty, setSelectedToCounty] = useState('');
+    const [departureDate, setDepartureDate] = useState(`${currentDate}`);
+    const [showLoginModal, setShowLoginModal] = useState(false);
 
-    const [title, setTitle] = useState('');
-    const [titleError, setTitleError] = useState('');
-    const [dueDate, setDueDate] = useState('');
-    const [dueDateError, setDueDateError] = useState('');
-    const [budget, setBudget] = useState('');
-    const [budgetError, setBudgetError] = useState('');
 
-    const handleSave = async (event: React.FormEvent) => {
-        event.preventDefault();
+    const handleFromCountyChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+        setSelectedFromCounty(e.target.value);
+    };
 
-        // Check if the user is logged in
-        const auth = getAuth();
-        const user = auth.currentUser;
+    const handleToCountyChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+        setSelectedToCounty(e.target.value);
+    };
 
-        if (!user) {
-            // User is not logged in, show toast error
-            toast.error('You are not logged in. Signup and log in to post your assignment');
-            return;
-        }
-
-        let hasError = false;
-
-        // Validate title
-        if (!title) {
-            setTitleError('* This field is required');
-            hasError = true;
-        } else if (title.length < 10) {
-            setTitleError('Must be at least 10 characters');
-            hasError = true;
-        } else {
-            setTitleError('');
-        }
-
-        // Validate dueDate
-        if (!dueDate) {
-            setDueDateError('* This field is required');
-            hasError = true;
-        } else {
-            setDueDateError('');
-        }
-
-        // Validate budget
-        if (!budget) {
-            setBudgetError('* This field is required');
-            hasError = true;
-        } else {
-            const budgetValue = Number(budget);
-            if (isNaN(budgetValue) || budgetValue < 5 || budgetValue > 9999) {
-                setBudgetError('The price must be between $5 and $9999');
-                hasError = true;
-            } else {
-                setBudgetError('');
-            }
-        }
-
-        if (hasError) {
-            return;
-        }
-
+    const handleMakeBooking = async () => {
         try {
-            const docRef = await addDoc(collection(db, 'assignments'), {
-                title: title,
-                dueDate: dueDate,
-                budget: budget,
-                status: 'Open',
-                createdAt: serverTimestamp(),
-                student: {
-                    userId: userId,
-                    price: '',
-                    bookingFee: '',
-                    finalPrice: '',
-                },
-                tutor: {
-                    userId: '',
-                    price: '',
-                    serviceFee: '',
-                    finalPrice: '',
-                    proposal: '',
-                },
-                paymentRequested: false,
-                paymentReleased: false,
-                studentReview: false,
-                tutorReview: false,
-            });
+            // Validate input if needed
 
-            const assignmentId = docRef.id;
-            const usersCollection = collection(db, 'users');
-            const querySnapshot = await getDocs(usersCollection);
+            // Set userId based on authentication status
+            const visitor = auth.currentUser;
+            const currentUserId = visitor ? visitor.uid : 'visitor_u';
 
-            const userEmails: string[] = [];
+            // Add data to Firestore
+            const bookingData = {
+                fromCounty: selectedFromCounty,
+                toCounty: selectedToCounty,
+                departureDate: departureDate,
+                userId: currentUserId,
+                timestamp: serverTimestamp(),
+            };
 
-            querySnapshot.forEach((doc) => {
-                const userData = doc.data();
-                if (userData.email) {
-                    userEmails.push(userData.email);
-                }
-            });
-            await addDoc(collection(db, 'mail'), {
-                to: 'qualityunited340@gmail.com',
-                bcc: userEmails,
-                message: {
-                    subject: 'New Assignment     ',
-                    html: `A new assignment has been posted`,
-                },
-            });
+            // Replace 'YOUR_COLLECTION_NAME' with the actual collection name
+            const docRef = await addDoc(collection(db, 'YOUR_COLLECTION_NAME'), bookingData);
 
-            //toast.success('Assignment      has been posted');
-            // You can redirect to the assignment page or do any other necessary action
-            router.push(`/post-assignment`);
+            // Redirect to make-booking-page
+            router.push('/make-booking-page');
         } catch (error) {
-            console.error('Error posting assignment:', error.message);
-            toast.error('Error posting assignment. Please try again.');
+            console.error('Error creating booking:', error);
+            toast.error('Failed to make booking. Please try again.');
         }
     };
 
-    const currentDate = new Date().toISOString().split('T')[0];
+    useEffect(() => {
+        // Fetch userId from the database if the user is logged in
+        const fetchUserId = async () => {
+            if (user) {
+                try {
+                    const userDoc = await getDoc(doc(db, 'users', user.userId));
+                    if (userDoc.exists()) {
+                        setUserId(userDoc.data().userId);
+                    }
+                } catch (error) {
+                    console.error('Error fetching userId:', error);
+                }
+            } else {
+                // Show login modal if the user is not logged in
+                setShowLoginModal(true);
+            }
+        };
+
+        fetchUserId();
+    }, [user]);
 
     return (
-        <div className="w-full bg-green-900 pb-4 pt-4">
-            <div className="container">
-                <p className="pt-3 text-center text-3xl font-bold text-white">
-                    Get Homework Help
+        <div className="detail-box bg-transparent px-4 ">
+            <div className="container justify-center">
+                <p className="mb-4 text-left l-2">
+                    <span className="text-2xl font-bold text-blue-950 bg-gray-100 p-2">
+                        Travel Destinations
+                    </span>
                 </p>
-                <p className="text-gray text-center text-gray-200">
-                    Find a tutor to help you with your school!
+            </div>
+
+            <div className="container flex flex-col justify-center rounded-xl  bg-gray-100">
+
+
+                <p className="flex items-right align-center">
+                    <input
+                        type="radio"
+                        checked={true}
+                        className="mr-2 text-lg"
+                    />
+                    <label htmlFor="Ticket types?" className="my-2 text-md font-medium text-blue-950">
+                        One way
+                    </label>
                 </p>
-                <form className="mt-6 flex justify-center">
-                    <div className="row flex justify-between w-full">
-                        <div className="flex flex-col col-md-3 col-sm-6 pb-2">
-                            <label
-                                htmlFor="title"
-                                className="mb-2 text-lg font-medium text-gray-100 whitespace-nowrap"
+
+                <div className="row flex justify-between">
+                    <div className="flex flex-col col-md-3 col-sm-6 pb-2">
+                        <label
+                            htmlFor="title"
+                            className="mb-2 text-lg font-medium text-blue-950 whitespace-nowrap"
+                        >
+                            From
+                        </label>
+                        <div className="mb-1">
+                            <select
+                                value={selectedFromCounty}
+                                onChange={handleFromCountyChange}
+                                className="rounded border p-1"
                             >
-                                What do you need done?
-                            </label>
-                            <input
-                                type="text"
-                                placeholder="e.g. Dissertation writing for Engineering Paper"
-                                onChange={(e) => setTitle(e.target.value)}
-                                className="border rounded p-1"
-                            />
-                            {titleError && (
-                                <span className="text-red-500">{titleError}</span>
-                            )}
-                        </div>
-                        <div className="flex flex-col col-md-3 col-sm-6 pb-2">
-                            <label
-                                htmlFor="dueDate"
-                                className="mb-2 text-lg font-medium text-gray-100 whitespace-nowrap"
-                            >
-                                When do you need this done?
-                            </label>
-                            <input
-                                type="date"
-                                id="dueDate"
-                                required
-                                placeholder="Enter date"
-                                min={currentDate}
-                                onChange={(e) => setDueDate(e.target.value)}
-                                className="border rounded p-1 sm:w-full"
-                            />
-                            {dueDateError && (
-                                <span className="text-red-500">{dueDateError}</span>
-                            )}
-                        </div>
-                        <div className="col-md-3 col-sm-6 pb-2 flex flex-col ">
-                            <label
-                                htmlFor="budget"
-                                className="mb-2 text-lg font-medium text-gray-100"
-                            >
-                                Willing to pay
-                            </label>
-                            <input
-                                placeholder="$ Enter budget"
-                                onChange={(e) => setBudget(e.target.value)}
-                                className="border rounded p-1"
-                            />
-                            {budgetError && (
-                                <span className="text-red-500">{budgetError}</span>
-                            )}
-                        </div>
-                        <div className="col-md-3 col-sm-6 pb-2 flex flex-col flex-end justify-end align-center ">
-                            <Link
-                                className="btn-1 bg-yellow-500 p-2 rounded text-white"
-                                href="/post-assignment"
-                            >
-                                Post Assignment
-                            </Link>
+                                <option value="">Select a destination</option>
+                                <option value="Business">Business</option>
+
+
+                                {/* Add more options as needed */}
+                            </select>
                         </div>
                     </div>
-                </form>
+                    <div className="col-md-3 col-sm-6 pb-2 flex flex-col ">
+                        <label
+                            htmlFor="budget"
+                            className="mb-2 text-lg font-medium text-blue-950"
+                        >
+                            To
+                        </label>
+                        <div className="mb-1">
+                            <select
+                                value={selectedToCounty}
+                                onChange={handleToCountyChange}
+                                className="rounded border p-1"
+                            >
+                                <option value="">Select a destination</option>
+                                <option value="Business">Business</option>
+
+
+                                {/* Add more options as needed */}
+                            </select>
+                        </div>
+
+                    </div>
+                    <div className="flex flex-col col-md-3 col-sm-6 pb-2">
+                        <label
+                            htmlFor="departureDate"
+                            className="mb-2 text-lg font-medium text-blue-950 whitespace-nowrap"
+                        >
+                            Departure
+                        </label>
+                        <input
+                            type="date"
+                            id="DepartureDate"
+                            required
+                            placeholder="Enter date"
+                            min={currentDate}
+                            onChange={(e) => setDepartureDate(e.target.value)}
+                            className="border rounded p-1 sm:w-full"
+                        />
+
+                    </div>
+                    <div className="col-md-3 col-sm-6 pb-2 flex flex-col flex-end justify-end align-center ">
+                        <Link
+                            className="btn-1 bg-yellow-500 p-2 rounded text-white"
+                            href="/post-assignment"
+                        >
+                            Make Booking
+                        </Link>
+                    </div>
+                </div>
             </div>
         </div>
     );
