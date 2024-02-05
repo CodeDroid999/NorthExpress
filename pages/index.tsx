@@ -14,7 +14,7 @@ import Features from 'components/home/Features'
 import HeroArea from 'components/unAuthed/HomeSection'
 
 
-export default function home() {
+export default function Home() {
 
   return (
     <>
