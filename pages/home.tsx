@@ -12,13 +12,13 @@ import type { SharedPageProps } from 'pages/_app'
 import { useRouter, useSearchParams } from 'next/navigation'
 import React, { useEffect } from 'react'
 import Footer from 'components/layout/Footer'
-import PostYourBooking from 'components/Homepage/PostYourBooking'
 import HighestEarners from 'components/Become-a-tutor/HighestEarnersSection'
 import AppplyNowHero from 'components/Become-a-tutor/ApplyNowSection'
 import TasksTable from 'components/BrowseTasks/TasksTable'
 import { UserAuth } from 'context/AuthContext'
 import Link from 'next/link'
 import PopularCountries from 'components/Become-a-tutor/PopularCountriesSection'
+import PostYourBooking from 'components/Homepage/PostYourBooking'
 
 interface PageProps extends SharedPageProps {
   posts: Post[]
