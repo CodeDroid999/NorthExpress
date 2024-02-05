@@ -3,16 +3,11 @@ import HowItWorksSection from 'components/Become-a-tutor/HowITWorksSection'
 import StatsCounter from 'components/Become-a-tutor/StatsCounter'
 import TasksTable from 'components/BrowseTasks/TasksTable'
 import Footer from 'components/layout/Footer'
-import { readToken } from 'lib/sanity.api'
-import { getAllPosts, getClient, getSettings } from 'lib/sanity.client'
-import { Post, Settings } from 'lib/sanity.queries'
 import Head from 'next/head'
-import type { SharedPageProps } from 'pages/_app'
-import React, { useEffect, useState } from 'react'
+import React, { } from 'react'
 import PopularCountries from 'components/Become-a-tutor/PopularCountriesSection'
 import Features from 'components/home/Features'
 import HeroArea from 'components/unAuthed/HomeSection'
-import { UserAuth } from 'context/AuthContext'
 
 
 export default function Home() {
@@ -56,23 +51,4 @@ export default function Home() {
       <Footer />
     </>
   )
-}
-
-export const getStaticProps = async (ctx: any) => {
-  const { draftMode = false } = ctx
-  const client = getClient(draftMode ? { token: readToken } : undefined)
-
-  const [settings, posts = []] = await Promise.all([
-    getSettings(client),
-    getAllPosts(client),
-  ])
-
-  return {
-    props: {
-      posts,
-      settings,
-      draftMode,
-      token: draftMode ? readToken : '',
-    },
-  }
 }
