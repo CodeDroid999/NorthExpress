@@ -1,74 +1,63 @@
+/* eslint-disable react/no-unescaped-entities */
+import { useRouter } from 'next/router';
 import React, { useState } from 'react';
-import { FcGoogle } from 'react-icons/fc';
-import { BsEyeFill, BsEyeSlashFill } from 'react-icons/bs';
-import Link from 'next/link';
 
 const LoginModal = ({ onClose }) => {
-    const [passwordVisible, setPasswordVisible] = useState(false);
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [emailError, setEmailError] = useState('');
-    const [passwordError, setPasswordError] = useState('');
-    const { signInWithGoogle, signInWithEmailAndPassword } = userAuth(); // Adjust this based on your AuthContext
-
-    const handleSignIn = async (event) => {
-        event.preventDefault();
-        // Your existing sign-in logic
-    };
+    const router = useRouter();
 
     return (
-        <div className={overlay}>
-            <div className={modal}>
-                <button className={closeButton} onClick={onClose}>
-                    X
-                </button>
+        <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50">
 
-                {/* Your Google Sign In button */}
-                <button
-                    type="button"
-                    className={googleSignInButton}
-                    onClick={signInWithGoogle}
-                >
-                    <FcGoogle className={googleIcon} />
-                    Log in with Google
-                </button>
+            <div className="bg-white rounded p-8 w-96 shadow-md">
+                <div className="flex">
+                    <div
+                        onClick={() => {
+                            onClose();
+                            router.push('/login');
+                        }}
+                        className="bg-green-500 text-white border-none p-2 rounded cursor-pointer text-center w-full"
+                    >
+                        Login
+                    </div>
+                </div>
 
-                {/* OR separator */}
-                <div className={orSeparator}>OR</div>
+                <div className="text-center text-sm text-gray-700 my-4">OR</div>
 
-                {/* Sign In form */}
-                <form onSubmit={handleSignIn} className={form}>
-                    {/* Email input */}
-                    {/* ... your existing email input code ... */}
+                <div className="flex flex-col gap-4">
+                    <div
+                        onClick={() => {
+                            onClose();
+                        }}
+                        className="bg-gray-100 text-red-500 border-none p-2 rounded cursor-pointer border-2 border-red-500 text-center hover:text-white hover:bg-red-500"
+                    >
+                        Continue without login
+                    </div>
 
-                    {/* Password input */}
-                    {/* ... your existing password input code ... */}
-
-                    {/* Continue button */}
-                    <button type="submit" className={continueButton}>
-                        Continue
-                    </button>
-
-                    {/* Sign up link */}
-                    <div className={signUpLink}>
-                        <p>Dont have an account?</p>
-                        <p>
-                            <Link href="/signup">Sign up</Link>
+                    <div className="flex flex-row space-x-3 text-lg text-gray-700">
+                        <p className="pt-1 pb-2 text-lg">Don't have an account?</p>
+                        <p
+                            className="font-medium text-green-900"
+                            onClick={() => {
+                                onClose();
+                                router.push('/');
+                            }}
+                        >
+                            Sign up
                         </p>
                     </div>
 
-                    {/* Forgot password button */}
-                    <button className={forgotPasswordButton}>
-                        <Link href="/forgot-password">Forgot password?</Link>
-                    </button>
-                </form>
+                    <div
+                        onClick={() => {
+                            router.push('/forgot-password');
+                        }}
+                        className="bg-transparent border-none text-blue-500 text-sm cursor-pointer"
+                    >
+                        Forgot password?
+                    </div>
+                </div>
             </div>
         </div>
     );
 };
 
 export default LoginModal;
-function userAuth(): { signInWithGoogle: any; signInWithEmailAndPassword: any; } {
-    throw new Error('Function not implemented.');
-}
-

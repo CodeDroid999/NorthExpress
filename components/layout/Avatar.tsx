@@ -154,12 +154,7 @@ export default function Avatar() {
           >
             Log out
           </div>
-          <div
-            onClick={handleSwitchMode}
-            className="flex cursor-pointer items-center gap-x-3.5 rounded-md px-3 mb-1 py-2 text-sm text-gray-800 hover:bg-gray-100  border w-100 "
-          >
-            Swap to Student Mode
-          </div>
+
         </div>
       )}
     </div>
