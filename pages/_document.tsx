@@ -5,7 +5,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <link rel="icon" href="/favicon/logo.ico" />
+        <link rel="icon" href="favicon/northexpress-logo.ico" />
       </Head>
 
       <body className="w-100">

@@ -15,6 +15,8 @@ import Link from 'next/link'
 import PopularCountries from 'components/Become-a-tutor/PopularCountriesSection'
 import HeroArea from 'components/AddBookingpage/HeroSection'
 import PostYourBooking from 'components/Homepage/PostYourBooking'
+import Alert from 'components/unAuthed/Alert'
+import CustomNavbar from 'components/unAuthed/Navbar'
 
 
 interface Query {
@@ -77,7 +79,12 @@ export default function Home(props) {
         <meta name="og:image" property="og:image" content="public/QualityUnitedWritersLogo.png" />
         <meta name="og:url" property="og:url" content="https://www.qualityunitedswriters.com" />
       </Head>
-      <HeroArea />
+      <div className="">
+        <Alert />
+      </div>
+      <div className="header_bottom sticky bg-blue-600">
+        <CustomNavbar />
+      </div>
       <PostYourBooking />
       <Features />
       <AppplyNowHero />

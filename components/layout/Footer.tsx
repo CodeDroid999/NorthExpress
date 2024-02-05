@@ -14,7 +14,7 @@ const Footer: React.FC = () => {
                 <a href="#" className="theme-footer-brand block mt-5">
                   <div className="mb-1 flex justify-items-center mx-auto">
                     <span className="text-2xl text-center text-gray-100 hover:text-yellow-600 whitespace-nowrap font-bold px-1 w-full border-2 rounded border-gray-100 hidden md:inline"> NorthExpress </span>
-                    <span className="text-2xl text-center text-blue-700 px-1 font-extrabold w-full border-2 rounded border-blue-700 inline md:hidden"> NE </span>
+                    <span className="text-2xl text-center text-blue-600 px-1 font-extrabold w-full border-2 rounded border-blue-600 inline md:hidden"> NE </span>
 
                   </div>
                   <p className="theme-copyright-text text-yellow-600 mt-4  font-bold text-center">Copyright © 2022 <a href="/" className="text-yellow-600">NorthExpress</a>. All rights reserved.</p>
