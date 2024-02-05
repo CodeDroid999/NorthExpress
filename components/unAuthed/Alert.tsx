@@ -17,18 +17,18 @@ const Alert = ({ preview }: Props) => {
                 <div className="flex justify-content-between">
                     <a href="https://maps.app.goo.gl/RR6QXHVEXpAxqWVz6" className="contact_link1">
                         <FontAwesomeIcon icon={faLocationDot} size="2x" style={{ color: '#e8b602' }} />
-                        <span className="pl-2">
+                        <span className="pl-2 hidden md:inline md:text-lg font-medium text-xs text-blue-950 hover:text-green-500">
                             Eldoret, Kenya </span>
                     </a>
                     <a href="https://wa.me/0719230590" className="contact_link2">
                         <FontAwesomeIcon icon={faPhone} size="2x" style={{ color: '#e8b602' }} />
-                        <span className="pl-2">
+                        <span className="pl-2 hidden md:inline md:text-lg font-medium text-xs text-blue-950 hover:text-green-500">
                             Call : (+254) 719 230590
                         </span>
                     </a>
                     <a href="mailto:sscholy@gmail.com" className="contact_link3">
                         <FontAwesomeIcon icon={faEnvelope} size="2x" style={{ color: '#e8b602' }} />
-                        <span className="pl-2">
+                        <span className="pl-2 hidden md:inline md:text-lg font-medium text-xs text-blue-950 hover:text-green-500">
                             sscholy@gmail.com
                         </span>
                     </a>
