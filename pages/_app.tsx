@@ -21,7 +21,6 @@ export interface SharedPageProps {
   token: string
 }
 
-const PreviewProvider = lazy(() => import('components/PreviewProvider'))
 
 export default function App({
   Component,
@@ -42,17 +41,10 @@ export default function App({
     <>
       <AuthContextProvider>
         <Toaster position="bottom-center" />
-        {draftMode ? (
-          <PreviewProvider token={token}>
-            <Component {...pageProps} />
-          </PreviewProvider>
-        ) : (
-          <Component {...pageProps} />
-        )}
-
+        <Component {...pageProps} />
         {/* Login Modal */}
         {showLoginModal && <LoginModal onClose={() => setShowLoginModal(false)} />}
-      </AuthContextProvider>
+      </AuthContextProvider >
     </>
   )
 }
