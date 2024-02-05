@@ -1,7 +1,5 @@
 import FAQAccordion from 'components/FAQaccordions'
-import HeroArea from 'components/Homepage/HeroSection'
 import HowItWorksSection from 'components/Homepage/HowITWorksSection'
-import StatsCounter from 'components/Homepage/StatsCounter'
 import BeYourOwnBoss from 'components/home/BeYourOwnBoss'
 import Features from 'components/home/Features'
 import { readToken } from 'lib/sanity.api'
@@ -18,6 +16,7 @@ import TasksTable from 'components/BrowseTasks/TasksTable'
 import { UserAuth } from 'context/AuthContext'
 import Link from 'next/link'
 import PopularCountries from 'components/Become-a-tutor/PopularCountriesSection'
+import HeroArea from 'components/AddBookingpage/HeroSection'
 import PostYourBooking from 'components/Homepage/PostYourBooking'
 
 interface PageProps extends SharedPageProps {
@@ -86,6 +85,7 @@ export default function MamamaCita(props: PageProps) {
         <meta name="og:image" property="og:image" content="public/QualityUnitedWritersLogo.png" />
         <meta name="og:url" property="og:url" content="https://www.qualityunitedswriters.com" />
       </Head>
+      <HeroArea />
       <PostYourBooking />
       <Features />
       <AppplyNowHero />
