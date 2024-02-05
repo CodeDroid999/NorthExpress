@@ -15,7 +15,7 @@ const StatsCounter = () => {
   }
 
   return (
-    <div ref={ref} className={`flex justify-center items-center space-x-4 p-4 ${startAnimation ? 'animate' : ''}`}>
+    <div ref={ref} className={`flex justify-center bg-gray-100 items-center space-x-4 p-4 ${startAnimation ? 'animate' : ''}`}>
       <div className="rounded text-center p-2 shadow">
         <h2 className="text-3xl font-bold rounded-xl shadow-inner p-1">
           <CountUp end={48777} duration={2} start={startAnimation ? null : undefined} /> +

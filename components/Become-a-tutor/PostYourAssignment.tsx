@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function PostYourAssignment() {
+export default function PostYourBooking() {
     return (
         <div className="sm:px-18  flex h-[50vh] flex-col-reverse items-center  bg-violet-100  px-4 py-8  lg:px-24 xl:my-10 xl:flex-row  xl:px-36">
             <div className="container">

@@ -12,7 +12,7 @@ import type { SharedPageProps } from 'pages/_app'
 import { useRouter, useSearchParams } from 'next/navigation'
 import React, { useEffect } from 'react'
 import Footer from 'components/layout/Footer'
-import PostYourAssignment from 'components/Homepage/PostYourAssignment'
+import PostYourBooking from 'components/Homepage/PostYourBooking'
 import HighestEarners from 'components/Become-a-tutor/HighestEarnersSection'
 import AppplyNowHero from 'components/Become-a-tutor/ApplyNowSection'
 import TasksTable from 'components/BrowseTasks/TasksTable'
@@ -88,7 +88,7 @@ export default function Home(props: PageProps) {
       </Head>
       <HeroArea />
       <StatsCounter />
-      <PostYourAssignment />
+      <PostYourBooking />
       <Features />
       <AppplyNowHero />
       <HowItWorksSection />

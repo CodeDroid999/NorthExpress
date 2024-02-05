@@ -1,8 +1,6 @@
-import Home from 'components/layout-copy/HomeSection';
-import CustomNavbar from 'components/unAuthed/Navbar';
+import Home from 'components/unAuthed/HomeSection';
 import Image from 'next/image'
 import Link from 'next/link';
-import HeroBackground from "public/hero-bg.jpeg"
 import React from 'react';
 
 const HeroArea = () => {
@@ -11,36 +9,88 @@ const HeroArea = () => {
       <div className="hero_bg_box">
         <div className="img-box">
           <Image
-            src={HeroBackground}
+            src="https://i.postimg.cc/zDKqLqyb/hero-bg.jpg"
             alt="assignment"
-
+            width="1400"
+            height="800"
             className="w-full h-full"
           />
         </div>
       </div>
-      <div className="relative h-[100vh] pb-6 top-0 left-0">
-        <Home />
-        {/* Gradient Cover */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black to-transparent"></div>
-        {/* Content Overlay */}
-        <div className="absolute inset-0 flex items-end justify-center text-white pb-3">
-          <div className="text-center">
-            <h1 className="text-4xl font-bold mb-4 text-gray-200">
-              Earn <span className="text-gray-200">money</span>
-            </h1>
-            <h1 className="text-4xl font-bold mb-4">answering homework questions</h1>
-            <p className="text-lg mb-6">
-              Earn up to <strong>$7,500 USD </strong>monthly working from home tutoring students!
-            </p>
-            <div className="btn-box whitespace-nowrap">
-              <Link className="btn-1 py-2 px-3 text-xl rounded bg-green-900 text-white" href="tutor-application">Apply now!</Link>
+      <Home />
+      <section className=" slider_section ">
+        <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
+          <div className="carousel-inner">
+            <div className="carousel-item active">
+              <div className="container">
+                <div className="row">
+                  <div className="col-md-7">
+                    <div className="detail-box">
+                      <h1>
+                        Get on-demand Q&A<span className="text-green-900"> Homework help</span> from verified tutors.
+                      </h1>
+                      <p className="pt-1 pb-2 text-lg">
+                        Work with thousands of tutors to help you meet your deadlines and get the grades you so sorely need!
+                      </p>
+                      <div className="btn-box whitespace-nowrap">
+                        <Link href="/howitworks" className="btn-1 rounded"> Learn more </Link>
+                        <Link href="" className="btn-2 rounded">Post Assignment     </Link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <p className="text-lg mt-4 text-yellow-600 pb-4">Now accepting tutors from all over the world!</p>
+            <div className="carousel-item ">
+              <div className="container">
+                <div className="row">
+                  <div className="col-md-7">
+                    <div className="detail-box">
+                      <h1>
+                        Apply for an account to start working online.
+                        <span className="text-green-900">
+                          Tutor Online </span>
+                      </h1>
+                      <p className="pt-1 pb-2 text-lg">Every 15 assigned tutoring, get 10% cash back (Limited to $50) on your posted assignments!</p>
+                      <div className="btn-box whitespace-nowrap">
+                        <Link href="/howitworks" className="btn-1 rounded"> Learn more </Link>
+                        <Link href="" className="btn-2 rounded">Become a tutor</Link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="carousel-item ">
+              <div className="container">
+                <div className="row">
+                  <div className="col-md-7">
+                    <div className="detail-box">
+                      <h1>
+                        APA examples/ samples<span className="text-green-900"> creative vision </span>
+                      </h1>
+                      <p className="pt-1 pb-2 text-lg">
+                        Collaborate to bring your ideas to life with precision, creativity, and innovation. We are your
+                        creative partner. </p>
+                      <div className="btn-box">
+                        <Link href="#about" className="btn-1"> Learn more </Link>
+                        <Link href="#contact" className="btn-2">Get A Quote</Link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div >
+          <div className="container idicator_container">
+            <ol className="carousel-indicators">
+              <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
           </div>
-        </div>
-
-
-      </div>
+        </div >
+      </section >
     </div >
   );
 };

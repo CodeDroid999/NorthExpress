@@ -16,7 +16,7 @@ interface Props {
     handleNextStep: () => void;
 }
 
-export default function PostYourAssignment() {
+export default function PostYourBooking() {
     const { user } = UserAuth();
     const userId = user?.userId;
 
