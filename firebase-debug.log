@@ -1,0 +1,14 @@
+[debug] [2024-02-05T07:43:20.032Z] ----------------------------------------------------------------------
+[debug] [2024-02-05T07:43:20.035Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\hp\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2024-02-05T07:43:20.035Z] CLI Version:   13.0.1
+[debug] [2024-02-05T07:43:20.036Z] Platform:      win32
+[debug] [2024-02-05T07:43:20.036Z] Node Version:  v18.17.0
+[debug] [2024-02-05T07:43:20.037Z] Time:          Mon Feb 05 2024 10:43:20 GMT+0300 (East Africa Time)
+[debug] [2024-02-05T07:43:20.037Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-02-05T07:43:20.138Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-02-05T07:43:20.139Z] > authorizing via signed-in user (johnmwega2002@gmail.com)
+[debug] [2024-02-05T07:43:20.139Z] [iam] checking project northexpresskenya for permissions ["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasedatabase.instances.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]
+[debug] [2024-02-05T07:43:20.142Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/northexpresskenya:testIamPermissions [none]
+[debug] [2024-02-05T07:43:20.142Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/northexpresskenya:testIamPermissions x-goog-quota-user=projects/northexpresskenya
+[debug] [2024-02-05T07:43:20.143Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/northexpresskenya:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasedatabase.instances.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]}
