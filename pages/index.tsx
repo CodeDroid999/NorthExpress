@@ -1,7 +1,5 @@
 import FAQAccordion from 'components/FAQaccordions'
 import HeroArea from 'components/Homepage/HeroSection'
-import HowItWorksSection from 'components/Homepage/HowITWorksSection'
-import StatsCounter from 'components/Homepage/StatsCounter'
 import BeYourOwnBoss from 'components/home/BeYourOwnBoss'
 import Features from 'components/home/Features'
 import { readToken } from 'lib/sanity.api'
@@ -18,7 +16,8 @@ import TasksTable from 'components/BrowseTasks/TasksTable'
 import { UserAuth } from 'context/AuthContext'
 import Link from 'next/link'
 import PopularCountries from 'components/Become-a-tutor/PopularCountriesSection'
-import PostYourBooking from 'components/Homepage/PostYourBooking'
+import TopDestinations from 'components/home/TopDestinations'
+import DiscoverDestinations from 'components/Homepage/DiscoverDestinations'
 
 interface PageProps extends SharedPageProps {
   posts: Post[]
@@ -88,9 +87,10 @@ export default function Home(props: PageProps) {
       </Head>
       <HeroArea />
       <Features />
+      <TopDestinations />
       <AppplyNowHero />
-      <HowItWorksSection />
       <HighestEarners />
+      <DiscoverDestinations />
       <BeYourOwnBoss />
       <section className="flex justify-center align-center mx-auto my-4">
         <div className="w-5/6 shadow-xl">

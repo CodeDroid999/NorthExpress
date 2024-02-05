@@ -7,7 +7,7 @@ export default function HighestEarners() {
             <div className="container">
                 <div className="flex flex-1 flex-col items-center justify-center">
                     <h1 className="text-center  text-2xl font-bold text-green-900 pt-2 pb-4">
-                        Highest Earners
+                        Customer Reviews
                     </h1>
                     <HighestEarnerCard />
                 </div>

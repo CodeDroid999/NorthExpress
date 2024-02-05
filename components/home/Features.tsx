@@ -8,21 +8,21 @@ import Link from 'next/link';
 export default function Features() {
   const features = [
     {
-      title: 'Pay as you use',
+      title: 'Value for your money',
       content:
-        'Concentrate on your job knowing that we are preserving your privacy and data. If you need help, we offer support around-the-clock.',
+        'Concentrate on your travel arrangements knowing that we have your finances in mind. If you need help, we offer support around-the-clock.',
       icon: <BiDollar size={28} />,
     },
     {
-      title: 'Proof of Excellence',
+      title: 'Comfort',
       content:
-        'Check any professional portfolio, client testimonials, and identity documentation.',
+        ' At North Express, we are redefining comfort.Our buses are equipped with large and comfortable seats.',
       icon: <BiStar size={28} />,
     },
     {
       title: 'Safe and Secure',
       content:
-        'Concentrate on your job knowing that we are preserving your privacy and data. If you need help, we offer support around-the-clock.',
+        'We have 24/7 surveillance on sll our premises. Our insured shuttles are proven to have an excellent safety score.',
       icon: <SiAdguard size={24} />,
     },
   ];
@@ -32,7 +32,7 @@ export default function Features() {
       <div className="container">
         <div className="pb-4">
           <h1 className="font-bold text-center text-4xl text-green-950 ">
-            Why use our platform?
+            Why travel with us?
           </h1>
         </div>
 

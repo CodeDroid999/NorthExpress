@@ -19,10 +19,10 @@ const Rating = (rating) => {
 const HighestEarner = () => {
   // Sample data
   const earners = [
-    { name: 'Allan Mitchell', rating: 5, earnings: 94372 },
-    { name: 'Parma Jackson', rating: 4.5, earnings: 82447 },
-    { name: 'Caroline Smith', rating: 4, earnings: 80329 },
-    { name: 'Priya Prithanka', rating: 4.5, earnings: 78669 },
+    { name: 'Allan Mutheu', rating: 5, earnings: "- Excellent Service! -" },
+    { name: 'Pauline Awuor', rating: 4.5, earnings: "- The seats are superb! -" },
+    { name: 'Caroline Chepkoech', rating: 4, earnings: "- They reply fast! -" },
+    { name: 'Hassan Abdi', rating: 4.5, earnings: "- I got my parcel on time -" },
   ];
 
   return (
@@ -35,7 +35,7 @@ const HighestEarner = () => {
             {Rating(earner.rating)}
           </div>
           {/* Display earnings */}
-          <p className="text-lg text-green-900 text-center">$ {earner.earnings.toFixed(2)}</p>
+          <p className="text-lg text-green-900 text-center"> {earner.earnings}</p>
         </div>
       ))}
     </div>
