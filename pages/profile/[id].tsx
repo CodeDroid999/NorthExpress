@@ -42,7 +42,7 @@ export default function ProfilePage({
   children: React.ReactNode
   hasNewNotifications: boolean
 }) {
-  const [assignments, setAssignments] = useState([])
+  const [bookings, setAssignments] = useState([])
   const [reviews, setReviews] = useState([])
   const [loading, setLoading] = useState(false)
   const [activeTab, setActiveTab] = useState('basic') // Default tab is 'Personal Info tab'
@@ -82,14 +82,14 @@ export default function ProfilePage({
         where('tutorId', '==', userId)
       )
 
-      // Fetch assignments
+      // Fetch bookings
       const assignmentsPromise = getDocs(assignmentsQuery).then((assignmentQuerySnapshot) => {
-        const assignments = assignmentQuerySnapshot.docs.map((doc) => {
+        const bookings = assignmentQuerySnapshot.docs.map((doc) => {
           const data = doc.data()
           // Additional processing for assignment data if needed
           return { id: doc.id, ...data }
         })
-        return assignments
+        return bookings
       })
 
       // Fetch reviews
@@ -119,8 +119,8 @@ export default function ProfilePage({
 
       // Wait for both promises to resolve
       Promise.all([assignmentsPromise, reviewsPromise])
-        .then(([assignments, reviews]) => {
-          setAssignments(assignments)
+        .then(([bookings, reviews]) => {
+          setAssignments(bookings)
           setReviews(reviews)
           setLoading(false)
         })
@@ -143,7 +143,7 @@ export default function ProfilePage({
     setActiveTab(tab)
   }
 
-  const completedAssignments = assignments.filter((assignment) => assignment.status === 'Completed')
+  const completedAssignments = bookings.filter((assignment) => assignment.status === 'Completed')
   const myTutorReviews = reviews.filter(
     (review) => review.senderId !== review.tutorId
   )
@@ -215,7 +215,7 @@ export default function ProfilePage({
                       <div className="w-42 h-42 flex-auto rounded-lg  bg-gradient-to-r from-gray-800    to-gray-700    shadow-lg">
                         <div className="p-4 md:p-7">
                           <h2 className="text-center text-xl capitalize text-gray-200">
-                            {assignments.length}
+                            {bookings.length}
                           </h2>
                           <h3 className="text-center  text-sm  text-gray-400">
                             Homeworks Assigned

@@ -51,7 +51,7 @@ const HeroArea = () => {
                         <span className="text-green-900">
                           Tutor Online </span>
                       </h1>
-                      <p className="pt-1 pb-2 text-lg">Every 15 assigned tutoring, get 10% cash back (Limited to $50) on your posted assignments!</p>
+                      <p className="pt-1 pb-2 text-lg">Every 15 assigned tutoring, get 10% cash back (Limited to $50) on your posted bookings!</p>
                       <div className="btn-box whitespace-nowrap">
                         <Link href="/howitworks" className="btn-1 rounded"> Learn more </Link>
                         <Link href="" className="btn-2 rounded">Become a tutor</Link>

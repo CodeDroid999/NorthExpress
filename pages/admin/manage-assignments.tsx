@@ -24,7 +24,7 @@ const ManageAssignments: React.FC = (props: any) => {
     const router = useRouter()
     const searchParams = useSearchParams();
     const page = parseInt(searchParams.get('page') || '1', 10);
-    const { assignments } = props;
+    const { bookings } = props;
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
             if (!user) {
@@ -90,7 +90,7 @@ const ManageAssignments: React.FC = (props: any) => {
                                             </tr>
                                         </thead>
                                         <tbody className="pt-2 pb-2">
-                                            {assignments.map((assignment, index) => (
+                                            {bookings.map((assignment, index) => (
                                                 <tr
                                                     key={assignment.id}
                                                     className={index % 2 === 0 ? 'bg-blue-100' : 'bg-white'}
@@ -122,10 +122,10 @@ export default ManageAssignments;
 
 export async function getServerSideProps() {
     try {
-        const q = query(collection(db, 'assignments'), orderBy('createdAt', 'desc'));
+        const q = query(collection(db, 'bookings'), orderBy('createdAt', 'desc'));
         const querySnapshot = await getDocs(q);
 
-        const assignments = await Promise.all(
+        const bookings = await Promise.all(
             querySnapshot.docs.map(async (doc) => {
                 const data = doc.data();
                 data.createdAt = formatDate(data.createdAt.toDate());
@@ -142,7 +142,7 @@ export async function getServerSideProps() {
                         const studentData = studentDoc.data();
                         studentData.createdAt = formatDate(studentData.createdAt.toDate());
 
-                        const offersCollectionRef = collection(db, 'assignments', id, 'offers');
+                        const offersCollectionRef = collection(db, 'bookings', id, 'offers');
                         const offersQuerySnapshot = await getDocs(offersCollectionRef);
 
                         const offers = offersQuerySnapshot.docs.map((offerDoc) => {
@@ -162,16 +162,16 @@ export async function getServerSideProps() {
                     console.error(`No userId field available for assignment with id: ${id}`);
                 }
 
-                return null; // Return null for assignments without proper user information
+                return null; // Return null for bookings without proper user information
             })
         );
 
-        // Filter out null values from the assignments array
-        const validAssignments = assignments.filter((assignment) => assignment !== null);
+        // Filter out null values from the bookings array
+        const validAssignments = bookings.filter((assignment) => assignment !== null);
 
         return {
             props: {
-                assignments: validAssignments,
+                bookings: validAssignments,
             },
         };
     } catch (error) {
@@ -179,7 +179,7 @@ export async function getServerSideProps() {
 
         return {
             props: {
-                assignments: [], // Initialize assignments as an empty array in case of an error
+                bookings: [], // Initialize bookings as an empty array in case of an error
             },
         };
     }

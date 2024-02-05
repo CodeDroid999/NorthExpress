@@ -32,7 +32,7 @@ export const formatDate = (dateString) => {
 }
 
 export default function ManageAccount() {
-    const [assignments, setAssignments] = useState([])
+    const [bookings, setAssignments] = useState([])
     const [reviews, setReviews] = useState([])
     const [activeTab, setActiveTab] = useState('basic') // Default tab is 'Personal Info tab'
     const [user, setUser] = useState(null)
@@ -77,14 +77,14 @@ export default function ManageAccount() {
                 where('tutorId', '==', userId)
             )
 
-            // Fetch assignments
+            // Fetch bookings
             const assignmentsPromise = getDocs(assignmentsQuery).then((assignmentQuerySnapshot) => {
-                const assignments = assignmentQuerySnapshot.docs.map((doc) => {
+                const bookings = assignmentQuerySnapshot.docs.map((doc) => {
                     const data = doc.data()
                     // Additional processing for assignment data if needed
                     return { id: doc.id, ...data }
                 })
-                return assignments
+                return bookings
             })
 
             // Fetch reviews
@@ -114,8 +114,8 @@ export default function ManageAccount() {
 
             // Wait for both promises to resolve
             Promise.all([assignmentsPromise, reviewsPromise])
-                .then(([assignments, reviews]) => {
-                    setAssignments(assignments)
+                .then(([bookings, reviews]) => {
+                    setAssignments(bookings)
                     setReviews(reviews)
                     setLoading(false)
                 })
@@ -142,7 +142,7 @@ export default function ManageAccount() {
         setActiveTab(tab)
     }
 
-    const completedAssignments = assignments.filter((assignment) => assignment.status === 'Completed')
+    const completedAssignments = bookings.filter((assignment) => assignment.status === 'Completed')
     const myTutorReviews = reviews.filter(
         (review) => review.senderId !== review.tutorId
     )
@@ -223,7 +223,7 @@ export default function ManageAccount() {
                                             <div className="w-42 h-42 flex-auto rounded-lg  bg-gradient-to-r from-gray-800    to-gray-700    shadow-lg">
                                                 <div className="p-4 md:p-7">
                                                     <h2 className="text-center text-xl capitalize text-gray-200">
-                                                        {assignments.length}
+                                                        {bookings.length}
                                                     </h2>
                                                     <h3 className="text-center  text-sm  text-gray-400">
                                                         Homeworks Assigned
@@ -286,9 +286,9 @@ export default function ManageAccount() {
 
                                         {user?.role === 'Student' && (
                                             <button
-                                                className={`${activeTab === 'assignments' ? 'bg-gray-100' : ''
+                                                className={`${activeTab === 'bookings' ? 'bg-gray-100' : ''
                                                     } w-full whitespace-nowrap border-2 rounded hover:shadow-2xl py-3 text-center text-sm font-medium text-green-950 transition duration-150 ease-in hover:text-gray-900`}
-                                                onClick={() => handleTabClick('assignments')}
+                                                onClick={() => handleTabClick('bookings')}
                                             >
                                                 Assignments
                                             </button>
@@ -330,7 +330,7 @@ export default function ManageAccount() {
                                         <UserApplicationHistory />
                                     </div>
                                 )}
-                                {activeTab === 'assignments' && (
+                                {activeTab === 'bookings' && (
                                     <div className="w-full p-4">
                                         {/* Content for the Personal Info tab */}
                                         <AssignmentsTab />

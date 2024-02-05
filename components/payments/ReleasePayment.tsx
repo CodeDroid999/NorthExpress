@@ -22,7 +22,7 @@ export default function ReleasePayment({
   const router = useRouter()
 
   const handleReleasePayment = async () => {
-    const taskRef = doc(db, 'assignments', assignmentId)
+    const taskRef = doc(db, 'bookings', assignmentId)
 
     await updateDoc(taskRef, {
       paymentReleased: true,

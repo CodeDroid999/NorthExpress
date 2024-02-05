@@ -77,11 +77,11 @@ export default function Earned() {
             {payments.length === 0 ? (
               <div className="mt-28 flex flex-col items-center">
                 <h1 className="text-xl font-semibold text-green-950 ">
-                  You havent earned from any assignments yet. But lets change that!
+                  You havent earned from any bookings yet. But lets change that!
                 </h1>
                 <div className="mt-6">
                   <Link
-                    href="/browse-assignments"
+                    href="/browse-bookings"
                     className="rounded-full bg-green-900 px-4 py-2 font-semibold text-white"
                   >
                     Browse Assignments
@@ -98,7 +98,7 @@ export default function Earned() {
                     >
                       <span
                         className="cursor-pointer text-blue-800"
-                        onClick={() => router.push(`/assignments/${payment.assignmentId}`)}
+                        onClick={() => router.push(`/bookings/${payment.assignmentId}`)}
                       >
                         {payment.assignmentTitle}
                       </span>

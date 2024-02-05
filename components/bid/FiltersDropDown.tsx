@@ -54,9 +54,9 @@ const FiltersDropdown: React.FC<DropdownProps> = ({ options }) => {
                   checked={selectedOptions.includes(options[0])}
                   onChange={() => handleSelectOption(options[0])}
                 />
-                Available assignments only
+                Available bookings only
                 <div className="mb-4 text-left  text-neutral-500">
-                  Hide assignments that are already assigned
+                  Hide bookings that are already assigned
                 </div>
               </label>
 
@@ -69,7 +69,7 @@ const FiltersDropdown: React.FC<DropdownProps> = ({ options }) => {
                 />
                 Assignments with no offers only
                 <div className="mb-4 text-left  text-neutral-500">
-                  Hide assignments that have offers
+                  Hide bookings that have offers
                 </div>
               </label>
               <div className="flex justify-between">

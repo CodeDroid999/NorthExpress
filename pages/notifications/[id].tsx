@@ -82,27 +82,27 @@ export default function Notifications() {
         }
       )
 
-      // Fetch unread notifications and mark them as read on initial load
-      ;(async () => {
-        const unreadQuerySnapshot = await getDocs(
-          query(
-            notificationsRef,
-            where('receiverId', '==', userId),
-            where('read', '==', false)
+        // Fetch unread notifications and mark them as read on initial load
+        ; (async () => {
+          const unreadQuerySnapshot = await getDocs(
+            query(
+              notificationsRef,
+              where('receiverId', '==', userId),
+              where('read', '==', false)
+            )
           )
-        )
 
-        const unreadNotifications = unreadQuerySnapshot.docs.map(
-          (doc) => doc.ref
-        )
-        const batch = writeBatch(db)
+          const unreadNotifications = unreadQuerySnapshot.docs.map(
+            (doc) => doc.ref
+          )
+          const batch = writeBatch(db)
 
-        unreadNotifications.forEach((notificationRef) => {
-          batch.update(notificationRef, { read: true })
-        })
+          unreadNotifications.forEach((notificationRef) => {
+            batch.update(notificationRef, { read: true })
+          })
 
-        await batch.commit()
-      })()
+          await batch.commit()
+        })()
 
       return () => {
         unsubscribe()
@@ -198,7 +198,7 @@ export default function Notifications() {
                     <span className=""> {notification.content}</span>
 
                     <span className="ml-1.5 text-blue-700">
-                      <Link href={`/assignments/${notification.assignmentId}`}>
+                      <Link href={`/bookings/${notification.assignmentId}`}>
                         {notification.assignmentTitle}
                       </Link>
                     </span>

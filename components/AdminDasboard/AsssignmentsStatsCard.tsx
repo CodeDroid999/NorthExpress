@@ -19,7 +19,7 @@ const AssignmentsStatsCard = () => {
     useEffect(() => {
         const fetchAssignmentStats = async () => {
             try {
-                const assignmentsSnapshot = await getDocs(collection(db, 'assignments'));
+                const assignmentsSnapshot = await getDocs(collection(db, 'bookings'));
 
                 const totalAssignments = assignmentsSnapshot.docs.length;
                 const assignedAssignments = assignmentsSnapshot.docs.filter(doc =>
@@ -74,7 +74,7 @@ const AssignmentsStatsCard = () => {
                 </div>
             </div>
             <div className="divide border-2 w-full mt-2 mb-2"></div>
-            <Link href="/admin/manage-assignments" className="flex align-items-right w-100">
+            <Link href="/admin/manage-bookings" className="flex align-items-right w-100">
                 <span className="rounded bg-green-900 hover:bg-green-800 px-1 text-white">Manage</span>
             </Link>
         </div>

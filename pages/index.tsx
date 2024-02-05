@@ -91,15 +91,7 @@ export default function Home(props: PageProps) {
       <AppplyNowHero />
       <HighestEarners />
       <DiscoverDestinations />
-      <BeYourOwnBoss />
-      <section className="flex justify-center align-center mx-auto my-4">
-        <div className="w-5/6 shadow-xl">
-          <Link href="/login" className="w-full">
-            <TasksTable />
-          </Link>
-        </div>
-      </section>
-      <PopularCountries />
+
       <FAQAccordion />
       <Footer />
     </>

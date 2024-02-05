@@ -44,20 +44,20 @@ const Accordion: React.FC = () => {
     },
     {
       question: 'Who is a Student?',
-      answer: "A student is someone who posts assignments or work on the website. It typically means a user or contributor who shares Research, Technical, Assignments, or any form of work on our platform. Posters are members of our online community, researchers, students, professors, developers  bloggers, writers, photographers, or anyone who actively posts things to be done.",
+      answer: "A student is someone who posts bookings or work on the website. It typically means a user or contributor who shares Research, Technical, Assignments, or any form of work on our platform. Posters are members of our online community, researchers, students, professors, developers  bloggers, writers, photographers, or anyone who actively posts things to be done.",
     },
     {
       question: 'Who is a Tutor',
-      answer: "A tutor is someone who takes on the assignments or work posted by the student. Taskers play a pivotal role on our platform, and they are the individuals who bring the posted projects and assignments to life. Taskers can encompass a wide range of skills and expertise, making them valuable assets to our online community."
+      answer: "A tutor is someone who takes on the bookings or work posted by the student. Taskers play a pivotal role on our platform, and they are the individuals who bring the posted projects and bookings to life. Taskers can encompass a wide range of skills and expertise, making them valuable assets to our online community."
     },
     {
       question: 'What services are available on QualityunitedWriters?',
       answer:
-        'We offer a wide range of services, from posting assignments to finding the ideal candidate for your specific needs. From Technical writing which involves taking highly technical information like user manuals and research and turning it into content that the average person can understand. We have also a bunch of interesting assignments as well, for example, Web content and blog writing, Copywriting, Newswriting, Business writing, Ghostwritering, Instructional writing, and Resume writing. The customer will let you know if the assignment needs to be completed in person or remote and provide dates that assignments need to be completed by.',
+        'We offer a wide range of services, from posting bookings to finding the ideal candidate for your specific needs. From Technical writing which involves taking highly technical information like user manuals and research and turning it into content that the average person can understand. We have also a bunch of interesting bookings as well, for example, Web content and blog writing, Copywriting, Newswriting, Business writing, Ghostwritering, Instructional writing, and Resume writing. The customer will let you know if the assignment needs to be completed in person or remote and provide dates that bookings need to be completed by.',
     }, {
-      question: 'What assignments are available for me to do?',
+      question: 'What bookings are available for me to do?',
       answer:
-        'There’s a wide range of assignments on QualityunitedWriters. From Technical writing which involves taking highly technical information like user manuals and research and turning it into content that the average person can understand. We have also a bunch of interesting assignments as well, for example, Web content and blog writing, Copywriting, Newswriting, Business writing, Ghostwritering, Instructional writing, and Resume writing. The customer will let you know if the assignment needs to be completed in person or remote and provide dates that assignments need to be completed by.',
+        'There’s a wide range of bookings on QualityunitedWriters. From Technical writing which involves taking highly technical information like user manuals and research and turning it into content that the average person can understand. We have also a bunch of interesting bookings as well, for example, Web content and blog writing, Copywriting, Newswriting, Business writing, Ghostwritering, Instructional writing, and Resume writing. The customer will let you know if the assignment needs to be completed in person or remote and provide dates that bookings need to be completed by.',
     },
     {
       question: 'How do i get paid?',
@@ -70,9 +70,9 @@ const Accordion: React.FC = () => {
         'So you can post or earn with peace of mind please refer to QualityunitedWriters Insurance page - terms and conditions apply.',
     },
     {
-      question: 'Can I get alerts or notifications for assignments?',
+      question: 'Can I get alerts or notifications for bookings?',
       answer:
-        'Of course! Set up assignment alerts in your account settings and we will let you know when any new assignments appear that match your interests.',
+        'Of course! Set up assignment alerts in your account settings and we will let you know when any new bookings appear that match your interests.',
     },
     // Add more FAQ items as needed...
   ]

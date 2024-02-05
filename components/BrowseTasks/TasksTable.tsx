@@ -62,7 +62,7 @@ const TasksTable = () => {
         </table>
         <div className="flex w-full flex-col justify-center">
           <div className="assignment-counter text-blue-900">
-            <TaskCounter assignments={filteredData} />
+            <TaskCounter bookings={filteredData} />
           </div>
           <div className="pagination space-x-2 flex justify-center">
             {Array.from({ length: Math.ceil(filteredData.length / rowsPerPage) }, (_, index) => (

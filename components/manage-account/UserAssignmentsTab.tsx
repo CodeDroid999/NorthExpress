@@ -12,18 +12,18 @@ const UserAssignmentTab = () => {
     useEffect(() => {
         const fetchUserAssignments = async () => {
             try {
-                const q = query(collection(db, 'assignments'), where('student.userId', '==', userId), orderBy('createdAt', 'desc'));
+                const q = query(collection(db, 'bookings'), where('student.userId', '==', userId), orderBy('createdAt', 'desc'));
                 const querySnapshot = await getDocs(q);
 
-                const assignments = querySnapshot.docs.map((doc) => {
+                const bookings = querySnapshot.docs.map((doc) => {
                     const data = doc.data();
                     data.createdAt = formatDate(data.createdAt.toDate());
                     return { id: doc.id, ...data };
                 });
 
-                setUserAssignments(assignments);
+                setUserAssignments(bookings);
             } catch (error) {
-                console.error('Error fetching user assignments:', error);
+                console.error('Error fetching user bookings:', error);
             }
         };
 

@@ -49,7 +49,7 @@ export default function TaskDetails(props: any) {
 
   useEffect(() => {
     setLoading(true)
-    const offersCollectionRef = collection(db, 'assignments', assignmentId, 'offers')
+    const offersCollectionRef = collection(db, 'bookings', assignmentId, 'offers')
     const unsubscribe = onSnapshot(offersCollectionRef, async (snapshot) => {
       const updatedOffers: any = await Promise.all(
         snapshot.docs.map(async (doc) => {
@@ -82,7 +82,7 @@ export default function TaskDetails(props: any) {
 
   const withdrawOffer = async (offerId: string) => {
     try {
-      await deleteDoc(doc(db, 'assignments', assignmentId, 'offers', offerId))
+      await deleteDoc(doc(db, 'bookings', assignmentId, 'offers', offerId))
       await addDoc(collection(db, 'notifications'), {
         receiverId: assignmentData.student.userId,
         senderId: user.userId,
@@ -529,7 +529,7 @@ export default function TaskDetails(props: any) {
 export async function getServerSideProps({ params }) {
   const assignmentId = params.id
 
-  const docRef = doc(db, 'assignments', assignmentId)
+  const docRef = doc(db, 'bookings', assignmentId)
   const docSnap = await getDoc(docRef)
 
   const assignmentData = docSnap.data()

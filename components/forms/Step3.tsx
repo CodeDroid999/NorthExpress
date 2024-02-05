@@ -50,7 +50,7 @@ export default function Step3({ handlePreviousStep }: Props) {
       return
     }
 
-    const docRef = await addDoc(collection(db, 'assignments'), {
+    const docRef = await addDoc(collection(db, 'bookings'), {
       title: title,
       description: description,
       dueDate: dueDate,

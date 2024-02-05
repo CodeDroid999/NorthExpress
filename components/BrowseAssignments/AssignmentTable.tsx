@@ -43,17 +43,17 @@ const AssignmentTable = () => {
           <tbody className="pt-2 pb-2">
             {currentRows.map((row, index) => (
               <tr key={row.id} className={index % 2 === 0 ? 'bg-blue-100' : 'bg-white'}>
-              <td className="pl-2 pt-1 pb-1">{row.summary}</td>
-              <td className="text-center">{row.price}</td>
-              <td className="text-center">{row.dueDate}</td>
-              <td className="text-center">{row.bids}</td>
+                <td className="pl-2 pt-1 pb-1">{row.summary}</td>
+                <td className="text-center">{row.price}</td>
+                <td className="text-center">{row.dueDate}</td>
+                <td className="text-center">{row.bids}</td>
               </tr>
             ))}
           </tbody>
         </table>
         <div className="flex w-full flex-col justify-center">
           <div className="assignment-counter text-blue-900">
-          <AssignmentCount assignments={filteredData} />
+            <AssignmentCount bookings={filteredData} />
           </div>
           <div className="pagination space-x-2 flex justify-center">
             {Array.from({ length: Math.ceil(filteredData.length / rowsPerPage) }, (_, index) => (

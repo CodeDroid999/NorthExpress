@@ -80,7 +80,7 @@ export default function PostAssignment() {
     }
 
     try {
-      const docRef = await addDoc(collection(db, 'assignments'), {
+      const docRef = await addDoc(collection(db, 'bookings'), {
         title: title,
         dueDate: dueDate,
         budget: budget,

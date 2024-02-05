@@ -24,7 +24,7 @@ const SideNav = () => {
                 <Link href="/admin/manage-users" className="text-blue-800 text-right whitespace-nowrap">My Users</Link>
             </div>
             <div className="p-2 flex font-bold items-center w-full border border-green-700">
-                <Link href="/admin/manage-assignments" className="text-blue-800 text-right whitespace-nowrap">Assignments</Link>
+                <Link href="/admin/manage-bookings" className="text-blue-800 text-right whitespace-nowrap">Assignments</Link>
             </div>
             <div className="p-2 flex font-bold items-center w-full border border-green-700">
                 <Link href="/privacy" className="text-blue-800 text-right whitespace-nowrap">Messages</Link>

@@ -201,7 +201,7 @@ function Navbar() {
 
                   <div className="flex">
                     {userRole === 'Student' && (
-                      <Link href="/browse-assignments" className=" text-gray-700 hover:text-green-500 text-sm">
+                      <Link href="/browse-bookings" className=" text-gray-700 hover:text-green-500 text-sm">
                         Browse
                       </Link>
                     )}
@@ -223,7 +223,7 @@ function Navbar() {
                     )}
                     {userRole === 'Tutor' && (
                       <Link
-                        href="/bid-assignments"
+                        href="/bid-bookings"
                         className="text-gray-700 hover:text-green-500 text-sm whitespace-nowrap"
                         id="customfontsize"
                       >
@@ -233,7 +233,7 @@ function Navbar() {
                   </div>
                   <div className="flex">
                     {userRole === 'Student' && (
-                      <Link href={`/my-assignments/${user.userId}`} className="text-gray-700  hover:text-green-500 text-sm">
+                      <Link href={`/my-bookings/${user.userId}`} className="text-gray-700  hover:text-green-500 text-sm">
                         Assignments
                       </Link>
                     )}

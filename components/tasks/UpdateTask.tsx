@@ -75,7 +75,7 @@ export default function UpdateTask({ assignmentId, assignmentData }) {
     if (hasError) {
       return
     }
-    const taskRef = doc(db, 'assignments', assignmentId)
+    const taskRef = doc(db, 'bookings', assignmentId)
     await updateDoc(taskRef, {
       dueDate,
       budget,

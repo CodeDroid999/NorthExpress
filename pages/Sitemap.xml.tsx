@@ -3,13 +3,13 @@ import { getAllPosts, getClient } from 'lib/sanity.client'
 type SitemapLocation = {
   url: string
   changefreq?:
-    | 'always'
-    | 'hourly'
-    | 'daily'
-    | 'weekly'
-    | 'monthly'
-    | 'yearly'
-    | 'never'
+  | 'always'
+  | 'hourly'
+  | 'daily'
+  | 'weekly'
+  | 'monthly'
+  | 'yearly'
+  | 'never'
   priority: number
   lastmod?: Date
 }
@@ -31,18 +31,17 @@ const createSitemap = (locations: SitemapLocation[]) => {
   return `<?xml version="1.0" encoding="UTF-8"?>
   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
       ${locations
-        .map((location) => {
-          return `<url>
+      .map((location) => {
+        return `<url>
                     <loc>${baseUrl}${location.url}</loc>
                     <priority>${location.priority}</priority>
-                    ${
-                      location.lastmod
-                        ? `<lastmod>${location.lastmod.toISOString()}</lastmod>`
-                        : ''
-                    }
+                    ${location.lastmod
+            ? `<lastmod>${location.lastmod.toISOString()}</lastmod>`
+            : ''
+          }
                   </url>`
-        })
-        .join('')}
+      })
+      .join('')}
   </urlset>
   `
 }
@@ -94,7 +93,7 @@ export async function getServerSideProps({ res }) {
       priority: 0.6,
     },
     {
-      url: '/browse-assignments',
+      url: '/browse-bookings',
       priority: 0.6,
     },
     {
@@ -114,7 +113,7 @@ export async function getServerSideProps({ res }) {
       priority: 0.6,
     },
     {
-      url: '/my-assignments',
+      url: '/my-bookings',
       priority: 0.6,
     },
     {
@@ -146,7 +145,7 @@ export async function getServerSideProps({ res }) {
       priority: 0.6,
     },
     {
-      url: '/assignments',
+      url: '/bookings',
       priority: 0.6,
     },
     {
@@ -163,12 +162,12 @@ export async function getServerSideProps({ res }) {
     },
     // Add more static URLs for your pages here
   ];
-  
+
   // Add more static URLs for other pages  
   const locations = [...defaultUrls, ...postUrls]
-  
 
-  
+
+
 
   // Set response to XML
   res.setHeader('Content-Type', 'text/xml')

@@ -36,7 +36,7 @@ export const formatDate = (dateString) => {
 }
 
 export default function ManageAdmin() {
-    const [assignments, setAssignments] = useState([])
+    const [bookings, setAssignments] = useState([])
     const [reviews, setReviews] = useState([])
     const [activeTab, setActiveTab] = useState('basic') // Default tab is 'Personal Info tab'
     const [user, setUser] = useState(null)
@@ -83,14 +83,14 @@ export default function ManageAdmin() {
                 where('tutorId', '==', userId)
             )
 
-            // Fetch assignments
+            // Fetch bookings
             const assignmentsPromise = getDocs(assignmentsQuery).then((assignmentQuerySnapshot) => {
-                const assignments = assignmentQuerySnapshot.docs.map((doc) => {
+                const bookings = assignmentQuerySnapshot.docs.map((doc) => {
                     const data = doc.data()
                     // Additional processing for assignment data if needed
                     return { id: doc.id, ...data }
                 })
-                return assignments
+                return bookings
             })
 
             // Fetch reviews
@@ -120,8 +120,8 @@ export default function ManageAdmin() {
 
             // Wait for both promises to resolve
             Promise.all([assignmentsPromise, reviewsPromise])
-                .then(([assignments, reviews]) => {
-                    setAssignments(assignments)
+                .then(([bookings, reviews]) => {
+                    setAssignments(bookings)
                     setReviews(reviews)
                     setLoading(false)
                 })
@@ -148,7 +148,7 @@ export default function ManageAdmin() {
         setActiveTab(tab)
     }
 
-    const completedAssignments = assignments.filter((assignment) => assignment.status === 'Completed')
+    const completedAssignments = bookings.filter((assignment) => assignment.status === 'Completed')
     const myTutorReviews = reviews.filter(
         (review) => review.senderId !== review.tutorId
     )

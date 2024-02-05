@@ -92,7 +92,7 @@ export default function MakeOffer({ studentId, assignmentTitle, student }) {
 
   const SubmitForm = async (event: any) => {
     event.preventDefault()
-    const taskRef = doc(db, 'assignments', assignmentId)
+    const taskRef = doc(db, 'bookings', assignmentId)
     await addDoc(collection(taskRef, 'offers'), {
       userId: user.userId,
       amount: offer,

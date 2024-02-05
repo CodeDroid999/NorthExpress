@@ -3,12 +3,12 @@ import { collection, onSnapshot, query, where } from 'firebase/firestore'
 import React, { useState, useEffect } from 'react'
 
 export default function CompletionRate({ reviews, userId }) {
-  const [assignments, setAssignments] = useState([])
+  const [bookings, setAssignments] = useState([])
   const [loading, setLoading] = useState(false)
   useEffect(() => {
     setLoading(true)
     const q = query(
-      collection(db, 'assignments'),
+      collection(db, 'bookings'),
       where('tutor.userId', '==', userId)
     )
 
@@ -33,7 +33,7 @@ export default function CompletionRate({ reviews, userId }) {
   }, [userId])
   const positiveReviews = reviews?.filter((review) => review.rating >= 4)
   const totalPositiveReviews = positiveReviews.length
-  const completedTasks = assignments?.filter((assignment) => assignment.status === 'Completed')
+  const completedTasks = bookings?.filter((assignment) => assignment.status === 'Completed')
   const totalJobsCompleted = completedTasks.length
   function calculateJobCompletionRate(
     totalPositiveReviews,

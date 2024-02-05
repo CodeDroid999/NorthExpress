@@ -84,7 +84,7 @@ export default function PostSimilarTask({ assignmentData }) {
       return
     }
 
-    const docRef = await addDoc(collection(db, 'assignments'), {
+    const docRef = await addDoc(collection(db, 'bookings'), {
       title: title,
       description: description,
       dueDate: dueDate,
@@ -134,7 +134,7 @@ export default function PostSimilarTask({ assignmentData }) {
 
     toast.success('Assignmenthas been posted')
 
-    router.push(`/assignments/${assignmentId}`)
+    router.push(`/bookings/${assignmentId}`)
 
     closeForm()
   }

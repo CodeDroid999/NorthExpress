@@ -44,11 +44,11 @@ const FAQAccordion: React.FC = () => {
     }, {
       question: 'What services are available on NorthExpress?',
       answer:
-        'We offer a wide range of services, from posting assignments to finding the ideal candidate for your specific needs. From Technical writing which involves taking highly technical information like user manuals and research and turning it into content that the average person can understand. We have also a bunch of interesting assignments as well, for example, Web content and blog writing, Copywriting, Newswriting, Business writing, Ghostwritering, Instructional writing, and Resume writing. The customer will let you know if the assignment needs to be completed in person or remote and provide dates that assignments need to be completed by.',
+        'We offer a wide range of services, from posting bookings to finding the ideal candidate for your specific needs. From Technical writing which involves taking highly technical information like user manuals and research and turning it into content that the average person can understand. We have also a bunch of interesting bookings as well, for example, Web content and blog writing, Copywriting, Newswriting, Business writing, Ghostwritering, Instructional writing, and Resume writing. The customer will let you know if the assignment needs to be completed in person or remote and provide dates that bookings need to be completed by.',
     }, {
-      question: 'What assignments are available for me to do?',
+      question: 'What bookings are available for me to do?',
       answer:
-        'There’s a wide range of assignments on NorthExpress. From Technical writing which involves taking highly technical information like user manuals and research and turning it into content that the average person can understand. We have also a bunch of interesting assignments as well, for example, Web content and blog writing, Copywriting, Newswriting, Business writing, Ghostwritering, Instructional writing, and Resume writing. The customer will let you know if the assignment needs to be completed in person or remote and provide dates that assignments need to be completed by.',
+        'There’s a wide range of bookings on NorthExpress. From Technical writing which involves taking highly technical information like user manuals and research and turning it into content that the average person can understand. We have also a bunch of interesting bookings as well, for example, Web content and blog writing, Copywriting, Newswriting, Business writing, Ghostwritering, Instructional writing, and Resume writing. The customer will let you know if the assignment needs to be completed in person or remote and provide dates that bookings need to be completed by.',
     },
     {
       question: 'How do i get paid?',
@@ -61,9 +61,9 @@ const FAQAccordion: React.FC = () => {
         'So you can post or earn with peace of mind please refer to Airtsker Insurance page - terms and conditions apply.',
     },
     {
-      question: 'Can I get alerts or notifications for assignments?',
+      question: 'Can I get alerts or notifications for bookings?',
       answer:
-        'Of course! Set up assignment alerts in your account settings and we will let you know when any new assignments appear that match your interests.',
+        'Of course! Set up assignment alerts in your account settings and we will let you know when any new bookings appear that match your interests.',
     },
     // Add more FAQ items as needed...
   ]

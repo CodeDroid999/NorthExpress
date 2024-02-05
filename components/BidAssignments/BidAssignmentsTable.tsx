@@ -14,7 +14,7 @@ import { onAuthStateChanged } from 'firebase/auth';
 import { formatDate } from 'pages/public-profile/[id]';
 
 const BidAssignmentsTable: React.FC = (props: any) => {
-    const { assignments } = props;
+    const { bookings } = props;
     const handleNavigation = (assignmentId: string) => {
         router.push(`/order/${assignmentId}`);
     };
@@ -63,7 +63,7 @@ const BidAssignmentsTable: React.FC = (props: any) => {
                                 </tr>
                             </thead>
                             <tbody className="pt-2 pb-2">
-                                {assignments.map((assignment, index) => (
+                                {bookings.map((assignment, index) => (
                                     <tr
                                         key={assignment.id}
                                         className={index % 2 === 0 ? 'bg-blue-100' : 'bg-white'}
@@ -90,11 +90,11 @@ const BidAssignmentsTable: React.FC = (props: any) => {
 export default BidAssignmentsTable;
 
 export async function getServerSideProps() {
-    const q = query(collection(db, 'assignments'), orderBy('createdAt', 'desc'))
+    const q = query(collection(db, 'bookings'), orderBy('createdAt', 'desc'))
 
     const querySnapshot = await getDocs(q)
 
-    const assignments = await Promise.all(
+    const bookings = await Promise.all(
         querySnapshot.docs.map(async (doc) => {
             const data = doc.data()
             data.createdAt = formatDate(data.createdAt.toDate())
@@ -111,7 +111,7 @@ export async function getServerSideProps() {
             const studentData = studentDoc.data()
             studentData.createdAt = formatDate(studentData.createdAt.toDate())
 
-            const offersCollectionRef = collection(db, 'assignments', id, 'offers')
+            const offersCollectionRef = collection(db, 'bookings', id, 'offers')
             const offersQuerySnapshot = await getDocs(offersCollectionRef)
 
             const offers = offersQuerySnapshot.docs.map((offerDoc) => {
@@ -129,7 +129,7 @@ export async function getServerSideProps() {
 
     return {
         props: {
-            assignments,
+            bookings,
         },
     }
 }

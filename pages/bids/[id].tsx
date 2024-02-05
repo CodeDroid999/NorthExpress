@@ -11,10 +11,10 @@ import {
 } from 'firebase/firestore';
 import { onAuthStateChanged } from 'firebase/auth';
 import { UserAuth } from 'context/AuthContext';
-import MyAssignmentsDetails from 'components/my-assignments/myAssignments';
+import MyAssignmentsDetails from 'components/my-bookings/myAssignments';
 export default function MyAssignmentsDetailsPage() { // Updated component name
   const [selectedFilter, setSelectedFilter] = useState('');
-  const [assignments, setAssignments] = useState([]); // Updated state name
+  const [bookings, setAssignments] = useState([]); // Updated state name
   const [loading, setLoading] = useState(false);
   const { user } = UserAuth();
   const router = useRouter();
@@ -22,7 +22,7 @@ export default function MyAssignmentsDetailsPage() { // Updated component name
 
   useEffect(() => {
     setLoading(true);
-    const q = query(collection(db, 'assignments')); // Updated collection name
+    const q = query(collection(db, 'bookings')); // Updated collection name
 
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
       const updatedAssignments = [];
@@ -31,7 +31,7 @@ export default function MyAssignmentsDetailsPage() { // Updated component name
         const data = doc.data();
         const id = doc.id;
 
-        const offersCollectionRef = collection(db, 'assignments', id, 'offers'); // Updated collection name
+        const offersCollectionRef = collection(db, 'bookings', id, 'offers'); // Updated collection name
         const offersQuerySnapshot = await getDocs(offersCollectionRef);
         const offers = offersQuerySnapshot.docs.map((offerDoc) => {
           const offerData = offerDoc.data();
@@ -59,14 +59,14 @@ export default function MyAssignmentsDetailsPage() { // Updated component name
     return () => unsubscribe();
   }, [router]);
 
-  const postedAssignments = assignments.filter((assignment) => assignment.student.userId === userId); // Updated property names
-  const assignedAssignments = assignments.filter(
+  const postedAssignments = bookings.filter((assignment) => assignment.student.userId === userId); // Updated property names
+  const assignedAssignments = bookings.filter(
     (assignment) => assignment.tutor.userId === userId && assignment.status === 'Assigned'
   );
-  const completedAssignments = assignments.filter(
+  const completedAssignments = bookings.filter(
     (assignment) => assignment.tutor.userId === userId && assignment.status === 'Completed'
   );
-  const pendingOffers = assignments.filter((assignment) => {
+  const pendingOffers = bookings.filter((assignment) => {
     return (
       assignment.status === 'Open' &&
       assignment.offers.some((offer) => offer.userId === userId)
@@ -115,35 +115,35 @@ export default function MyAssignmentsDetailsPage() { // Updated component name
               <div className="mt-28 flex flex-col items-center justify-center">
                 <h1 className="text-xl font-medium text-gray-700">
                   Hello {user?.firstName}, select a category to display your
-                  assignments
+                  bookings
                 </h1>
               </div>
             )}
             {selectedFilter === 'posted' && (
               <MyAssignmentsDetails
                 heading="Posted"
-                assignments={postedAssignments}
+                bookings={postedAssignments}
                 warning="You have not posted any orders!"
               />
             )}
             {selectedFilter === 'assigned' && (
               <MyAssignmentsDetails
                 heading="Assignments I have been assigned"
-                assignments={assignedAssignments}
+                bookings={assignedAssignments}
                 warning="You have not been assigned any orders!"
               />
             )}
             {selectedFilter === 'offers-pending' && (
               <MyAssignmentsDetails
                 heading="Pending Bids"
-                assignments={pendingOffers}
+                bookings={pendingOffers}
                 warning="You have no pending offers!"
               />
             )}
             {selectedFilter === 'completed' && (
               <MyAssignmentsDetails
                 heading="Assignments I have completed"
-                assignments={completedAssignments}
+                bookings={completedAssignments}
                 warning="You have not completed any orders!"
               />
             )}

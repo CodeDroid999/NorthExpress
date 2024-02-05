@@ -56,8 +56,8 @@ export default function Avatar() {
           </div>
           <div className="flex ">
             {userRole === 'Student' && (
-              <Link href="/browse-assignments" className="bg-white- 500 flex items-center gap-x-3.5 rounded-md px-3 mb-1 mt-1 py-2 text-sm text-gray-800 hover:bg-neutral-100 border w-100">
-                Browse assignments
+              <Link href="/browse-bookings" className="bg-white- 500 flex items-center gap-x-3.5 rounded-md px-3 mb-1 mt-1 py-2 text-sm text-gray-800 hover:bg-neutral-100 border w-100">
+                Browse bookings
               </Link>
             )}
 
@@ -76,21 +76,21 @@ export default function Avatar() {
           </div>
           <div className="flex ">
             {userRole === 'Student' && (
-              <Link href="/post-assignments" className="bg-white- 500 flex items-center gap-x-3.5 rounded-md px-3 mb-1 py-2 text-sm text-gray-800 hover:bg-neutral-100 border w-100">
-                Post assignments
+              <Link href="/post-bookings" className="bg-white- 500 flex items-center gap-x-3.5 rounded-md px-3 mb-1 py-2 text-sm text-gray-800 hover:bg-neutral-100 border w-100">
+                Post bookings
               </Link>
             )}
 
             {userRole === 'Tutor' && (
-              <Link href="/bid-assignments" className="bg-white- 500 flex items-center gap-x-3.5 rounded-md px-3 mb-1 py-2 text-sm text-gray-800 hover:bg-neutral-100 border w-100">
-                Bid assignments
+              <Link href="/bid-bookings" className="bg-white- 500 flex items-center gap-x-3.5 rounded-md px-3 mb-1 py-2 text-sm text-gray-800 hover:bg-neutral-100 border w-100">
+                Bid bookings
               </Link>
             )}
           </div>
           <div className="flex ">
             {userRole === 'Student' && (
-              <Link href={`/my-assignments/${user?.userId}`} className="bg-white- 500 flex items-center gap-x-3.5 rounded-md px-3 mb-1 py-2 text-sm text-gray-800 hover:bg-neutral-100 border w-100">
-                My assignments
+              <Link href={`/my-bookings/${user?.userId}`} className="bg-white- 500 flex items-center gap-x-3.5 rounded-md px-3 mb-1 py-2 text-sm text-gray-800 hover:bg-neutral-100 border w-100">
+                My bookings
               </Link>
             )}
 
