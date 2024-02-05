@@ -28,7 +28,7 @@ interface Query {
   [key: string]: string
 }
 
-export default function MamamaCita(props: PageProps) {
+export default function Home(props: PageProps) {
   const { posts, settings, draftMode } = props
   const searchParams = useSearchParams();
   const redirect = searchParams.get('redirect');
