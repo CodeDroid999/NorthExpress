@@ -12,16 +12,19 @@ const Footer: React.FC = () => {
             <div className="col-lg-4">
               <div className="theme-footer-section theme-footer-">
                 <a href="#" className="theme-footer-brand block mt-5">
-                  <div className="mb-1">
-                    <span className="text-2xl text-gray-100 hover:text-yellow-600 whitespace-nowrap font-bold px-1 font-extrabold w-full border-2 rounded border-gray-100 hidden md:inline"> NorthExpress </span>
-                    <span className="text-2xl text-blue-700 px-1 font-extrabold w-full border-2 rounded border-blue-700 inline md:hidden"> NE </span>
+                  <div className="mb-1 flex justify-items-center mx-auto">
+                    <span className="text-2xl text-center text-gray-100 hover:text-yellow-600 whitespace-nowrap font-bold px-1 w-full border-2 rounded border-gray-100 hidden md:inline"> NorthExpress </span>
+                    <span className="text-2xl text-center text-blue-700 px-1 font-extrabold w-full border-2 rounded border-blue-700 inline md:hidden"> NE </span>
+
                   </div>
+                  <p className="theme-copyright-text text-yellow-600 mt-4  font-bold text-center">Copyright © 2022 <a href="/" className="text-yellow-600">NorthExpress</a>. All rights reserved.</p>
+
                 </a>
               </div>
             </div>
             <div className="col-md-2">
               <div className="row">
-                <h1 className="text-gray-100 hover:text-yellow-600 whitespace-nowrap font-bold text-2xl font-bold">Company</h1>
+                <h1 className="text-gray-100 hover:text-yellow-600 whitespace-nowrap text-2xl font-bold underline mb-2">Company</h1>
                 {/* Add the rest of the content for the footer */}
                 <Link href="/about-us" className="text-gray-100 hover:text-yellow-600 whitespace-nowrap font-bold ">About Us</Link>
                 <Link href="/about-us" className="text-gray-100 hover:text-yellow-600 whitespace-nowrap font-bold ">Contact Us</Link>
@@ -31,10 +34,8 @@ const Footer: React.FC = () => {
             </div>
             <div className="col-md-2">
               <div className="row">
-                <h1 className="text-gray-100 hover:text-yellow-600 whitespace-nowrap font-bold text-2xl font-bold">Contacts</h1>
+                <h1 className="text-gray-100 hover:text-yellow-600 whitespace-nowrap font-bold text-2xl underline mb-2">Contacts</h1>
                 {/* Add the rest of the content for the footer */}
-                <Link href="/about-us" className="text-gray-100 hover:text-yellow-600 whitespace-nowrap font-bold ">0726 354 300</Link>
-                <Link href="/about-us" className="text-gray-100 hover:text-yellow-600 whitespace-nowrap font-bold ">0726 354 300</Link>
                 <Link href="/about-us" className="text-gray-100 hover:text-yellow-600 whitespace-nowrap font-bold ">0726 354 300</Link>
                 <Link href="/about-us" className="text-gray-100 hover:text-yellow-600 whitespace-nowrap font-bold ">0726 354 300</Link>
                 <Link href="/about-us" className="text-gray-100 hover:text-yellow-600 whitespace-nowrap font-bold ">0726 354 300</Link>
@@ -46,11 +47,11 @@ const Footer: React.FC = () => {
         </div>
       </div>
 
-      <div className="theme-copyright">
+      <div className="theme-copyright shadow bg-gray-100">
         <div className="container mx-auto">
-          <div className="row">
+          <div className="row justify-center mx-auto">
             <div className="col-md-6">
-              <p className="theme-copyright-text">Copyright © 2022 <a href="/" className="text-white">NorthExpress</a>. All rights reserved.</p>
+              <p className="theme-copyright-text text-blue-950  font-bold text-center">Copyright © 2022 <a href="/" className="text-blue-950">NorthExpress</a>. All rights reserved.</p>
             </div>
           </div>
         </div>
