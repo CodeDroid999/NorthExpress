@@ -2,9 +2,6 @@ import FAQAccordion from 'components/FAQaccordions'
 import HowItWorksSection from 'components/Homepage/HowITWorksSection'
 import BeYourOwnBoss from 'components/home/BeYourOwnBoss'
 import Features from 'components/home/Features'
-import { readToken } from 'lib/sanity.api'
-import { getAllPosts, getClient, getSettings } from 'lib/sanity.client'
-import { Post, Settings } from 'lib/sanity.queries'
 import Head from 'next/head'
 import type { SharedPageProps } from 'pages/_app'
 import { useRouter, useSearchParams } from 'next/navigation'
@@ -19,17 +16,12 @@ import PopularCountries from 'components/Become-a-tutor/PopularCountriesSection'
 import HeroArea from 'components/AddBookingpage/HeroSection'
 import PostYourBooking from 'components/Homepage/PostYourBooking'
 
-interface PageProps extends SharedPageProps {
-  posts: Post[]
-  settings: Settings
-}
 
 interface Query {
   [key: string]: string
 }
 
-export default function Home(props: PageProps) {
-  const { posts, settings, draftMode } = props
+export default function Home(props) {
   const searchParams = useSearchParams();
   const redirect = searchParams.get('redirect');
 
@@ -106,21 +98,3 @@ export default function Home(props: PageProps) {
   )
 }
 
-export const getStaticProps = async (ctx: any) => {
-  const { draftMode = false } = ctx
-  const client = getClient(draftMode ? { token: readToken } : undefined)
-
-  const [settings, posts = []] = await Promise.all([
-    getSettings(client),
-    getAllPosts(client),
-  ])
-
-  return {
-    props: {
-      posts,
-      settings,
-      draftMode,
-      token: draftMode ? readToken : '',
-    },
-  }
-}
