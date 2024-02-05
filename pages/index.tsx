@@ -87,7 +87,6 @@ export default function Home(props: PageProps) {
         <meta name="og:url" property="og:url" content="https://www.qualityunitedswriters.com" />
       </Head>
       <HeroArea />
-      <PostYourBooking />
       <Features />
       <AppplyNowHero />
       <HowItWorksSection />

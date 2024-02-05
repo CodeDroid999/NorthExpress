@@ -244,7 +244,7 @@ export default function PostYourBooking() {
                         />
 
                     </div>
-                    <div className="col-md-3 col-sm-6 pt-2 flex flex-col flex-items-end">
+                    <div className="col-md-3 col-sm-6 pt-2 sm:pb-3 flex flex-col flex-items-end">
                         <Link
                             className="btn-1 bg-yellow-600 p-2 rounded text-gray-100 text-center"
                             href="/add-booking"
