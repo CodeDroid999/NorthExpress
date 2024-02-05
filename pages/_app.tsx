@@ -17,7 +17,6 @@ import '../styles/custom.css'
 import LoginModal from 'components/unAuthed/LoginModal';
 
 export interface SharedPageProps {
-  draftMode: boolean
   token: string
 }
 
@@ -26,7 +25,7 @@ export default function App({
   Component,
   pageProps,
 }: AppProps<SharedPageProps>) {
-  const { draftMode, token } = pageProps;
+  const { token } = pageProps;
   const { user } = UserAuth();
   const [showLoginModal, setShowLoginModal] = useState(false);
 
