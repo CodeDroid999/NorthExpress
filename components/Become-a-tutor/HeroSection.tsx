@@ -9,7 +9,7 @@ const HeroArea = () => {
       <div className="hero_bg_box">
         <div className="img-box">
           <Image
-            src="https://i.postimg.cc/zDKqLqyb/hero-bg.jpg"
+            src="https://i.postimg.cc/QMYd1v3C/hero-bg.png"
             alt="assignment"
             width="1400"
             height="800"
