@@ -12,3 +12,55 @@
 [debug] [2024-02-05T07:43:20.142Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/northexpresskenya:testIamPermissions [none]
 [debug] [2024-02-05T07:43:20.142Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/northexpresskenya:testIamPermissions x-goog-quota-user=projects/northexpresskenya
 [debug] [2024-02-05T07:43:20.143Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/northexpresskenya:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasedatabase.instances.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]}
+[debug] [2024-02-05T07:43:22.441Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/northexpresskenya:testIamPermissions 200
+[debug] [2024-02-05T07:43:22.442Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/northexpresskenya:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasedatabase.instances.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]}
+[debug] [2024-02-05T07:43:22.444Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/northexpresskenya [none]
+[debug] [2024-02-05T07:43:23.070Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/northexpresskenya 200
+[debug] [2024-02-05T07:43:23.071Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/northexpresskenya {"projectId":"northexpresskenya","projectNumber":"498415498621","displayName":"NorthExpressKenya","name":"projects/northexpresskenya","resources":{"hostingSite":"northexpresskenya","realtimeDatabaseInstance":"northexpresskenya-default-rtdb","storageBucket":"northexpresskenya.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_a363ceb0-ba5b-467b-bfad-547027b737ee"}
+[info] 
+[info] === Deploying to 'northexpresskenya'...
+[info] 
+[info] i  deploying database, storage, firestore 
+[info] i  database: checking rules syntax... 
+[debug] [2024-02-05T07:43:23.078Z] >>> [apiv2][query] GET https://firebasedatabase.googleapis.com/v1beta/projects/northexpresskenya/locations/-/instances/northexpresskenya-default-rtdb [none]
+[debug] [2024-02-05T07:43:25.310Z] <<< [apiv2][status] GET https://firebasedatabase.googleapis.com/v1beta/projects/northexpresskenya/locations/-/instances/northexpresskenya-default-rtdb 200
+[debug] [2024-02-05T07:43:25.311Z] <<< [apiv2][body] GET https://firebasedatabase.googleapis.com/v1beta/projects/northexpresskenya/locations/-/instances/northexpresskenya-default-rtdb {"name":"projects/498415498621/locations/us-central1/instances/northexpresskenya-default-rtdb","project":"projects/498415498621","databaseUrl":"https://northexpresskenya-default-rtdb.firebaseio.com","type":"DEFAULT_DATABASE","state":"ACTIVE"}
+[debug] [2024-02-05T07:43:25.317Z] >>> [apiv2][query] PUT https://northexpresskenya-default-rtdb.firebaseio.com/.settings/rules.json dryRun=true
+[debug] [2024-02-05T07:43:25.318Z] >>> [apiv2][body] PUT https://northexpresskenya-default-rtdb.firebaseio.com/.settings/rules.json "{\n  /* Visit https://firebase.google.com/docs/database/security to learn more about security rules. */\n  \"rules\": {\n    \".read\": false,\n    \".write\": false\n  }\n}"
+[debug] [2024-02-05T07:43:25.965Z] <<< [apiv2][status] PUT https://northexpresskenya-default-rtdb.firebaseio.com/.settings/rules.json 200
+[debug] [2024-02-05T07:43:25.965Z] <<< [apiv2][body] PUT https://northexpresskenya-default-rtdb.firebaseio.com/.settings/rules.json {"status":"ok"}
+[info] +  database: rules syntax for database northexpresskenya-default-rtdb is valid 
+[info] i  storage: ensuring required API firebasestorage.googleapis.com is enabled... 
+[debug] [2024-02-05T07:43:25.971Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/northexpresskenya/services/firebasestorage.googleapis.com [none]
+[debug] [2024-02-05T07:43:25.971Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/northexpresskenya/services/firebasestorage.googleapis.com x-goog-quota-user=projects/northexpresskenya
+[debug] [2024-02-05T07:43:28.308Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/northexpresskenya/services/firebasestorage.googleapis.com 200
+[debug] [2024-02-05T07:43:28.308Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/northexpresskenya/services/firebasestorage.googleapis.com [omitted]
+[info] +  storage: required API firebasestorage.googleapis.com is enabled 
+[debug] [2024-02-05T07:43:28.310Z] >>> [apiv2][query] GET https://firebasestorage.googleapis.com/v1alpha/projects/northexpresskenya/defaultBucket [none]
+[debug] [2024-02-05T07:43:29.412Z] <<< [apiv2][status] GET https://firebasestorage.googleapis.com/v1alpha/projects/northexpresskenya/defaultBucket 200
+[debug] [2024-02-05T07:43:29.413Z] <<< [apiv2][body] GET https://firebasestorage.googleapis.com/v1alpha/projects/northexpresskenya/defaultBucket {"name":"projects/northexpresskenya/defaultBucket","location":"US","bucket":{"name":"projects/northexpresskenya/buckets/northexpresskenya.appspot.com"}}
+[info] i  firebase.storage: checking storage.rules for compilation errors... 
+[debug] [2024-02-05T07:43:29.422Z] >>> [apiv2][query] POST https://firebaserules.googleapis.com/v1/projects/northexpresskenya:test [none]
+[debug] [2024-02-05T07:43:29.423Z] >>> [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/northexpresskenya:test [omitted]
+[debug] [2024-02-05T07:43:30.502Z] <<< [apiv2][status] POST https://firebaserules.googleapis.com/v1/projects/northexpresskenya:test 200
+[debug] [2024-02-05T07:43:30.502Z] <<< [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/northexpresskenya:test {}
+[info] +  firebase.storage: rules file storage.rules compiled successfully 
+[info] i  firestore: reading indexes from firestore.indexes.json... 
+[info] i  cloud.firestore: checking firestore.rules for compilation errors... 
+[debug] [2024-02-05T07:43:30.507Z] >>> [apiv2][query] POST https://firebaserules.googleapis.com/v1/projects/northexpresskenya:test [none]
+[debug] [2024-02-05T07:43:30.507Z] >>> [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/northexpresskenya:test [omitted]
+[debug] [2024-02-05T07:43:31.613Z] <<< [apiv2][status] POST https://firebaserules.googleapis.com/v1/projects/northexpresskenya:test 200
+[debug] [2024-02-05T07:43:31.614Z] <<< [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/northexpresskenya:test {}
+[info] +  cloud.firestore: rules file firestore.rules compiled successfully 
+[debug] [2024-02-05T07:43:31.619Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/northexpresskenya/releases pageSize=10&pageToken=
+[debug] [2024-02-05T07:43:32.712Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/northexpresskenya/releases 200
+[debug] [2024-02-05T07:43:32.712Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/northexpresskenya/releases {"releases":[{"name":"projects/northexpresskenya/releases/cloud.firestore","rulesetName":"projects/northexpresskenya/rulesets/07526a7f-2162-4c00-a011-24333e8d879e","createTime":"2024-02-03T02:50:43.660825Z","updateTime":"2024-02-03T02:50:43.660825Z"},{"name":"projects/northexpresskenya/releases/firebase.storage/northexpresskenya.appspot.com","rulesetName":"projects/northexpresskenya/rulesets/17d79700-9b32-4a92-95f8-72cf76e72e36","createTime":"2024-02-05T07:38:30.596791Z","updateTime":"2024-02-05T07:38:30.596791Z"}]}
+[debug] [2024-02-05T07:43:32.742Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/northexpresskenya/rulesets/17d79700-9b32-4a92-95f8-72cf76e72e36 [none]
+[debug] [2024-02-05T07:43:33.833Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/northexpresskenya/rulesets/17d79700-9b32-4a92-95f8-72cf76e72e36 200
+[debug] [2024-02-05T07:43:33.833Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/northexpresskenya/rulesets/17d79700-9b32-4a92-95f8-72cf76e72e36 [omitted]
+[debug] [2024-02-05T07:43:33.836Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/northexpresskenya [none]
+[debug] [2024-02-05T07:43:34.521Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/northexpresskenya 200
+[debug] [2024-02-05T07:43:34.522Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/northexpresskenya {"projectId":"northexpresskenya","projectNumber":"498415498621","displayName":"NorthExpressKenya","name":"projects/northexpresskenya","resources":{"hostingSite":"northexpresskenya","realtimeDatabaseInstance":"northexpresskenya-default-rtdb","storageBucket":"northexpresskenya.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_a363ceb0-ba5b-467b-bfad-547027b737ee"}
+[debug] [2024-02-05T07:43:34.523Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/498415498621:getIamPolicy [none]
+[debug] [2024-02-05T07:43:36.486Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/498415498621:getIamPolicy 200
+[debug] [2024-02-05T07:43:36.487Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/498415498621:getIamPolicy {"version":1,"etag":"BwYQnYupb6M=","bindings":[{"role":"roles/editor","members":["serviceAccount:northexpresskenya@appspot.gserviceaccount.com"]},{"role":"roles/firebase.managementServiceAgent","members":["serviceAccount:firebase-service-account@firebase-sa-management.iam.gserviceaccount.com","serviceAccount:service-498415498621@gcp-sa-firebase.iam.gserviceaccount.com"]},{"role":"roles/firebase.sdkAdminServiceAgent","members":["serviceAccount:firebase-adminsdk-7y733@northexpresskenya.iam.gserviceaccount.com"]},{"role":"roles/firebaserules.system","members":["serviceAccount:service-498415498621@firebase-rules.iam.gserviceaccount.com"]},{"role":"roles/firebasestorage.serviceAgent","members":["serviceAccount:service-498415498621@gcp-sa-firebasestorage.iam.gserviceaccount.com"]},{"role":"roles/firestore.serviceAgent","members":["serviceAccount:service-498415498621@gcp-sa-firestore.iam.gserviceaccount.com"]},{"role":"roles/iam.serviceAccountTokenCreator","members":["serviceAccount:firebase-adminsdk-7y733@northexpresskenya.iam.gserviceaccount.com"]},{"role":"roles/owner","members":["user:johnmwega2002@gmail.com"]},{"role":"roles/storage.admin","members":["serviceAccount:firebase-adminsdk-7y733@northexpresskenya.iam.gserviceaccount.com"]}]}
