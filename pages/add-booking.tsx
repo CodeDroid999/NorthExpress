@@ -86,8 +86,6 @@ export default function MamamaCita(props: PageProps) {
         <meta name="og:image" property="og:image" content="public/QualityUnitedWritersLogo.png" />
         <meta name="og:url" property="og:url" content="https://www.qualityunitedswriters.com" />
       </Head>
-      <HeroArea />
-      <StatsCounter />
       <PostYourBooking />
       <Features />
       <AppplyNowHero />

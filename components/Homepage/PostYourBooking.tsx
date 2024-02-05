@@ -22,8 +22,8 @@ export default function PostYourBooking() {
     const currentDate = new Date().toISOString().split('T')[0];
     const auth = getAuth();
     const [userId, setUserId] = useState<string | null>(null);
-    const [selectedFromCounty, setSelectedFromCounty] = useState('');
-    const [selectedToCounty, setSelectedToCounty] = useState('');
+    const [selectedFromCounty, setSelectedFromCounty] = useState('Eldoret');
+    const [selectedToCounty, setSelectedToCounty] = useState('Kisumu');
     const [departureDate, setDepartureDate] = useState(`${currentDate}`);
     const [showLoginModal, setShowLoginModal] = useState(false);
 
@@ -54,36 +54,17 @@ export default function PostYourBooking() {
             };
 
             // Replace 'YOUR_COLLECTION_NAME' with the actual collection name
-            const docRef = await addDoc(collection(db, 'YOUR_COLLECTION_NAME'), bookingData);
+            const docRef = await addDoc(collection(db, 'bookings'), bookingData);
 
             // Redirect to make-booking-page
-            router.push('/make-booking-page');
+            router.push('/make-booking');
         } catch (error) {
             console.error('Error creating booking:', error);
             toast.error('Failed to make booking. Please try again.');
         }
     };
 
-    useEffect(() => {
-        // Fetch userId from the database if the user is logged in
-        const fetchUserId = async () => {
-            if (user) {
-                try {
-                    const userDoc = await getDoc(doc(db, 'users', user.userId));
-                    if (userDoc.exists()) {
-                        setUserId(userDoc.data().userId);
-                    }
-                } catch (error) {
-                    console.error('Error fetching userId:', error);
-                }
-            } else {
-                // Show login modal if the user is not logged in
-                setShowLoginModal(true);
-            }
-        };
 
-        fetchUserId();
-    }, [user]);
 
     return (
         <div className="detail-box bg-transparent px-4 ">
@@ -95,7 +76,7 @@ export default function PostYourBooking() {
                 </p>
             </div>
 
-            <div className="container flex flex-col justify-center rounded-xl  bg-gray-100">
+            <div className="container flex flex-col justify-center rounded-xl  bg-gray-100 mx-2">
 
 
                 <p className="flex items-right align-center">
@@ -121,10 +102,56 @@ export default function PostYourBooking() {
                             <select
                                 value={selectedFromCounty}
                                 onChange={handleFromCountyChange}
-                                className="rounded border p-1"
+                                className="rounded border p-1 text-blue-950 w-full"
                             >
-                                <option value="">Select a destination</option>
-                                <option value="Business">Business</option>
+                                <option value="">{selectedFromCounty}</option>
+                                <option value="baringo">Baringo</option>
+                                <option value="bomet">Bomet</option>
+                                <option value="bungoma">Bungoma</option>
+                                <option value="busia">Busia</option>
+                                <option value="elgeyo marakwet">Elgeyo Marakwet</option>
+                                <option value="embu">Embu</option>
+                                <option value="garissa">Garissa</option>
+                                <option value="homa bay">Homa Bay</option>
+                                <option value="isiolo">Isiolo</option>
+                                <option value="kajiado">Kajiado</option>
+                                <option value="kakamega">Kakamega</option>
+                                <option value="kericho">Kericho</option>
+                                <option value="kiambu">Kiambu</option>
+                                <option value="kilifi">Kilifi</option>
+                                <option value="kirinyaga">Kirinyaga</option>
+                                <option value="kisii">Kisii</option>
+                                <option value="kisumu">Kisumu</option>
+                                <option value="kitui">Kitui</option>
+                                <option value="kwale">Kwale</option>
+                                <option value="laikipia">Laikipia</option>
+                                <option value="lamu">Lamu</option>
+                                <option value="machakos">Machakos</option>
+                                <option value="makueni">Makueni</option>
+                                <option value="mandera">Mandera</option>
+                                <option value="meru">Meru</option>
+                                <option value="migori">Migori</option>
+                                <option value="marsabit">Marsabit</option>
+                                <option value="mombasa">Mombasa</option>
+                                <option value="muranga">Muranga</option>
+                                <option value="nairobi">Nairobi</option>
+                                <option value="nakuru">Nakuru</option>
+                                <option value="nandi">Nandi</option>
+                                <option value="narok">Narok</option>
+                                <option value="nyamira">Nyamira</option>
+                                <option value="nyandarua">Nyandarua</option>
+                                <option value="nyeri">Nyeri</option>
+                                <option value="samburu">Samburu</option>
+                                <option value="siaya">Siaya</option>
+                                <option value="taita taveta">Taita Taveta</option>
+                                <option value="tana river">Tana River</option>
+                                <option value="tharaka nithi">Tharaka Nithi</option>
+                                <option value="trans nzoia">Trans Nzoia</option>
+                                <option value="turkana">Turkana</option>
+                                <option value="uasin gishu">Uasin Gishu</option>
+                                <option value="vihiga">Vihiga</option>
+                                <option value="wajir">Wajir</option>
+                                <option value="pokot">West Pokot</option>
 
 
                                 {/* Add more options as needed */}
@@ -142,10 +169,56 @@ export default function PostYourBooking() {
                             <select
                                 value={selectedToCounty}
                                 onChange={handleToCountyChange}
-                                className="rounded border p-1"
+                                className="rounded border p-1 text-blue-950 w-full"
                             >
-                                <option value="">Select a destination</option>
-                                <option value="Business">Business</option>
+                                <option value="">{selectedToCounty}</option>
+                                <option value="baringo">Baringo</option>
+                                <option value="bomet">Bomet</option>
+                                <option value="bungoma">Bungoma</option>
+                                <option value="busia">Busia</option>
+                                <option value="elgeyo marakwet">Elgeyo Marakwet</option>
+                                <option value="embu">Embu</option>
+                                <option value="garissa">Garissa</option>
+                                <option value="homa bay">Homa Bay</option>
+                                <option value="isiolo">Isiolo</option>
+                                <option value="kajiado">Kajiado</option>
+                                <option value="kakamega">Kakamega</option>
+                                <option value="kericho">Kericho</option>
+                                <option value="kiambu">Kiambu</option>
+                                <option value="kilifi">Kilifi</option>
+                                <option value="kirinyaga">Kirinyaga</option>
+                                <option value="kisii">Kisii</option>
+                                <option value="kisumu">Kisumu</option>
+                                <option value="kitui">Kitui</option>
+                                <option value="kwale">Kwale</option>
+                                <option value="laikipia">Laikipia</option>
+                                <option value="lamu">Lamu</option>
+                                <option value="machakos">Machakos</option>
+                                <option value="makueni">Makueni</option>
+                                <option value="mandera">Mandera</option>
+                                <option value="meru">Meru</option>
+                                <option value="migori">Migori</option>
+                                <option value="marsabit">Marsabit</option>
+                                <option value="mombasa">Mombasa</option>
+                                <option value="muranga">Muranga</option>
+                                <option value="nairobi">Nairobi</option>
+                                <option value="nakuru">Nakuru</option>
+                                <option value="nandi">Nandi</option>
+                                <option value="narok">Narok</option>
+                                <option value="nyamira">Nyamira</option>
+                                <option value="nyandarua">Nyandarua</option>
+                                <option value="nyeri">Nyeri</option>
+                                <option value="samburu">Samburu</option>
+                                <option value="siaya">Siaya</option>
+                                <option value="taita taveta">Taita Taveta</option>
+                                <option value="tana river">Tana River</option>
+                                <option value="tharaka nithi">Tharaka Nithi</option>
+                                <option value="trans nzoia">Trans Nzoia</option>
+                                <option value="turkana">Turkana</option>
+                                <option value="uasin gishu">Uasin Gishu</option>
+                                <option value="vihiga">Vihiga</option>
+                                <option value="wajir">Wajir</option>
+                                <option value="pokot">West Pokot</option>
 
 
                                 {/* Add more options as needed */}
@@ -167,14 +240,14 @@ export default function PostYourBooking() {
                             placeholder="Enter date"
                             min={currentDate}
                             onChange={(e) => setDepartureDate(e.target.value)}
-                            className="border rounded p-1 sm:w-full"
+                            className="border rounded p-1 sm:w-full text-blue-950"
                         />
 
                     </div>
-                    <div className="col-md-3 col-sm-6 pb-2 flex flex-col flex-end justify-end align-center ">
+                    <div className="col-md-3 col-sm-6 pt-2 flex flex-col flex-items-end">
                         <Link
-                            className="btn-1 bg-yellow-500 p-2 rounded text-white"
-                            href="/post-assignment"
+                            className="btn-1 bg-yellow-600 p-2 rounded text-gray-100 text-center"
+                            href="/add-booking"
                         >
                             Make Booking
                         </Link>
