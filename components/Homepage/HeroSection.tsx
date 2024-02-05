@@ -27,7 +27,37 @@ const HeroArea = () => {
             <div className="header_bottom sticky">
                 <CustomNavbar />
             </div>
+            <section className=" slider_section ">
+                <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
+                    <div className="carousel-inner">
+                        <div className="carousel-item active">
+                            <div className="container">
+                                <div className="row mx-4">
+                                    <div className="col-md-7">
+                                        <h4 className="mb-4.5 text-lg font-medium text-white">
+                                            🔥 North Express - Travel with comfort.
+                                        </h4>
+                                        <h1 className="mb-2 pr-16 text-3xl font-bold text-white xl:text-hero ">
+                                            Comfortable.<span>Efficient.</span>Affordable.
+                                        </h1>
+                                        <div className="detail-box">
+                                            <p className="text-white pt-1/2 pb-1/2 text-lg">
+                                                North Express is the brainchild of a group
+                                                of veteran logisticians redefining luxury transport.
+                                                At North Express, we are redefining comfort, and setting new standards of efficiency and reliability.
+                                            </p>
 
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div >
+
+                </div >
+                <PostYourBooking />
+            </section >
         </div >
     );
 };
