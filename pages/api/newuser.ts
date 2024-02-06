@@ -27,7 +27,7 @@ export default async function handler(
       const mailOptions = {
         from: process.env.NODEMAILER_EMAIL, // Use environment variable for sender email
         to: 'airtaska1@gmail.com', // Destination email address
-        subject: 'New User Signup on QualityunitedWriters',
+        subject: 'New User Signup on NorthExpress',
         text: `
         A new user with the following details has just signed up.
           Name: ${firstName} 

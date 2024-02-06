@@ -284,7 +284,7 @@ export default function MakeOffer({ studentId, assignmentTitle, student }) {
                 </div>
                 <div className="flex flex-col items-center">
                   <p className="mt-1 text-sm font-medium text-green-950">
-                    * QualityunitedWriters automatically includes a Service Fee to cover
+                    * NorthExpress automatically includes a Service Fee to cover
                     insurance and transaction costs.
                   </p>
                   <div className="mt-4 max-w-[280px] rounded-xl border border-gray-400 px-3 py-2">

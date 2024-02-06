@@ -10,7 +10,7 @@ export default function Layout({ children }) {
     <div>
       <Head>
         <title>
-          QualityunitedWriters | Get More Done | Post any assignment. Pick the best person. Get it
+          NorthExpress | Get More Done | Post any assignment. Pick the best person. Get it
           done. | Post your assignment for free Earn money as a tutor
         </title>
         <meta charSet="utf-8" />
@@ -34,7 +34,7 @@ export default function Layout({ children }) {
         />
         <meta
           name="description"
-          content="Post your assignment for free | Earn money as a tutor| Discover how QualityunitedWriters works | Trusted ratings and reviews| Insurance for peace of mind | Join QualityunitedWriters today!"
+          content="Post your assignment for free | Earn money as a tutor| Discover how NorthExpress works | Trusted ratings and reviews| Insurance for peace of mind | Join NorthExpress today!"
         />
 
       </Head>

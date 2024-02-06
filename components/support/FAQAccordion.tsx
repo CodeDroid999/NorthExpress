@@ -38,9 +38,9 @@ const FAQItem: React.FC<{ question: string; answer: string }> = ({
 const Accordion: React.FC = () => {
   const faqData = [
     {
-      question: 'What is QualityunitedWriters?',
+      question: 'What is NorthExpress?',
       answer:
-        'QualityunitedWriters is your go-to platform for getting things done quickly, precisely, and efficiently as well as getting your next job.Get your work done as a Client, Get your next side-hustle as a Tutor '
+        'NorthExpress is your go-to platform for getting things done quickly, precisely, and efficiently as well as getting your next job.Get your work done as a Client, Get your next side-hustle as a Tutor '
     },
     {
       question: 'Who is a Student?',
@@ -51,23 +51,23 @@ const Accordion: React.FC = () => {
       answer: "A tutor is someone who takes on the bookings or work posted by the student. Taskers play a pivotal role on our platform, and they are the individuals who bring the posted projects and bookings to life. Taskers can encompass a wide range of skills and expertise, making them valuable assets to our online community."
     },
     {
-      question: 'What services are available on QualityunitedWriters?',
+      question: 'What services are available on NorthExpress?',
       answer:
         'We offer a wide range of services, from posting bookings to finding the ideal candidate for your specific needs. From Technical writing which involves taking highly technical information like user manuals and research and turning it into content that the average person can understand. We have also a bunch of interesting bookings as well, for example, Web content and blog writing, Copywriting, Newswriting, Business writing, Ghostwritering, Instructional writing, and Resume writing. The customer will let you know if the assignment needs to be completed in person or remote and provide dates that bookings need to be completed by.',
     }, {
       question: 'What bookings are available for me to do?',
       answer:
-        'There’s a wide range of bookings on QualityunitedWriters. From Technical writing which involves taking highly technical information like user manuals and research and turning it into content that the average person can understand. We have also a bunch of interesting bookings as well, for example, Web content and blog writing, Copywriting, Newswriting, Business writing, Ghostwritering, Instructional writing, and Resume writing. The customer will let you know if the assignment needs to be completed in person or remote and provide dates that bookings need to be completed by.',
+        'There’s a wide range of bookings on NorthExpress. From Technical writing which involves taking highly technical information like user manuals and research and turning it into content that the average person can understand. We have also a bunch of interesting bookings as well, for example, Web content and blog writing, Copywriting, Newswriting, Business writing, Ghostwritering, Instructional writing, and Resume writing. The customer will let you know if the assignment needs to be completed in person or remote and provide dates that bookings need to be completed by.',
     },
     {
       question: 'How do i get paid?',
       answer:
-        ' You may commence the assignment assured that QualityunitedWriters has guaranteed the payment from the Student. Once you finish the job and claim payment, the Student will receive a notification to release the funds to your designated bank account. QualityunitedWriters will deduct a service fee, encompassing transactional, insurance, and maintenance costs, upon the release of payment to upgrade and advance the QualityunitedWriters platform, hence, increasing the potential for you to generate more earnings',
+        ' You may commence the assignment assured that NorthExpress has guaranteed the payment from the Student. Once you finish the job and claim payment, the Student will receive a notification to release the funds to your designated bank account. NorthExpress will deduct a service fee, encompassing transactional, insurance, and maintenance costs, upon the release of payment to upgrade and advance the NorthExpress platform, hence, increasing the potential for you to generate more earnings',
     },
     {
       question: 'Is there insurance?',
       answer:
-        'So you can post or earn with peace of mind please refer to QualityunitedWriters Insurance page - terms and conditions apply.',
+        'So you can post or earn with peace of mind please refer to NorthExpress Insurance page - terms and conditions apply.',
     },
     {
       question: 'Can I get alerts or notifications for bookings?',
@@ -94,7 +94,7 @@ const Accordion: React.FC = () => {
             href="/become-a-tutor"
             className="flex w-full flex-row justify-center text-lg font-semibold text-white"
           >
-            Join QualityunitedWriters
+            Join NorthExpress
             <MdArrowForward size={28} className="ml-3 pt-1 " />
           </Link>
         </div>

@@ -29,7 +29,7 @@ export default function GetPaid() {
             href="/signup"
             className="flex w-full justify-center text-lg font-semibold text-blue-800"
           >
-            Join QualityunitedWriters
+            Join NorthExpress
           </Link>
         </div>
       </div>

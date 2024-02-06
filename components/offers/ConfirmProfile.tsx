@@ -143,7 +143,7 @@ export default function ConfirmProfile({ closePopup, goToForms }) {
               Before you make a bid
             </h1>
             <p className="text-sm font-medium text-gray-600">
-              Help us keep QualityunitedWriters safe and fun, and fill in a few details
+              Help us keep NorthExpress safe and fun, and fill in a few details
             </p>
           </div>
           <div className="my-4">

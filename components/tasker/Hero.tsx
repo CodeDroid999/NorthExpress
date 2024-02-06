@@ -27,7 +27,7 @@ export default function Hero() {
         </h2>
         <p className="my-5 text-lg font-medium text-white">
           Whether youre a genius spreadsheet guru or a diligent carpenter, find
-          your next job on QualityunitedWriters.
+          your next job on NorthExpress.
         </p>
         <ul className="flex flex-col gap-2">
           {list.map(({ title }) => {
@@ -46,7 +46,7 @@ export default function Hero() {
             href="/signup"
             className="flex w-full justify-center text-lg font-semibold text-white"
           >
-            Join QualityunitedWriters
+            Join NorthExpress
           </Link>
         </div>
       </div>

@@ -27,15 +27,15 @@ export default async function handler(
         html: `
           <html>
           <body>
-            <h1>Welcome to QualityunitedWriters!</h1>
+            <h1>Welcome to NorthExpress!</h1>
             <p className="pt-1 pb-2 text-lg">Dear ${firstName} ${lastName},</p>
-            <p className="pt-1 pb-2 text-lg">Thank you for joining QualityunitedWriters, your one-stop destination for finding the right bookings and talented taskers. We're excited to have you on board and want to express our gratitude for choosing <Link href="https://www.QualityUnited Writers.com">QualityunitedWriters</a>.</p>
+            <p className="pt-1 pb-2 text-lg">Thank you for joining NorthExpress, your one-stop destination for finding the right bookings and talented taskers. We're excited to have you on board and want to express our gratitude for choosing <Link href="https://www.QualityUnited Writers.com">NorthExpress</a>.</p>
             
             <!-- For AssignmentPosters -->
             <h2>For AssignmentPosters:</h2>
             <ul>
               <li><Link href="https://www.QualityUnited Writers.com/post-assignment">Post your bookings for free</a> and connect with skilled taskers.</li>
-              <li>Ready to get started? <Link href="https://www.QualityUnited Writers.com/signup">Create your account</a>, <Link href="https://www.QualityUnited Writers.com/browse-bookings">browse bookings</a>, and unlock a world of opportunities on QualityunitedWriters.</li>
+              <li>Ready to get started? <Link href="https://www.QualityUnited Writers.com/signup">Create your account</a>, <Link href="https://www.QualityUnited Writers.com/browse-bookings">browse bookings</a>, and unlock a world of opportunities on NorthExpress.</li>
               <li>Find the perfect candidates to get your work done efficiently.</li>
               <li>Enjoy the flexibility to <Link href="https://www.QualityUnited Writers.com/how-it-works">manage projects your way</a>.</li>
               <li>Pay as you use with no subscription or credit fees.</li>
@@ -50,8 +50,8 @@ export default async function handler(
               <li>Enjoy the freedom to work on your schedule.</li>
             </ul>
             
-            <!-- Why Choose QualityunitedWriters -->
-            <h2>Why Choose QualityunitedWriters:</h2>
+            <!-- Why Choose NorthExpress -->
+            <h2>Why Choose NorthExpress:</h2>
             <ul>
               <li>We prioritize your <Link href="https://www.QualityUnited Writers.com/how-it-works">privacy</a> and <Link href="https://www.QualityUnited Writers.com/how-it-works">data security</a>.</li>
               <li>Benefit from a diverse pool of professionals with <Link href="https://www.QualityUnited Writers.com/how-it-works">verified credentials</a>.</li>
@@ -65,10 +65,10 @@ export default async function handler(
               <li>Be sure to check out our <Link href="https://www.QualityUnited Writers.com/faq">frequently asked questions</a> for more information.</li>
             </ul>
             
-            <p className="pt-1 pb-2 text-lg">Ready to get started? <Link href="https://www.QualityUnited Writers.com/signup">Create your account</a>, <Link href="https://www.QualityUnited Writers.com/browse-bookings">browse bookings</a>, and unlock a world of opportunities on QualityunitedWriters.</p>
-            <p className="pt-1 pb-2 text-lg">Thank you again for choosing QualityunitedWriters. We look forward to helping you achieve your goals and find the best solutions for your bookings.</p>
+            <p className="pt-1 pb-2 text-lg">Ready to get started? <Link href="https://www.QualityUnited Writers.com/signup">Create your account</a>, <Link href="https://www.QualityUnited Writers.com/browse-bookings">browse bookings</a>, and unlock a world of opportunities on NorthExpress.</p>
+            <p className="pt-1 pb-2 text-lg">Thank you again for choosing NorthExpress. We look forward to helping you achieve your goals and find the best solutions for your bookings.</p>
             
-            <p className="pt-1 pb-2 text-lg">Best regards,<br>The QualityunitedWriters Team</p>
+            <p className="pt-1 pb-2 text-lg">Best regards,<br>The NorthExpress Team</p>
           </body>
           </html>
         `,

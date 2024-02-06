@@ -20,22 +20,22 @@ const Contact = () => {
     <Layout>
       <Head>
         <title>
-          QualityunitedWriters | Get More Done | Post any assignment. Pick the best person. Get it done. | Post your assignment for free Earn money as a tutor
+          NorthExpress | Get More Done | Post any assignment. Pick the best person. Get it done. | Post your assignment for free Earn money as a tutor
         </title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta
           name="description"
-          content="QualityunitedWriters is your one-stop destination for finding the right bookings and talented taskers. Post any assignment, pick the best person, and get it done. Join now to earn money as a tutor or post your bookings for free."
+          content="NorthExpress is your one-stop destination for finding the right bookings and talented taskers. Post any assignment, pick the best person, and get it done. Join now to earn money as a tutor or post your bookings for free."
         />
-        <meta name="keywords" content="QualityunitedWriters, bookings, tutor, earn money, post assignment" />
-        <meta name="author" content="QualityunitedWriters" />
+        <meta name="keywords" content="NorthExpress, bookings, tutor, earn money, post assignment" />
+        <meta name="author" content="NorthExpress" />
         <meta name="robots" content="index, follow" />
-        <meta name="og:title" property="og:title" content="QualityunitedWriters | Get More Done" />
+        <meta name="og:title" property="og:title" content="NorthExpress | Get More Done" />
         <meta
           name="og:description"
           property="og:description"
-          content="QualityunitedWriters is your one-stop destination for finding the right bookings and talented taskers. Post any assignment, pick the best person, and get it done. Join now to earn money as a tutor or post your bookings for free."
+          content="NorthExpress is your one-stop destination for finding the right bookings and talented taskers. Post any assignment, pick the best person, and get it done. Join now to earn money as a tutor or post your bookings for free."
         />
         <meta name="og:image" property="og:image" content="public/sync-my-socials-logo.png" />
 
