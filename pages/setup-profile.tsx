@@ -99,7 +99,9 @@ export default function CompleteAccount() {
     <div className="mx-auto mt-10 h-screen w-full max-w-[1200px] px-3 md:mt-20">
       <Head>
         <title>
-          NorthExpress - Your Academic Research and Project Partner
+          NorthExpress - North Express - Travel with comfort.
+          Comfortable. Efficient. Affordable.
+          North Express is the brainchild of a group of veteran logisticians redefining luxury transport. At North Express, we are redefining comfort, and setting new standards of efficiency and reliability.
         </title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -110,7 +112,9 @@ export default function CompleteAccount() {
         <meta name="keywords" content="Academic writing services, Expert academic writers, Professional research assistance, High-quality research papers, Academic project support, Thesis and dissertation help, Essay writing service, Top-rated tutors, Academic success tips, Homework assistance, Online tutoring, Quality writing solutions, Best essay writers, Custom research papers, Academic support platform, Tutoring for students, Research paper editing, Writing and editing services, Academic guidance, Homework help for students" />
         <meta name="author" content="NorthExpress" />
         <meta name="robots" content="index, follow" />
-        <meta name="og:title" property="og:title" content="NorthExpress - Your Academic Research and Project Partner" />
+        <meta name="og:title" property="og:title" content="NorthExpress - North Express - Travel with comfort.
+Comfortable. Efficient. Affordable.
+North Express is the brainchild of a group of veteran logisticians redefining luxury transport. At North Express, we are redefining comfort, and setting new standards of efficiency and reliability." />
         <meta
           name="og:description"
           property="og:description"

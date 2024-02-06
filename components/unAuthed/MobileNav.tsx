@@ -6,6 +6,8 @@ import React, { useState } from 'react';
 
 import NavigationMenu from './NavMenu';
 import logo from 'public/sync-my-socials-logo.png'
+import Avatar from 'components/layout/Avatar';
+import MobileAvatar from 'components/layout/MobileAvatar';
 
 
 const MobileNavbar = () => {
@@ -38,13 +40,10 @@ const MobileNavbar = () => {
 
         {/* Right div (Sticky bar) */}
         <div className="flex items-center justify-end mr-3">
-          <div className="flex flex-col items-center">
-            <FontAwesomeIcon
-              icon={isMenuVisible ? faTimes : faBars} // Toggle between 'faBars' and 'faTimes' icon
-              size="2x"
-              style={{ color: "#f2a807", fontSize: "36px", cursor: "pointer" }}
-              onClick={toggleMenu}  // Call toggleMenu function on click
-            />
+          <div className="flex flex-col items-center "
+            onClick={toggleMenu} >
+
+            <MobileAvatar />
           </div>
         </div>
       </div>

@@ -4,7 +4,7 @@ import { UserAuth } from 'context/AuthContext'
 import Image from 'next/image'
 import airtaskalogo from 'public/QualityUnitedWritersLogo.png'
 import Avatar from './Avatar'
-import Avartar from './Avartar'
+import Avartar from './MobileAvatar'
 import RedDot from 'components/messaging/RedDot'
 import { db } from '../../firebase'
 import {

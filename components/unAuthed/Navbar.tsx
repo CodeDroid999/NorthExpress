@@ -1,11 +1,8 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import { useState } from 'react';
 
 import MobileNavbar from './MobileNav';
-import logo from 'public/sync-my-socials-logo.png'
 import Avatar from 'components/layout/Avatar';
 
 
@@ -17,8 +14,9 @@ const CustomNavbar = () => {
   };
   return (
     <div className="m-auto flex w-11/12 items-center justify-between p-2 lg:p-3 ">
+      <MobileNavbar />
       {/**Desktop */}
-      <div className="flex flex-grow  w-full  justify-between font-semibold lg:flex">
+      <div className="md:flex flex-grow  w-full  justify-between font-semibold lg:flex hidden">
         <div className="flex flex-row items-center">
           <div className="mr-1">
             <h1 className="text-4xl font-bold">

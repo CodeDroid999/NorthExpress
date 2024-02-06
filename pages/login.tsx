@@ -154,7 +154,9 @@ export default function LogIn() {
   return (
     <AuthLayout>
       <Head>
-        <title>NorthExpress - Your Academic Research and Project Partner</title>
+        <title>NorthExpress - North Express - Travel with comfort.
+          Comfortable. Efficient. Affordable.
+          North Express is the brainchild of a group of veteran logisticians redefining luxury transport. At North Express, we are redefining comfort, and setting new standards of efficiency and reliability.</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta
@@ -169,7 +171,9 @@ export default function LogIn() {
         <meta name="robots" content="index, follow" />
         <meta
           property="og:title"
-          content="NorthExpress - Your Academic Research and Project Partner"
+          content="NorthExpress - North Express - Travel with comfort.
+Comfortable. Efficient. Affordable.
+North Express is the brainchild of a group of veteran logisticians redefining luxury transport. At North Express, we are redefining comfort, and setting new standards of efficiency and reliability."
         />
         <meta
           property="og:description"
