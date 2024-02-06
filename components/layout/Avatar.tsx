@@ -4,6 +4,7 @@ import Link from 'next/link'
 import React, { useState } from 'react'
 import profile from 'public/profile.jpeg'
 import router from 'next/router'
+import { ImAttachment } from 'react-icons/im';
 
 export default function Avatar() {
   const { user, logOut } = UserAuth()
@@ -62,98 +63,102 @@ export default function Avatar() {
             </Link>
           </div>
           <div className="flex ">
-            {userRole === 'Student' && (
-              <Link href="/browse-bookings" className="bg-white- 500 flex items-center gap-x-3.5 rounded-md px-3 mb-1 mt-1 py-2 text-sm text-gray-800 hover:bg-neutral-100 border w-100">
-                Browse bookings
+            {!user ? (
+              <Link href="/signup" className="bg-white- 500 flex items-center gap-x-3.5 rounded-md px-3 mb-1 mt-1 py-2 text-sm text-gray-800 hover:bg-neutral-100 border w-100">
+                Sign Up
+              </Link>
+            ) : (
+              <Link href="/login" className="bg-white- 500 flex items-center gap-x-3.5 rounded-md px-3 mb-1 mt-1 py-2 text-sm text-gray-800 hover:bg-neutral-100 border w-100">
+                Sign In
               </Link>
             )}
+          </div>
 
-            {userRole === 'Tutor' && (
-              <Link href="/boost-earnings" className="bg-white- 500 flex items-center gap-x-3.5 rounded-md px-3 mb-1  mt-1 py-2 text-sm text-gray-800 hover:bg-neutral-100 border w-100">
-                Boost Earnings
-              </Link>
-            )}
-          </div>
-          <div className="flex ">
-            {userRole === 'Tutor' && (
-              <Link href={`/applications/${user?.userId}`} className="bg-white- 500 flex items-center gap-x-3.5 rounded-md px-3 mb-1 py-2 text-sm text-gray-800 hover:bg-neutral-100 border w-100">
-                Tutor Application
-              </Link>
-            )}
-          </div>
-          <div className="flex ">
-            {userRole === 'Student' && (
-              <Link href="/post-bookings" className="bg-white- 500 flex items-center gap-x-3.5 rounded-md px-3 mb-1 py-2 text-sm text-gray-800 hover:bg-neutral-100 border w-100">
-                Post bookings
-              </Link>
-            )}
-
-            {userRole === 'Tutor' && (
-              <Link href="/bid-bookings" className="bg-white- 500 flex items-center gap-x-3.5 rounded-md px-3 mb-1 py-2 text-sm text-gray-800 hover:bg-neutral-100 border w-100">
-                Bid bookings
-              </Link>
-            )}
-          </div>
-          <div className="flex ">
-            {userRole === 'Student' && (
-              <Link href={`/my-bookings/${user?.userId}`} className="bg-white- 500 flex items-center gap-x-3.5 rounded-md px-3 mb-1 py-2 text-sm text-gray-800 hover:bg-neutral-100 border w-100">
-                My bookings
-              </Link>
-            )}
-
-            {userRole === 'Tutor' && (
-              <Link href={`/orders/${user?.userId}`} className="bg-white- 500 flex items-center gap-x-3.5 rounded-md px-3 mb-1 py-2 text-sm text-gray-800 hover:bg-neutral-100 border w-100">
-                My Orders
-              </Link>
-            )}
-          </div>
 
           <Link
             className="bg-white- 500 flex items-center gap-x-3.5 rounded-md px-3 mb-1 py-2 text-sm text-gray-800 hover:bg-neutral-100 border w-100"
-            href={`/profile/${user?.userId}`}
+            href={`/add-booking}`}
           >
-            My Profile
-          </Link>
-
-          <Link
-            className="bg-white- 500 flex items-center gap-x-3.5 rounded-md px-3 mb-1 py-2 text-sm text-gray-800 hover:bg-neutral-100  border w-100 "
-            href={`/payment-history/${user?.userId}`}
-          >
-            Payment History
+            Make Booking
           </Link>
           <Link
-            className="bg-white- 500 flex items-center gap-x-3.5 rounded-md px-3 mb-1 py-2 text-sm text-gray-800 hover:bg-neutral-100 border w-100  "
-            href={`/payment-methods/${user?.userId}`}
+            className="bg-white- 500 flex items-center gap-x-3.5 rounded-md px-3 mb-1 py-2 text-sm text-gray-800 hover:bg-neutral-100 border w-100"
+            href={`/bus-hire}`}
           >
-            Payment Methods
+            Hire a bus
           </Link>
-          <div className="bg-white- 500 flex items-center gap-x-3.5 rounded-md px-3 mb-1 py-2 text-sm text-gray-800 hover:bg-neutral-100 border w-100  ">
-
-            <div
-              onClick={toggleDropdown}
-              className="mt-1 flex cursor-pointer items-center text-sm text-gray-800 hover:bg-gray-100 "
-            >
-              Settings
-            </div>
-          </div>
-
-          {isDropdownOpen && (
-            <div className="flex flex-col rounded p-1 text-sm text-gray-800 w-100 bg-gray-200">
-              <Link className="bg-white- 500 flex items-center gap-x-3.5 rounded-md px-3 mb-1 py-2 text-sm text-gray-800 hover:bg-neutral-100 border w-100 " href={`/settings/mobile-number/${user?.userId}`}>
-                Mobile
+          <Link
+            className="bg-white- 500 flex items-center gap-x-3.5 rounded-md px-3 mb-1 py-2 text-sm text-gray-800 hover:bg-neutral-100 border w-100"
+            href={`/parcels}`}
+          >
+            Parcels
+          </Link>
+          <div className="flex ">
+            {!user ? (
+              <Link href="/login" className="bg-white- 500 flex items-center gap-x-3.5 rounded-md px-3 mb-1 mt-1 py-2 text-sm text-gray-800 hover:bg-neutral-100 border w-100">
+                Bus Hire
               </Link>
-              <Link className="bg-white- 500 flex items-center gap-x-3.5 rounded-md px-3 mb-1 py-2 text-sm text-gray-800 hover:bg-neutral-100 border w-100 " href={`/settings/email/${user?.userId}`}>Email</Link>
-              <Link className="bg-white- 500 flex items-center gap-x-3.5 rounded-md px-3 mb-1 py-2 text-sm text-gray-800 hover:bg-neutral-100 border w-100 " href="/forgot-password">Change password</Link>
-            </div>
-          )}
-
-
-          <div
-            onClick={handleLogOut}
-            className="bg-white- 500 flex items-center gap-x-3.5 rounded-md px-3 mb-1 py-2 text-sm text-gray-800 hover:bg-neutral-100 border w-100  "
-          >
-            Log out
+            ) : (
+              <Link href="/browse-bookings" className="bg-white- 500 flex items-center gap-x-3.5 rounded-md px-3 mb-1 mt-1 py-2 text-sm text-gray-800 hover:bg-neutral-100 border w-100">
+                Sign Up
+              </Link>
+            )}
           </div>
+          <div className="flex ">
+            {!user ? (
+              <Link href="/login" className="bg-white- 500 flex items-center gap-x-3.5 rounded-md px-3 mb-1 mt-1 py-2 text-sm text-gray-800 hover:bg-neutral-100 border w-100">
+                About Us
+              </Link>
+            ) : (
+              <>
+                <Link
+                  className="bg-white- 500 flex items-center gap-x-3.5 rounded-md px-3 mb-1 py-2 text-sm text-gray-800 hover:bg-neutral-100 border w-100"
+                  href={`/profile/${user?.userId}`}
+                >
+                  My Profile
+                </Link>
+
+                <Link
+                  className="bg-white- 500 flex items-center gap-x-3.5 rounded-md px-3 mb-1 py-2 text-sm text-gray-800 hover:bg-neutral-100  border w-100 "
+                  href={`/payment-history/${user?.userId}`}
+                >
+                  Payment History
+                </Link>
+                <Link
+                  className="bg-white- 500 flex items-center gap-x-3.5 rounded-md px-3 mb-1 py-2 text-sm text-gray-800 hover:bg-neutral-100 border w-100  "
+                  href={`/payment-methods/${user?.userId}`}
+                >
+                  Payment Methods
+                </Link>
+                <div className="bg-white- 500 flex items-center gap-x-3.5 rounded-md px-3 mb-1 py-2 text-sm text-gray-800 hover:bg-neutral-100 border w-100  ">
+
+                  <div
+                    onClick={toggleDropdown}
+                    className="mt-1 flex cursor-pointer items-center text-sm text-gray-800 hover:bg-gray-100 "
+                  >
+                    Settings
+                  </div>
+                </div>
+
+                {isDropdownOpen && (
+                  <div className="flex flex-col rounded p-1 text-sm text-gray-800 w-100 bg-gray-200">
+                    <Link className="bg-white- 500 flex items-center gap-x-3.5 rounded-md px-3 mb-1 py-2 text-sm text-gray-800 hover:bg-neutral-100 border w-100 " href={`/settings/mobile-number/${user?.userId}`}>
+                      Mobile
+                    </Link>
+                    <Link className="bg-white- 500 flex items-center gap-x-3.5 rounded-md px-3 mb-1 py-2 text-sm text-gray-800 hover:bg-neutral-100 border w-100 " href={`/settings/email/${user?.userId}`}>Email</Link>
+                    <Link className="bg-white- 500 flex items-center gap-x-3.5 rounded-md px-3 mb-1 py-2 text-sm text-gray-800 hover:bg-neutral-100 border w-100 " href="/forgot-password">Change password</Link>
+                  </div>
+                )}
+
+
+                <div onClick={handleLogOut} className="bg-white- 500 flex items-center gap-x-3.5 rounded-md px-3 mb-1 py-2 text-sm text-gray-800 hover:bg-neutral-100 border w-100  "          >
+                  Log out
+                </div>
+              </>
+            )}
+          </div>
+
+
 
         </div>
       )}
