@@ -94,7 +94,7 @@ export default function PostYourBooking() {
                     <div className="flex flex-col col-md-3 col-sm-6 pb-2">
                         <label
                             htmlFor="title"
-                            className="mb-2 text-lg font-medium text-blue-950 whitespace-nowrap"
+                            className="mb-2 text-lg font-medium text-blue-950 text-left  whitespace-nowrap"
                         >
                             From
                         </label>
@@ -161,7 +161,7 @@ export default function PostYourBooking() {
                     <div className="col-md-3 col-sm-6 pb-2 flex flex-col ">
                         <label
                             htmlFor="budget"
-                            className="mb-2 text-lg font-medium text-blue-950"
+                            className="mb-2 text-lg font-medium text-blue-950 text-left "
                         >
                             To
                         </label>
@@ -229,7 +229,7 @@ export default function PostYourBooking() {
                     <div className="flex flex-col col-md-3 col-sm-6 pb-2">
                         <label
                             htmlFor="departureDate"
-                            className="mb-2 text-lg font-medium text-blue-950 whitespace-nowrap"
+                            className="mb-2 text-lg font-medium text-blue-950 text-left  whitespace-nowrap"
                         >
                             Departure
                         </label>
