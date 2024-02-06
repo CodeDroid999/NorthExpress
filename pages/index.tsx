@@ -1,20 +1,16 @@
 import FAQAccordion from 'components/FAQaccordions'
 import HeroArea from 'components/Homepage/HeroSection'
-import BeYourOwnBoss from 'components/home/BeYourOwnBoss'
 import Features from 'components/home/Features'
 import type { SharedPageProps } from 'pages/_app'
 import { useRouter, useSearchParams } from 'next/navigation'
 import React, { useEffect } from 'react'
-import Footer from 'components/layout/Footer'
 import HighestEarners from 'components/Become-a-tutor/HighestEarnersSection'
 import AppplyNowHero from 'components/Become-a-tutor/ApplyNowSection'
-import TasksTable from 'components/BrowseTasks/TasksTable'
 import { UserAuth } from 'context/AuthContext'
-import Link from 'next/link'
-import PopularCountries from 'components/Become-a-tutor/PopularCountriesSection'
 import TopDestinations from 'components/home/TopDestinations'
 import DiscoverDestinations from 'components/Homepage/DiscoverDestinations'
 import Head from 'next/head'
+import Footer from 'components/layout/Footer'
 
 interface PageProps extends SharedPageProps {
 }
