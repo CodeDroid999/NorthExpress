@@ -46,16 +46,16 @@ const UserAssignmentCard = () => {
                             </tr>
                         </thead>
                         <tbody className="pt-2 pb-2">
-                            {userAssignments.map((assignment, index) => (
+                            {userAssignments.map((booking, index) => (
                                 <tr
-                                    key={assignment.id}
+                                    key={booking.id}
                                     className={index % 2 === 0 ? 'bg-blue-100' : 'bg-white'}
                                 >
-                                    <td className="pl-2 pt-1">{assignment.title}</td>
-                                    <td className="text-center">{assignment.dueDate}</td>
-                                    <td className="text-center">{assignment.status}</td>
-                                    <td className="text-center">{assignment.budget}</td>
-                                    <td className="text-center">{assignment.offers.length}</td>
+                                    <td className="pl-2 pt-1">{booking.title}</td>
+                                    <td className="text-center">{booking.dueDate}</td>
+                                    <td className="text-center">{booking.status}</td>
+                                    <td className="text-center">{booking.budget}</td>
+                                    <td className="text-center">{booking.offers.length}</td>
                                 </tr>
                             ))}
                         </tbody>

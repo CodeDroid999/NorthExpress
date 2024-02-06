@@ -33,8 +33,8 @@ export default function CompleteAccount() {
   const pushUser = (activeRole: string) => {
     let page;
     if (activeRole === 'Student') {
-      toast.success(`Welcome onboard dear student . You are being redirected to the post-assignment page.`);
-      router.push('/post-assignment');
+      toast.success(`Welcome onboard dear student . You are being redirected to the post-booking page.`);
+      router.push('/post-booking');
     } else if (activeRole === 'Tutor') {
       toast.success(`Welcome onboard . You are being redirected to tutor-application.`);
       router.push('/tutor-application');

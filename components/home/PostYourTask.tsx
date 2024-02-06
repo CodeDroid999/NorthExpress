@@ -41,7 +41,7 @@ export default function PostYourTask() {
         <div className="w-full flex px-4 py-3 ">
           <div className="container flex justify-center space-x-2">
             <Link
-              href="/post-assignment"
+              href="/post-booking"
               className=" text-white whitespace-nowrap"
             >   <button
               className="rounded-2xl bg-green-900 px-4 py-2 text-white hover:bg-green-900 hover:shadow"
@@ -50,7 +50,7 @@ export default function PostYourTask() {
 
             </Link>
             <Link
-              href="/post-assignment"
+              href="/post-booking"
               className=" text-white whitespace-nowrap"
             >   <button
               className="rounded-2xl bg-green-900 px-4 py-2 text-white hover:bg-green-900 hover:shadow"

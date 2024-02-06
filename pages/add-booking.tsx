@@ -24,7 +24,7 @@ export default function Home(props) {
       if (userRole) {
         switch (userRole) {
           case 'Student':
-            // Redirect Student to post-assignment
+            // Redirect Student to post-booking
             router.push('/dashboard');
             break;
           case 'Tutor':

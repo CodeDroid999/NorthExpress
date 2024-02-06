@@ -1,5 +1,5 @@
 import React from 'react'
-import Assignment from './assignment'
+import Assignment from './booking'
 
 export default function MyAssignmentsDetails({ heading, bookings, warning }) {
   return (
@@ -12,8 +12,8 @@ export default function MyAssignmentsDetails({ heading, bookings, warning }) {
         <div>
           <h1 className="text-2xl font-medium text-green-950">{heading}</h1>
           <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {bookings.map((assignment: any) => (
-              <Assignment key={assignment.id} assignment={assignment} />
+            {bookings.map((booking: any) => (
+              <Assignment key={booking.id} booking={booking} />
             ))}
           </div>
         </div>

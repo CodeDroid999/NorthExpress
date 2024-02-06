@@ -36,7 +36,7 @@ export default function PostAssignment() {
 
     if (!user) {
       // User is not logged in, show toast error
-      toast.error('You are not logged in. Signup and log in to post your assignment');
+      toast.error('You are not logged in. Signup and log in to post your booking');
       return;
     }
 
@@ -122,16 +122,16 @@ export default function PostAssignment() {
         bcc: userEmails,
         message: {
           subject: 'New Assignment     ',
-          html: `A new assignment has been posted`,
+          html: `A new booking has been posted`,
         },
       });
 
       //toast.success('Assignment      has been posted');
-      // You can redirect to the assignment page or do any other necessary action
-      router.push(`/post-assignment`);
+      // You can redirect to the booking page or do any other necessary action
+      router.push(`/post-booking`);
     } catch (error) {
-      console.error('Error posting assignment:', error.message);
-      toast.error('Error posting assignment. Please try again.');
+      console.error('Error posting booking:', error.message);
+      toast.error('Error posting booking. Please try again.');
     }
   };
 
@@ -204,7 +204,7 @@ export default function PostAssignment() {
             <div className="col-md-3 col-sm-6 pb-2 flex flex-col flex-end justify-end align-center ">
               <Link
                 className="btn-1 bg-yellow-500 p-2 rounded text-white"
-                href="/post-assignment"
+                href="/post-booking"
               >
                 Post Assignment
               </Link>

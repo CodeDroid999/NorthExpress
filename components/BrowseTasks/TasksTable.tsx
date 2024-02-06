@@ -2,23 +2,23 @@ import React, { useState } from 'react';
 import TaskCounter from './TaskCounter';
 
 const assignmentsData = [
-  { id: 1, summary: "450 min for the assignment. There is part two for the two responses.", price: "$45.00", dueDate: "15/11/2023", bids: 41 },
-  { id: 1, summary: "450 min for the assignment. There is part two for the two responses.", price: "$45.00", dueDate: "15/11/2023", bids: 41 },
-  { id: 1, summary: "450 min for the assignment. There is part two for the two responses.", price: "$45.00", dueDate: "15/11/2023", bids: 41 },
-  { id: 1, summary: "450 min for the assignment. There is part two for the two responses.", price: "$45.00", dueDate: "15/11/2023", bids: 41 },
-  { id: 1, summary: "450 min for the assignment. There is part two for the two responses.", price: "$45.00", dueDate: "15/11/2023", bids: 41 },
-  { id: 1, summary: "450 min for the assignment. There is part two for the two responses.", price: "$45.00", dueDate: "15/11/2023", bids: 41 },
-  { id: 1, summary: "450 min for the assignment. There is part two for the two responses.", price: "$45.00", dueDate: "15/11/2023", bids: 41 },
-  { id: 1, summary: "450 min for the assignment. There is part two for the two responses.", price: "$45.00", dueDate: "15/11/2023", bids: 41 },
-  { id: 1, summary: "450 min for the assignment. There is part two for the two responses.", price: "$45.00", dueDate: "15/11/2023", bids: 41 },
-  { id: 1, summary: "450 min for the assignment. There is part two for the two responses.", price: "$45.00", dueDate: "15/11/2023", bids: 41 },
-  { id: 1, summary: "450 min for the assignment. There is part two for the two responses.", price: "$45.00", dueDate: "15/11/2023", bids: 41 },
-  { id: 1, summary: "450 min for the assignment. There is part two for the two responses.", price: "$45.00", dueDate: "15/11/2023", bids: 41 },
-  { id: 1, summary: "450 min for the assignment. There is part two for the two responses.", price: "$45.00", dueDate: "15/11/2023", bids: 41 },
-  { id: 1, summary: "450 min for the assignment. There is part two for the two responses.", price: "$45.00", dueDate: "15/11/2023", bids: 41 },
-  { id: 1, summary: "450 min for the assignment. There is part two for the two responses.", price: "$45.00", dueDate: "15/11/2023", bids: 41 },
-  { id: 1, summary: "450 min for the assignment. There is part two for the two responses.", price: "$45.00", dueDate: "15/11/2023", bids: 41 },
-  // ... other assignment objects
+  { id: 1, summary: "450 min for the booking. There is part two for the two responses.", price: "$45.00", dueDate: "15/11/2023", bids: 41 },
+  { id: 1, summary: "450 min for the booking. There is part two for the two responses.", price: "$45.00", dueDate: "15/11/2023", bids: 41 },
+  { id: 1, summary: "450 min for the booking. There is part two for the two responses.", price: "$45.00", dueDate: "15/11/2023", bids: 41 },
+  { id: 1, summary: "450 min for the booking. There is part two for the two responses.", price: "$45.00", dueDate: "15/11/2023", bids: 41 },
+  { id: 1, summary: "450 min for the booking. There is part two for the two responses.", price: "$45.00", dueDate: "15/11/2023", bids: 41 },
+  { id: 1, summary: "450 min for the booking. There is part two for the two responses.", price: "$45.00", dueDate: "15/11/2023", bids: 41 },
+  { id: 1, summary: "450 min for the booking. There is part two for the two responses.", price: "$45.00", dueDate: "15/11/2023", bids: 41 },
+  { id: 1, summary: "450 min for the booking. There is part two for the two responses.", price: "$45.00", dueDate: "15/11/2023", bids: 41 },
+  { id: 1, summary: "450 min for the booking. There is part two for the two responses.", price: "$45.00", dueDate: "15/11/2023", bids: 41 },
+  { id: 1, summary: "450 min for the booking. There is part two for the two responses.", price: "$45.00", dueDate: "15/11/2023", bids: 41 },
+  { id: 1, summary: "450 min for the booking. There is part two for the two responses.", price: "$45.00", dueDate: "15/11/2023", bids: 41 },
+  { id: 1, summary: "450 min for the booking. There is part two for the two responses.", price: "$45.00", dueDate: "15/11/2023", bids: 41 },
+  { id: 1, summary: "450 min for the booking. There is part two for the two responses.", price: "$45.00", dueDate: "15/11/2023", bids: 41 },
+  { id: 1, summary: "450 min for the booking. There is part two for the two responses.", price: "$45.00", dueDate: "15/11/2023", bids: 41 },
+  { id: 1, summary: "450 min for the booking. There is part two for the two responses.", price: "$45.00", dueDate: "15/11/2023", bids: 41 },
+  { id: 1, summary: "450 min for the booking. There is part two for the two responses.", price: "$45.00", dueDate: "15/11/2023", bids: 41 },
+  // ... other booking objects
 ];
 
 const TasksTable = () => {
@@ -61,7 +61,7 @@ const TasksTable = () => {
           </tbody>
         </table>
         <div className="flex w-full flex-col justify-center">
-          <div className="assignment-counter text-blue-900">
+          <div className="booking-counter text-blue-900">
             <TaskCounter bookings={filteredData} />
           </div>
           <div className="pagination space-x-2 flex justify-center">

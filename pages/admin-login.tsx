@@ -47,7 +47,7 @@ export default function LogIn() {
               if (role === 'Admin') {
                 router.push('/admin/dashboard');
               } else if (role === 'Student') {
-                router.push('/post-assignment');
+                router.push('/post-booking');
               } else if (role === 'Tutor') {
                 router.push('/dashboard');
               } else {

@@ -39,7 +39,7 @@ const AssignmentsStatsCard = () => {
                     cancelledAssignments,
                 });
             } catch (error) {
-                console.error('Error fetching assignment stats:', error.message);
+                console.error('Error fetching booking stats:', error.message);
             }
         };
 

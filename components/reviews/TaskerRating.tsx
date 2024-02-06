@@ -18,7 +18,7 @@ export default function TaskerRating({ userId }) {
       setLoading(true)
       const reviewsRef = collection(db, 'reviews')
 
-      // Fetch assignment's reviews
+      // Fetch booking's reviews
       const reviewsQuery = query(reviewsRef, where('receiverId', '==', userId))
 
       const unsubscribe = onSnapshot(reviewsQuery, async (querySnapshot) => {

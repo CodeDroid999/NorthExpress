@@ -53,7 +53,7 @@ export default function Hero() {
       <div className="relative mb-6 ml-0 flex flex-1 flex-col items-center justify-center  md:mb-0 md:ml-8 ">
         <Image
           src={photo2}
-          alt="assignment"
+          alt="booking"
           className="h-[400px] w-[100%] rounded-2xl  md:h-[500px] lg:w-[400px] "
         />
       </div>

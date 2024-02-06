@@ -213,14 +213,14 @@ export default function MakeOffer({
             {step === 2 && (
               <div className="flex flex-col pt-8">
                 <h1 className="font-medium text-green-950 ">
-                  Why are you the best person for this assignment?
+                  Why are you the best person for this booking?
                 </h1>
                 <p className="mb-3 text-sm font-medium text-gray-800">
                   For your safety, do not share personal information e.g email,
                   phone or address
                 </p>
                 <textarea
-                  placeholder="e.g. I will be great for this assignment. I have the necessary experience,skills and equipment required to get this done."
+                  placeholder="e.g. I will be great for this booking. I have the necessary experience,skills and equipment required to get this done."
                   value={newProposal}
                   onChange={(e) => setNewProposal(e.target.value)}
                   className="h-40 w-full rounded-lg border bg-gray-50 p-2 text-sm font-medium
@@ -281,7 +281,7 @@ export default function MakeOffer({
                           Get paid securely
                         </h1>
                         <p className="text-xs font-medium text-gray-700">
-                          Assignmentfunds are held securely until the assignment is
+                          Assignmentfunds are held securely until the booking is
                           completed.
                         </p>
                       </div>

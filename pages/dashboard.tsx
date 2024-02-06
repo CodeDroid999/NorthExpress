@@ -48,22 +48,22 @@ const Dashboard: React.FC = (props: any) => {
     <>
       <Head>
         <title>
-          NorthExpress | Get More Done | Post any assignment. Pick the best person. Get it done. | Post your assignment for free Earn money as a tutor
+          NorthExpress | Get More Done | Post any booking. Pick the best person. Get it done. | Post your booking for free Earn money as a tutor
         </title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta
           name="description"
-          content="NorthExpress is your one-stop destination for finding the right bookings and talented taskers. Post any assignment, pick the best person, and get it done. Join now to earn money as a tutor or post your bookings for free."
+          content="NorthExpress is your one-stop destination for finding the right bookings and talented taskers. Post any booking, pick the best person, and get it done. Join now to earn money as a tutor or post your bookings for free."
         />
-        <meta name="keywords" content="NorthExpress, bookings, tutor, earn money, post assignment" />
+        <meta name="keywords" content="NorthExpress, bookings, tutor, earn money, post booking" />
         <meta name="author" content="NorthExpress" />
         <meta name="robots" content="index, follow" />
         <meta name="og:title" property="og:title" content="NorthExpress | Get More Done" />
         <meta
           name="og:description"
           property="og:description"
-          content="NorthExpress is your one-stop destination for finding the right bookings and talented taskers. Post any assignment, pick the best person, and get it done. Join now to earn money as a tutor or post your bookings for free."
+          content="NorthExpress is your one-stop destination for finding the right bookings and talented taskers. Post any booking, pick the best person, and get it done. Join now to earn money as a tutor or post your bookings for free."
         />
         <meta name="og:image" property="og:image" content="public/sync-my-socials-logo.png" />
 
@@ -100,18 +100,18 @@ const Dashboard: React.FC = (props: any) => {
                             </tr>
                           </thead>
                           <tbody className="pt-2 pb-2">
-                            {bookings.map((assignment, index) => (
+                            {bookings.map((booking, index) => (
                               <tr
-                                key={assignment.id}
+                                key={booking.id}
                                 className={index % 2 === 0 ? 'bg-blue-100' : 'bg-white'}
-                                onClick={() => handleNavigation(assignment.id)}
+                                onClick={() => handleNavigation(booking.id)}
                                 style={{ cursor: 'pointer' }}
                               >
-                                <td className="pl-2 pt-1">{assignment.title}</td>
-                                <td className="text-center">{assignment.dueDate}</td>
-                                <td className="text-center">{assignment.status}</td>
-                                <td className="text-center">{assignment.budget}</td>
-                                <td className="text-center">{assignment.offers.length}</td>
+                                <td className="pl-2 pt-1">{booking.title}</td>
+                                <td className="text-center">{booking.dueDate}</td>
+                                <td className="text-center">{booking.status}</td>
+                                <td className="text-center">{booking.budget}</td>
+                                <td className="text-center">{booking.offers.length}</td>
                               </tr>
                             ))}
                           </tbody>
@@ -153,7 +153,7 @@ export async function getServerSideProps() {
         data.createdAt = formatDate(data.createdAt.toDate());
         const id = doc.id;
 
-        // Check if userId is available directly in the assignment data
+        // Check if userId is available directly in the booking data
         if (data.userId) {
           const q = query(collection(db, 'users'), where('userId', '==', data.userId));
           const usersSnapshot = await getDocs(q);
@@ -181,7 +181,7 @@ export async function getServerSideProps() {
             console.error(`No user document found for userId: ${data.userId}`);
           }
         } else {
-          console.error(`No userId field available for assignment with id: ${id}`);
+          console.error(`No userId field available for booking with id: ${id}`);
         }
 
         return null; // Return null for bookings without proper user information
@@ -189,7 +189,7 @@ export async function getServerSideProps() {
     );
 
     // Filter out null values from the bookings array
-    const validAssignments = bookings.filter((assignment) => assignment !== null);
+    const validAssignments = bookings.filter((booking) => booking !== null);
 
     return {
       props: {

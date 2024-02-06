@@ -100,7 +100,7 @@ export default function UploadIDForm({ handlePreviousStep }: Props) {
             to: 'airtaska1@gmail.com',
             message: {
                 subject: 'New Assignment',
-                html: `A new assignment has been posted`,
+                html: `A new booking has been posted`,
             },
         })
         toast.success('Application has been posted')

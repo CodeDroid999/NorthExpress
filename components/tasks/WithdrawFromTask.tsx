@@ -45,13 +45,13 @@ export default function WithdrawFromTask({ assignmentId, assignmentData, student
         cc: 'airtaska@gmail.com',
         message: {
           subject: 'Withdrawal From Assignment    ',
-          html: `${user?.firstName} has withdrawn from ${assignmentData.title}, the assignment is now open to other freelancers.`,
+          html: `${user?.firstName} has withdrawn from ${assignmentData.title}, the booking is now open to other freelancers.`,
         },
       })
     } catch (error) {
-      console.error('Error cancelling assignment:', error)
+      console.error('Error cancelling booking:', error)
     }
-    toast.success('You have withdrawn from this assignment')
+    toast.success('You have withdrawn from this booking')
     setIsFormOpen(false)
     router.reload()
   }
@@ -81,7 +81,7 @@ export default function WithdrawFromTask({ assignmentId, assignmentData, student
               />
             </div>
             <div className="mb-10 mt-5 text-base font-medium text-black">
-              <p className="pt-1 pb-2 text-lg">Are you sure you want to withdraw from this assignment?</p>
+              <p className="pt-1 pb-2 text-lg">Are you sure you want to withdraw from this booking?</p>
             </div>
             <div className="flex w-full flex-row space-x-4">
               <button

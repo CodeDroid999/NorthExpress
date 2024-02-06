@@ -19,7 +19,7 @@ const ManageAssignments: React.FC = (props: any) => {
     const { bookings } = props;
 
     const handleNavigation = (assignmentId: string) => {
-        router.push(`/manage-assignment/${assignmentId}`); // Change to your desired route
+        router.push(`/manage-booking/${assignmentId}`); // Change to your desired route
     };
 
     return (
@@ -39,18 +39,18 @@ const ManageAssignments: React.FC = (props: any) => {
                                 </tr>
                             </thead>
                             <tbody className="pt-2 pb-2">
-                                {bookings.map((assignment, index) => (
+                                {bookings.map((booking, index) => (
                                     <tr
-                                        key={assignment.id}
+                                        key={booking.id}
                                         className={index % 2 === 0 ? 'bg-blue-100' : 'bg-white'}
-                                        onClick={() => handleNavigation(assignment.id)}
+                                        onClick={() => handleNavigation(booking.id)}
                                         style={{ cursor: 'pointer' }}
                                     >
-                                        <td className="pl-2 pt-1">{assignment.title}</td>
-                                        <td className="text-center">{assignment.dueDate}</td>
-                                        <td className="text-center">{assignment.status}</td>
-                                        <td className="text-center">{assignment.budget}</td>
-                                        <td className="text-center">{assignment.offers.length}</td>
+                                        <td className="pl-2 pt-1">{booking.title}</td>
+                                        <td className="text-center">{booking.dueDate}</td>
+                                        <td className="text-center">{booking.status}</td>
+                                        <td className="text-center">{booking.budget}</td>
+                                        <td className="text-center">{booking.offers.length}</td>
                                     </tr>
                                 ))}
                             </tbody>
@@ -76,7 +76,7 @@ export async function getServerSideProps() {
                 data.createdAt = formatDate(data.createdAt.toDate());
                 const id = doc.id;
 
-                // Check if userId is available directly in the assignment data
+                // Check if userId is available directly in the booking data
                 if (data.userId) {
                     const userQuery = query(collection(db, 'users'), where('userId', '==', data.userId));
                     const usersSnapshot = await getDocs(userQuery);
@@ -104,7 +104,7 @@ export async function getServerSideProps() {
                         console.error(`No user document found for userId: ${data.userId}`);
                     }
                 } else {
-                    console.error(`No userId field available for assignment with id: ${id}`);
+                    console.error(`No userId field available for booking with id: ${id}`);
                 }
 
                 return null; // Return null for bookings without proper user information
@@ -112,7 +112,7 @@ export async function getServerSideProps() {
         );
 
         // Filter out null values from the bookings array
-        const validAssignments = bookings.filter((assignment) => assignment !== null);
+        const validAssignments = bookings.filter((booking) => booking !== null);
 
         return {
             props: {

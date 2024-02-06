@@ -86,7 +86,7 @@ export default function ProfilePage({
       const assignmentsPromise = getDocs(assignmentsQuery).then((assignmentQuerySnapshot) => {
         const bookings = assignmentQuerySnapshot.docs.map((doc) => {
           const data = doc.data()
-          // Additional processing for assignment data if needed
+          // Additional processing for booking data if needed
           return { id: doc.id, ...data }
         })
         return bookings
@@ -143,7 +143,7 @@ export default function ProfilePage({
     setActiveTab(tab)
   }
 
-  const completedAssignments = bookings.filter((assignment) => assignment.status === 'Completed')
+  const completedAssignments = bookings.filter((booking) => booking.status === 'Completed')
   const myTutorReviews = reviews.filter(
     (review) => review.senderId !== review.tutorId
   )

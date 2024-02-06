@@ -34,7 +34,7 @@ export default async function handler(
             <!-- For AssignmentPosters -->
             <h2>For AssignmentPosters:</h2>
             <ul>
-              <li><Link href="https://www.QualityUnited Writers.com/post-assignment">Post your bookings for free</a> and connect with skilled taskers.</li>
+              <li><Link href="https://www.QualityUnited Writers.com/post-booking">Post your bookings for free</a> and connect with skilled taskers.</li>
               <li>Ready to get started? <Link href="https://www.QualityUnited Writers.com/signup">Create your account</a>, <Link href="https://www.QualityUnited Writers.com/browse-bookings">browse bookings</a>, and unlock a world of opportunities on NorthExpress.</li>
               <li>Find the perfect candidates to get your work done efficiently.</li>
               <li>Enjoy the flexibility to <Link href="https://www.QualityUnited Writers.com/how-it-works">manage projects your way</a>.</li>

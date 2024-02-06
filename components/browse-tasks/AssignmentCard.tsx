@@ -24,7 +24,7 @@ const AssignmentCard: React.FC<AssignmentCardProps> = ({
   studentId,
 }) => {
   return (
-    <div className="assignment-card">
+    <div className="booking-card">
       <h2>{title}</h2>
       <p>Due Date: {date}</p>
       <p>Status: {status}</p>

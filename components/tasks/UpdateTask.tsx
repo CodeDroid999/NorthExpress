@@ -207,7 +207,7 @@ export default function UpdateTask({ assignmentId, assignmentData }) {
                     type="submit"
                     className="flex-1 rounded-xl bg-green-900 py-2 text-center text-white"
                   >
-                    Update assignment
+                    Update booking
                   </button>
                 </div>
               </div>

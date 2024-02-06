@@ -77,8 +77,8 @@ const withdrawFromTaskEmail = async ({ email, assignmentTitle, name }) => {
     const mailOptions = {
       from: process.env.NODEMAILER_EMAIL,
       to: email,
-      subject: 'Withdrawal from assignment',
-      text: `${name} has withdrawn from ${assignmentTitle}, the assignment is now open to other freelancers.`,
+      subject: 'Withdrawal from booking',
+      text: `${name} has withdrawn from ${assignmentTitle}, the booking is now open to other freelancers.`,
     }
 
     await transporter.sendMail(mailOptions)

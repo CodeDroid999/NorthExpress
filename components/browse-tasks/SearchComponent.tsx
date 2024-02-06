@@ -72,7 +72,7 @@ const SearchComponent: React.FC = () => {
             {/* Use the hidden class to hide the input on small screens */}
             <input
               type="text"
-              placeholder="Search for an assignment"
+              placeholder="Search for an booking"
               className="text-dark w-full flex-shrink-0 flex-grow rounded-3xl bg-neutral-200 px-2 py-1 pr-10 focus:outline-none"
             />
             <CategoryDropdown

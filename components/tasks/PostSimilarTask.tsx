@@ -128,7 +128,7 @@ export default function PostSimilarTask({ assignmentData }) {
       bcc: userEmails,
       message: {
         subject: 'New Assignment    ',
-        html: `A new assignment has been posted`,
+        html: `A new booking has been posted`,
       },
     })
 
@@ -257,7 +257,7 @@ export default function PostSimilarTask({ assignmentData }) {
                     type="submit"
                     className="flex-1 rounded-xl bg-green-900 py-2 text-center text-white"
                   >
-                    Post assignment
+                    Post booking
                   </button>
                 </div>
               </div>

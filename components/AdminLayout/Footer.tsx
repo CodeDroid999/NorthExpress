@@ -214,7 +214,7 @@ export default function Footer() {
             <div className="flex flex-col items-center pt-4">
               <Image
                 src={airtaskalogo}
-                alt="assignment"
+                alt="booking"
                 className="md:h-[200px] md:w-[100%] h-[40px] w-[40px]"
                 id="customfontsize"
               />

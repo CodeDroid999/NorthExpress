@@ -35,7 +35,7 @@ export default function PaymentMethods() {
             </h1>
             <p className="text-base  text-gray-800">
               When you are ready to accept a Taskers offer, you will be required
-              to pay for the assignment. Payment will be held securely until the assignment
+              to pay for the booking. Payment will be held securely until the booking
               is complete and you release payment to the Tutor.
             </p>
           </div>
@@ -75,8 +75,8 @@ export default function PaymentMethods() {
               </h1>
               <div>
                 {!user?.bankAccount.accountHolderName ||
-                !user?.bankAccount.accountNumber ||
-                !user?.bankAccount.BSB ? (
+                  !user?.bankAccount.accountNumber ||
+                  !user?.bankAccount.BSB ? (
                   <div>
                     <h1 className="mb-2">
                       Please provide your bank details so you can get paid. We

@@ -27,7 +27,7 @@ export default function SetPrice() {
       <div className="relative ml-0 mt-6 flex flex-1  md:ml-8 md:mt-0">
         <Image
           src={photo1}
-          alt="assignment"
+          alt="booking"
           className="h-[100%] w-[100%] rounded-xl"
         />
       </div>

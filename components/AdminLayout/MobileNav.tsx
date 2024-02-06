@@ -26,7 +26,7 @@ const MobileNavbar = () => {
             <div className="mb-1">
               <Image
                 src={logo}
-                alt="assignment"
+                alt="booking"
                 width={130}
                 height={60}
                 className="h-[60px] w-[100%]"

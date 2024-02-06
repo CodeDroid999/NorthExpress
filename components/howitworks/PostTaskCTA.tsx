@@ -28,17 +28,17 @@ export default function PostTaskCTA() {
           The best marketplace to hire freelancers        </p>
         <div className="my-8 w-full max-w-sm rounded-full bg-green-900 px-4 py-3 sm:max-w-[200px] ">
           <Link
-            href="/post-assignment"
+            href="/post-booking"
             className="flex w-full justify-center text-lg font-semibold text-white"
           >
-            Post an assignment for free!
+            Post an booking for free!
           </Link>
         </div>
       </div>
       <div className="relative ml-0 mt-6 flex flex-1 flex-col items-center justify-center md:ml-8 md:mt-0">
         <Image
           src={photo1}
-          alt="assignment"
+          alt="booking"
           className="h-[100%] w-[100%] rounded-xl"
         />
 

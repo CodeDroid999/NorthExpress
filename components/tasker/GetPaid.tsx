@@ -19,7 +19,7 @@ export default function GetPaid() {
             Complete the job. Get paid. Easy.
           </h1>
           <p className="my-4 max-w-[470px] text-[22px] font-medium leading-[28px]  text-green-950">
-            When you mark an assignment as complete, a Request for Payment is sent
+            When you mark an booking as complete, a Request for Payment is sent
             directly to the job student so they can release payment instantly.
           </p>
         </div>

@@ -19,7 +19,7 @@ export default function Hero() {
         <div className="flex w-full flex-col md:flex-row md:space-x-6">
           <div className="my-2 w-full max-w-sm rounded-full bg-green-900  px-3 py-3 sm:w-[300px] xl:my-3   xl:py-4" >
             <Link
-              href="/post-assignment"
+              href="/post-booking"
               className="flex w-full flex-row items-center justify-center text-lg font-semibold text-gray-900"
             >
               Post your work for free

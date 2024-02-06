@@ -45,7 +45,7 @@ export default function CancelTask({ assignmentId, assignmentData, tutor }) {
         })
       }
     } catch (error) {
-      console.error('Error cancelling assignment:', error)
+      console.error('Error cancelling booking:', error)
     }
     toast.success('Assignment has been canceled')
     setIsFormOpen(false)
@@ -77,7 +77,7 @@ export default function CancelTask({ assignmentId, assignmentData, tutor }) {
               />
             </div>
             <div className="mb-10 mt-5 text-base font-medium text-black">
-              <p className="pt-1 pb-2 text-lg">Are you sure you want to cancel this assignment?</p>
+              <p className="pt-1 pb-2 text-lg">Are you sure you want to cancel this booking?</p>
             </div>
             <div className="flex w-full flex-row space-x-4">
               <button

@@ -14,7 +14,7 @@ export default function StudentSteps() {
                     <div className="mb-1">
                         <Image
                             src={photo1}
-                            alt="assignment"
+                            alt="booking"
                             className="h-[150px] w-[100%]"
                         />
                     </div>
@@ -24,7 +24,7 @@ export default function StudentSteps() {
                             <p className="pt-1 pb-2 text-lg"> 1. Upload your question</p>
                         </span>
                         <p className="text-md">
-                            Upload your question by posting an assignment. Be sure to be descriptive as possible to ensure the right people bid.
+                            Upload your question by posting an booking. Be sure to be descriptive as possible to ensure the right people bid.
                         </p>
 
                     </div>
@@ -34,7 +34,7 @@ export default function StudentSteps() {
                     <div className="mb-1">
                         <Image
                             src={photo2}
-                            alt="assignment"
+                            alt="booking"
                             className="h-[150px] w-[100%]"
                         />
                     </div>
@@ -54,7 +54,7 @@ export default function StudentSteps() {
                     <div className="mb-1">
                         <Image
                             src={photo3}
-                            alt="assignment"
+                            alt="booking"
                             className="h-[150px] w-[100%]"
                         />
                     </div>

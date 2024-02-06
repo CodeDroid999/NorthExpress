@@ -155,7 +155,7 @@ function Navbar() {
               <div className="ml-2">
                 <Image
                   src={airtaskalogo}
-                  alt="assignment"
+                  alt="booking"
                   className="h-[40px] w-[100%] md:h-[50px] lg:h-[60px] lg:w-[50px]"
                   id="customfontsize"
                 />
@@ -198,7 +198,7 @@ function Navbar() {
                   >
                     <Image
                       src="https://i.postimg.cc/Z5RLK0WK/notification-bell.png"
-                      alt="assignment" width="200" height="200"
+                      alt="booking" width="200" height="200"
                       className="h-[25px] w-[100%]"
                       id="customfontsize"
                     />
@@ -212,7 +212,7 @@ function Navbar() {
                   >
                     <Image
                       src="https://i.postimg.cc/0NGGVS3n/messages-icon.png"
-                      alt="assignment" width="200" height="200"
+                      alt="booking" width="200" height="200"
                       className="h-[25px] w-[100%]"
                       id="customfontsize"
                     />
@@ -223,7 +223,7 @@ function Navbar() {
                   <Link href={`/alerts/${user.userId}`} className="text-gray-700 hover:text-green-500">
                     <Image
                       src="https://i.postimg.cc/25LMy016/alert-icon-removebg-preview.png"
-                      alt="assignment" width="200" height="200"
+                      alt="booking" width="200" height="200"
                       className="h-[25px] w-[100%]"
                       id="customfontsize"
                     />
@@ -250,7 +250,7 @@ function Navbar() {
                   <div className="mb-1">
                     <Image
                       src={airtaskalogo}
-                      alt="assignment"
+                      alt="booking"
                       className="h-[50px] w-[100%] md:h-[50px] lg:h-[60px] lg:w-[50px] "
                     />
                   </div>
@@ -289,7 +289,7 @@ function Navbar() {
                 >
                   <Image
                     src="https://i.postimg.cc/Z5RLK0WK/notification-bell.png"
-                    alt="assignment" width="200" height="200"
+                    alt="booking" width="200" height="200"
                     className="h-[25px] w-[100%]"
                     id="customfontsize"
                   />
@@ -303,7 +303,7 @@ function Navbar() {
                 >
                   <Image
                     src="https://i.postimg.cc/0NGGVS3n/messages-icon.png"
-                    alt="assignment" width="200" height="200"
+                    alt="booking" width="200" height="200"
                     className="h-[25px] w-[100%]"
                     id="customfontsize"
                   />
@@ -314,7 +314,7 @@ function Navbar() {
                 <Link href={`/alerts/${user.userId}`} className="text-gray-700 hover:text-green-500">
                   <Image
                     src="https://i.postimg.cc/25LMy016/alert-icon-removebg-preview.png"
-                    alt="assignment" width="200" height="200"
+                    alt="booking" width="200" height="200"
                     className="h-[25px] w-[100%]"
                     id="customfontsize"
                   />

@@ -22,7 +22,7 @@ export default function TaskReviews({ assignmentId }) {
       setLoading(true)
       const reviewsRef = collection(db, 'reviews')
 
-      // Fetch assignment's reviews
+      // Fetch booking's reviews
       const reviewsQuery = query(reviewsRef, where('assignmentId', '==', assignmentId))
 
       const unsubscribe = onSnapshot(reviewsQuery, async (querySnapshot) => {
@@ -68,8 +68,8 @@ export default function TaskReviews({ assignmentId }) {
           <div className="my-3 flex flex-row space-x-4 text-lg font-medium text-gray-400">
             <span
               className={`${activeTab === 'Student'
-                  ? 'border-b-blue-600 text-green-950'
-                  : 'border-none'
+                ? 'border-b-blue-600 text-green-950'
+                : 'border-none'
                 } cursor-pointer border border-x-transparent border-t-transparent px-3`}
               onClick={() => setActiveTab('Student')}
             >
@@ -77,8 +77,8 @@ export default function TaskReviews({ assignmentId }) {
             </span>
             <span
               className={`${activeTab === 'Tutor'
-                  ? 'border-b-blue-600 text-green-950'
-                  : 'border-none'
+                ? 'border-b-blue-600 text-green-950'
+                : 'border-none'
                 } cursor-pointer border border-x-transparent border-t-transparent px-3`}
               onClick={() => setActiveTab('Tutor')}
             >

@@ -8,7 +8,7 @@ export default function ScrollCTA() {
         <div className="mb-5 mt-5 grid lg:grid-cols-7 lg:items-center lg:gap-x-8 xl:gap-x-12">
           <div className="lg:col-span-3">
             <h1 className="block pt-3 text-4xl font-bold text-green-900 sm:text-4xl md:text-5xl lg:text-6xl ">
-              Post your first assignment in seconds
+              Post your first booking in seconds
             </h1>
             <p className="mt-3 text-2xl text-gray-800 dark:text-gray-400">
               Working with the best doesnt have to be expensive.
@@ -39,7 +39,7 @@ export default function ScrollCTA() {
                 className="inline-flex w-full items-center justify-center gap-x-3 rounded-md border border-transparent bg-blue-600 px-3 px-4 py-3 text-center font-medium text-white transition hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-gray-800 sm:w-auto"
                 href="#"
               >
-                Post your assignment
+                Post your booking
               </a>
             </div>
           </div>

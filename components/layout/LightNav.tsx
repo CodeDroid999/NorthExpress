@@ -17,7 +17,7 @@ const LightCustomNavbar = () => {
   return (
     <div className="m-auto flex max-w-[1100px] items-center justify-between p-2 lg:p-3">
       {/**Mobile Nav */}
-      <MobileNavbar/>
+      <MobileNavbar />
 
       {/**Desktop */}
       <div className="hidden w-full items-center justify-between font-semibold lg:flex">
@@ -27,8 +27,8 @@ const LightCustomNavbar = () => {
               <Link href="/" className="text-gray-700">
                 <div className="mb-1">
                   <Image
-                   src={logo}
-                    alt="assignment"
+                    src={logo}
+                    alt="booking"
                     width={200}
                     height={100}
                     className="h-[50px] w-[100%] md:h-[50px] lg:h-[60px] lg:w-[50px]"

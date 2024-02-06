@@ -14,7 +14,7 @@ const HeroArea = () => {
                 <div className="img-box">
                     <Image
                         src="https://i.postimg.cc/QMYd1v3C/hero-bg.png"
-                        alt="assignment"
+                        alt="booking"
                         width="1400"
                         height="800"
                         className="w-full h-full"

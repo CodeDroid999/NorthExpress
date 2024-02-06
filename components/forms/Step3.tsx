@@ -82,13 +82,13 @@ export default function Step3({ handlePreviousStep }: Props) {
       to: 'airtaska1@gmail.com',
       message: {
         subject: 'New Assignment',
-        html: `A new assignment has been posted`,
+        html: `A new booking has been posted`,
       },
     })
 
     toast.success('Assignmemt has been posted')
 
-    router.push(`/assignment/${assignmentId}`)
+    router.push(`/booking/${assignmentId}`)
   }
 
   const handlePrevious = () => {
@@ -134,7 +134,7 @@ export default function Step3({ handlePreviousStep }: Props) {
             className="flex-1 rounded-xl bg-green-900 py-2 text-center text-white"
             onClick={handleNext}
           >
-            Post assignment
+            Post booking
           </button>
         </div>
       </form>
