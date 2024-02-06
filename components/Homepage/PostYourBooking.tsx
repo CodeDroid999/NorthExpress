@@ -82,8 +82,7 @@ export default function PostYourBooking() {
                 <p className="flex items-right align-center">
                     <input
                         type="radio"
-                        checked={true}
-                        className="mr-2 text-lg"
+                        className="mr-2 text-lg text-blue-500 font-bold"
                     />
                     <label htmlFor="Ticket types?" className="my-2 text-md font-medium text-blue-950">
                         One way

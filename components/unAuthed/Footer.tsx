@@ -1,6 +1,4 @@
-import { urlForImage } from 'lib/sanity.image'
 import Image from 'next/image'
-import Link from 'next/link'
 import React from 'react'
 import logo from 'public/QualityUnitedWritersLogo.png'
 import photo1 from "../../public/american-express.png"
