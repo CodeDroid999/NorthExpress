@@ -85,20 +85,6 @@ export default function Home(props) {
       <div className="header_bottom sticky bg-blue-600">
         <CustomNavbar />
       </div>
-      <PostYourBooking />
-      <Features />
-      <AppplyNowHero />
-      <HowItWorksSection />
-      <HighestEarners />
-      <BeYourOwnBoss />
-      <section className="flex justify-center align-center mx-auto my-4">
-        <div className="w-5/6 shadow-xl">
-          <Link href="/login" className="w-full">
-            <TasksTable />
-          </Link>
-        </div>
-      </section>
-      <PopularCountries />
       <FAQAccordion />
       <Footer />
     </>
