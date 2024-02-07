@@ -1,5 +1,4 @@
 import FAQAccordion from 'components/FAQaccordions'
-import HeroArea from 'components/Homepage/HeroSection'
 import Features from 'components/home/Features'
 import type { SharedPageProps } from 'pages/_app'
 import { useRouter, useSearchParams } from 'next/navigation'
@@ -11,6 +10,7 @@ import TopDestinations from 'components/home/TopDestinations'
 import DiscoverDestinations from 'components/Homepage/DiscoverDestinations'
 import Head from 'next/head'
 import Footer from 'components/layout/Footer'
+import HeroArea from 'components/unAuthed/HomeSection'
 
 interface PageProps extends SharedPageProps {
 }

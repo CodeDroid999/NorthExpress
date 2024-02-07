@@ -46,18 +46,10 @@ export default function Signup() {
         userId: user.uid,
         firstName: '',
         lastName: '',
-        dateOfBirth: '',
         phoneNumber: '',
         profilePicture: '',
-        accountStatus: 'inActive',
-        role: '',
+        role: 'Customer',
         email: user.email,
-        aboutDescription: '',
-        postalCode: '',
-        tag: '',
-        city: '',
-        skills: [],
-        education: [],
         createdAt: serverTimestamp(),
       });
       // Add additional fields or data as needed
@@ -82,26 +74,13 @@ export default function Signup() {
       const result = await signInWithPopup(auth, provider)
       const user = result.user
       const userRef = await addDoc(collection(db, 'users'), {
+        userId: user.uid,
         firstName: '',
         lastName: '',
-        dateOfBirth: '',
         phoneNumber: '',
         profilePicture: '',
-        billingAddress: '',
-        role: '',
+        role: 'Customer',
         email: user.email,
-        userId: user.uid,
-        bankAccount: {
-          accountHolderName: '',
-          accountNumber: '',
-          BSB: '',
-        },
-        aboutDescription: '',
-        postalCode: '',
-        tag: '',
-        city: '',
-        skills: [],
-        education: [],
         createdAt: serverTimestamp(),
       })
     } catch (error) {
@@ -159,26 +138,13 @@ export default function Signup() {
       // Make the HTTP request to the api/welcomeuser route
       await axios.post('/api/welcomeuser', userData);
       const userRef = await addDoc(collection(db, 'users'), {
+        userId: user.uid,
         firstName: '',
         lastName: '',
-        dateOfBirth: '',
         phoneNumber: '',
         profilePicture: '',
-        billingAddress: '',
-        role: '',
+        role: 'Customer',
         email: user.email,
-        userId: user.uid,
-        bankAccount: {
-          accountHolderName: '',
-          accountNumber: '',
-          BSB: '',
-        },
-        aboutDescription: '',
-        postalCode: '',
-        tag: '',
-        city: '',
-        skills: [],
-        education: [],
         createdAt: serverTimestamp(),
       })
       router.push(`/setup-profile`)

@@ -5,7 +5,7 @@ import React from 'react';
 const NavigationMenu: React.FC = () => {
   const user = UserAuth();
   return (
-    <div className=" w-100">
+    <div className="absolute w-100">
       <ul className="navbar-nav p-1 bg-blue-100">
         <li className="nav-item active p-2 ">
           <Link href="/" passHref>
@@ -34,17 +34,7 @@ const NavigationMenu: React.FC = () => {
             <span className="nav-link pl-3">Hire a bus +</span>
           </Link>
         </li>
-        <li className="nav-item shadow bg-gray-300 ">
-          {!user ? (
-            <Link href="/signup" passHref>
-              <span className="nav-link  pl-3 pt-2 pr-2 pb-2 mb-2">Sign Up</span>
-            </Link>
-          ) : (
-            <Link href="/login" passHref>
-              <span className="nav-link  pl-3 pt-2 pr-2 pb-2 mb-2">Sign In</span>
-            </Link>
-          )}
-        </li>
+
         <li className="nav-item shadow bg-gray-300 ">
           {!user ? (
             <Link href="/signup" passHref>

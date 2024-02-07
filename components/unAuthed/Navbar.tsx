@@ -3,7 +3,7 @@ import React from 'react';
 import { useState } from 'react';
 
 import MobileNavbar from './MobileNav';
-import Avatar from 'components/layout/Avatar';
+import Avatar from './Avatar';
 
 
 const CustomNavbar = () => {

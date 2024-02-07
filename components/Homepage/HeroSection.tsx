@@ -54,6 +54,9 @@ const HeroArea = () => {
                     </div >
 
                 </div >
+                <div className="header_bottom sticky">
+                    <CustomNavbar />
+                </div>
                 <PostYourBooking />
             </section >
         </div >

@@ -3,27 +3,26 @@ import React from 'react';
 import Alert from './Alert';
 import CustomNavbar from './Navbar';
 import Image from 'next/image';
-import { height } from '../OpenGraphImage';
+import PostYourBooking from 'components/Homepage/PostYourBooking';
 
 const HeroArea: React.FC = () => {
     return (
-        <header id="home" className="header_section">
+        <header id="home" className="header_section pb-4">
             <div className="hero_bg_box">
                 <div className="img-box">
                     <Image
                         src="https://i.postimg.cc/156hSWwZ/sewan.png"
                         width={1440}
                         height={600}
-                        alt="" />
+                        alt=""
+                    />
                 </div>
             </div>
             <div className="">
                 <Alert />
             </div>
-            <div className="header_bottom sticky">
-                <CustomNavbar />
-            </div>
-            <div className=" mx-auto max-w-c-1390 my-12">
+            <CustomNavbar />
+            <div className="overText mx-auto max-w-c-1390 my-12 z-3">
                 <div className="container flex lg:items-center lg:gap-8 xl:gap-32.5 pl-10">
                     <div className=" md:w-2/3">
                         <h4 className="mb-4.5 text-lg font-medium text-white">
@@ -38,13 +37,10 @@ const HeroArea: React.FC = () => {
                             "Kenyan Landscape"; with unmatched customer experience and top-tier services.
                             At North Express, we are redefining the luxury transport, and setting new standards of excellence and reliability.
                         </p>
-
-
                     </div>
-
-
                 </div>
             </div>
+            <PostYourBooking />
         </header>
     );
 };

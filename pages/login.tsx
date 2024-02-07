@@ -45,11 +45,11 @@ export default function LogIn() {
 
               // Redirect the user based on their role
               if (role === 'Admin') {
-                router.push('/admin/dashboard');
-              } else if (role === 'Student') {
-                router.push('/post-booking');
-              } else if (role === 'Tutor') {
-                router.push('/dashboard');
+                router.push('/admin-login');
+              } else if (role === 'SuperAdmin') {
+                router.push('/admin-login');
+              } else if (role === 'Customer') {
+                router.push('/add-booking');
               } else {
                 router.push(redirect || '/');
               }
@@ -90,18 +90,10 @@ export default function LogIn() {
           userId: user.uid,
           firstName: '',
           lastName: '',
-          dateOfBirth: '',
           phoneNumber: '',
           profilePicture: '',
-          accountStatus: 'inActive',
-          role: '',
+          role: 'Customer',
           email: user.email,
-          aboutDescription: '',
-          postalCode: '',
-          tag: '',
-          city: '',
-          skills: [],
-          education: [],
           createdAt: serverTimestamp(),
         })
       }
