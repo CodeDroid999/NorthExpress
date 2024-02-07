@@ -116,7 +116,7 @@ export default function LogIn() {
   return (
     <AuthLayout>
       <Head>
-        <title>NorthExpress - North Express - Travel with comfort.
+        <title>NorthExpress - Travel with comfort.
           Comfortable. Efficient. Affordable.
           North Express is the brainchild of a group of veteran logisticians redefining luxury transport. At North Express, we are redefining comfort, and setting new standards of efficiency and reliability.</title>
         <meta charSet="utf-8" />
@@ -133,7 +133,7 @@ export default function LogIn() {
         <meta name="robots" content="index, follow" />
         <meta
           property="og:title"
-          content="NorthExpress - North Express - Travel with comfort.
+          content="NorthExpress - Travel with comfort.
 Comfortable. Efficient. Affordable.
 North Express is the brainchild of a group of veteran logisticians redefining luxury transport. At North Express, we are redefining comfort, and setting new standards of efficiency and reliability."
         />

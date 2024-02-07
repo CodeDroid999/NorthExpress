@@ -21,9 +21,6 @@ export default function MobileAvatar() {
   const toggleMainDropdown = () => {
     setIsMainDropdownOpen(!isMainDropdownOpen);
   };
-  const handleSwitchMode = () => {
-    router.push('/setup-profile');
-  };
 
   return (
     <div className="relative z-50">
@@ -31,7 +28,7 @@ export default function MobileAvatar() {
         onClick={toggleMainDropdown}
         className="flex items-center justify-center border border-gray-100 shadow-inner rounded-full bg-transparent px-2.5 py-2.5 text-regular text-white duration-300 ease-in-out hover:bg-primary"
       >
-        <span className="mr-2 md:text-lg font-medium text-xs text-blue-950 hover:text-green-500">
+        <span className="mr-2 md:text-lg font-medium text-xs hover:text-green-500">
           Account
         </span>
         <div className="inline-flex justify-end ">
