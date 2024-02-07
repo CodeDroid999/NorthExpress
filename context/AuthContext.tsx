@@ -52,6 +52,7 @@ type User = {
 
 
 interface AuthContextType {
+  profilePicture: any;
   user: User | null;
   userRole: string | null;
   accountStatus: string | null;
