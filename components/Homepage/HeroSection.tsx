@@ -1,9 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import Alert from 'components/unAuthed/Alert';
-import Home from 'components/unAuthed/HomeSection';
 import CustomNavbar from 'components/unAuthed/Navbar';
 import Image from 'next/image'
-import Link from 'next/link';
 import React from 'react';
 import PostYourBooking from './PostYourBooking';
 

@@ -10,27 +10,27 @@ const NavigationMenu: React.FC = () => {
             <span className="nav-link  pl-3 text-white fint-bold">Home <span className="sr-only">(current)</span></span>
           </Link>
         </li>
-        <li className="nav-item p-2">
+        <li className="nav-item p-2 shadow border-2 border-blue-950">
           <Link href="/how-it-works" passHref>
             <span className="nav-link  pl-3">How it works</span>
           </Link>
         </li>
-        <li className="nav-item p-2">
+        <li className="nav-item p-2 shadow border-2 border-blue-950">
           <Link href="/login" passHref>
             <span className="nav-link pl-3">Sign in</span>
           </Link>
         </li>
-        <li className="nav-item p-2">
+        <li className="nav-item p-2 shadow border-2 border-blue-950">
           <Link href="/signup" passHref>
             <span className="nav-link pl-3">Sign up +</span>
           </Link>
         </li>
-        <li className="nav-item p-2">
+        <li className="nav-item p-2 shadow border-2 border-blue-950">
           <Link href="/blog" passHref>
             <span className="nav-link pl-3">Blog</span>
           </Link>
         </li>
-        <li className="nav-item p-2">
+        <li className="nav-item p-2 shadow border-2 border-blue-950">
           <Link href="/contact-us" passHref>
             <span className="nav-link  pl-3">Contact us</span>
           </Link>

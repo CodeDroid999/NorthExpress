@@ -21,9 +21,6 @@ export default function Avatar() {
   const toggleMainDropdown = () => {
     setIsMainDropdownOpen(!isMainDropdownOpen);
   };
-  const handleSwitchMode = () => {
-    router.push('/setup-profile');
-  };
 
   return (
     <div className="relative z-50">
