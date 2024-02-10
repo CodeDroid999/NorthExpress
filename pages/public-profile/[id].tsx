@@ -7,6 +7,7 @@ import { onAuthStateChanged } from 'firebase/auth'
 import { useRouter } from 'next/router'
 import UserAbout from 'components/profile/Reviews/UserAbout'
 import UserReviews from 'components/reviews/UserReviews'
+import Navbar from 'components/layout/Navbar'
 
 export const formatDate = (dateString) => {
   const date = new Date(dateString)

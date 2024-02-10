@@ -53,7 +53,7 @@ export default function AuthedAvatar() {
                                     height={25}
                                     className="h-[1.6rem] w-[1.6rem] cursor-pointer rounded-full object-cover"
                                 />
-                                {user?.firstName} {user?.lastName}
+                                {user?.displayName}
                             </span>
                         </Link>
                     </div>

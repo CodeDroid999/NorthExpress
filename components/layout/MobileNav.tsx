@@ -7,6 +7,7 @@ import React, { useState } from 'react';
 import NavigationMenu from './NavMenu';
 import logo from 'public/sync-my-socials-logo.png'
 import Avatar from 'components/layout/Avatar';
+import MobileAvatar from './MobileAvatar';
 
 
 const MobileNavbar = () => {
@@ -41,8 +42,7 @@ const MobileNavbar = () => {
         <div className="flex items-center justify-end mr-3">
           <div className="flex flex-col items-center "
             onClick={toggleMenu} >
-
-            <MobileNavbar />
+            <MobileAvatar />
           </div>
         </div>
       </div>
