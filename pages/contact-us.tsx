@@ -2,8 +2,7 @@ import ContactForm from 'components/support/ContactForm';
 import React from 'react';
 import axios from 'axios'; // Import axios for making HTTP requests
 import Head from 'next/head';
-import Layout from 'components/layout/layout';
-import AuthLayout from 'components/layout/AuthLayout';
+import HomeArea from 'components/layout/HomeSectionBluse';
 
 const Contact = () => {
   const handleFormSubmit = async (formData) => {
@@ -18,22 +17,12 @@ const Contact = () => {
   };
 
   return (
-    <AuthLayout>
+    <>
       <Head>
         <title>
           NorthExpress | Travel with comfort.
           Comfortable. Efficient. Affordable .
           At North Express, we are redefining the luxury transport, and setting new standards of excellence and reliability.
-
-          |Travel with comfort.
-          Comfortable. Efficient. Affordable .
-          At North Express, we are redefining the luxury transport, and setting new standards of excellence and reliability.
-
-          |Travel with comfort.
-          Comfortable. Efficient. Affordable .
-          At North Express, we are redefining the luxury transport, and setting new standards of excellence and reliability.
-
-
         </title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -55,10 +44,9 @@ const Contact = () => {
         <meta name="og:url" property="og:url" content="https://www.northexpresskenya.com" />
       </Head>
 
-      <div className="container mx-auto flex justify-center items-center ">
-        <ContactForm onSubmit={handleFormSubmit} />
-      </div>
-    </AuthLayout>
+      <HomeArea />
+      <ContactForm onSubmit={handleFormSubmit} />
+    </>
   );
 };
 
