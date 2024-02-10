@@ -9,8 +9,8 @@ import { UserAuth } from 'context/AuthContext'
 import TopDestinations from 'components/home/TopDestinations'
 import DiscoverDestinations from 'components/Homepage/DiscoverDestinations'
 import Head from 'next/head'
+import HeroArea from 'components/layout/HomeSection'
 import Footer from 'components/layout/Footer'
-import HeroArea from 'components/unAuthed/HomeSection'
 
 interface PageProps extends SharedPageProps {
 }

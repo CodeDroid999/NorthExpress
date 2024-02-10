@@ -3,10 +3,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react';
 import profile from 'public/profile.jpeg';
-import router from 'next/router';
-import { ImAttachment } from 'react-icons/im';
 
-export default function Avatar() {
+export default function AuthedAvatar() {
     const { user, logOut } = UserAuth();
     const userRole = user?.role;
     const userId = user?.userId;
@@ -120,7 +118,7 @@ export default function Avatar() {
                                 About Us
                             </Link>
                         ) : (
-                            <>
+                            <div>
                                 <Link
                                     className="bg-white- 500 flex items-center gap-x-3.5 rounded-md px-3 mb-1 py-2 text-sm text-gray-800 hover:bg-neutral-100 border w-100"
                                     href={`/profile/${user?.userId}`}
@@ -175,7 +173,7 @@ export default function Avatar() {
                                 >
                                     Log out
                                 </div>
-                            </>
+                            </div>
                         )}
                     </div>
                 </div>

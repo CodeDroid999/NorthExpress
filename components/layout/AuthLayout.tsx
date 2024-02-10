@@ -7,13 +7,13 @@ export default function AuthLayout({
   children: React.ReactNode
 }) {
   return (
-    <div className="mx-auto max-w-[1280px] px-3 sm:px-6 md:px-16">
-      <header className="flex flex-row items-center justify-between  bg-white py-2 duration-300 ease-in">
-        <h1 className="text-4xl font-bold md:text-5xl ">
+    <div className="mx-auto max-w-[1280px] px-3 sm:px-6 md:px-16 bg-gray-200">
+      <header className="flex flex-row items-center justify-between  bg-gray-200 py-2 duration-300 ease-in">
+        <h1 className="text-3xl font-bold md:text-2xl ">
           <Link href="/">NorthExpress</Link>
         </h1>
       </header>
-      <main className="mx-auto mt-6 w-full max-w-[400px]  md:mt-10">
+      <main className="mx-auto mt-8 pb-12 w-full max-w-[400px]  md:mt-16">
         {children}
       </main>
     </div>

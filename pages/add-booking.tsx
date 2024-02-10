@@ -2,9 +2,10 @@ import FAQAccordion from 'components/FAQaccordions'
 import Head from 'next/head'
 import { useRouter, useSearchParams } from 'next/navigation'
 import React, { useEffect } from 'react'
-import Footer from 'components/layout/Footer'
 import { UserAuth } from 'context/AuthContext'
-import Alert from 'components/unAuthed/Alert'
+import Alert from 'components/layout/Alert'
+import CustomNavbar from 'components/layout/Navbar'
+import Footer from 'components/layout/Footer'
 
 
 interface Query {

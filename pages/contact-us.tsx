@@ -1,8 +1,8 @@
-import Layout from 'components/layout/Layout';
 import ContactForm from 'components/support/ContactForm';
 import React from 'react';
 import axios from 'axios'; // Import axios for making HTTP requests
 import Head from 'next/head';
+import Layout from 'components/layout/layout';
 
 const Contact = () => {
   const handleFormSubmit = async (formData) => {

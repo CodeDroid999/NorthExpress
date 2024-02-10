@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import toast from 'react-hot-toast'
-import AuthLayout from 'components/layout/AuthLayout'
 import { firebaseConfig } from '../firebase' // Import your Firebase configuration
 import Head from 'next/head'
+import AuthLayout from 'components/layout/AuthLayout'
 
 export default function ForgotPassword() {
   const [email, setEmail] = useState('')

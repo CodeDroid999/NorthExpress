@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import AuthLayout from 'components/layout/AuthLayout';
 import { GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, sendEmailVerification, signInWithPopup } from 'firebase/auth';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { FcGoogle } from 'react-icons/fc';
@@ -9,6 +8,7 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import toast from 'react-hot-toast';
 import Head from 'next/head';
+import AuthLayout from 'components/layout/AuthLayout';
 
 export default function Signup() {
   const [passwordVisible, setPasswordVisible] = useState(false);

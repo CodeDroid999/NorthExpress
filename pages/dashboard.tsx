@@ -15,7 +15,6 @@ interface Query {
 
 
 import React, { } from 'react';
-import Navbar from '../components/layout/Navbar';
 import Head from 'next/head';
 import {
   collection,
@@ -28,9 +27,10 @@ import { db } from '../firebase';
 import { formatDate } from './profile/[id]';
 import { useRouter } from 'next/router'
 import { useSearchParams } from 'next/navigation'
-import Footer from 'components/layout/Footer'
 import PostAssignment from 'components/Homepage/PostAssignment'
 import HowItWorksSection from 'components/howitworks/HowITWorksSection'
+import Footer from 'components/layout/Footer'
+import Navbar from 'components/layout/Navbar'
 
 const Dashboard: React.FC = (props: any) => {
   const router = useRouter();

@@ -14,7 +14,7 @@ import { AuthContextProvider, UserAuth } from 'context/AuthContext'
 import { Toaster } from 'react-hot-toast'
 
 import '../styles/custom.css'
-import LoginModal from 'components/unAuthed/LoginModal';
+import LoginModal from 'components/layout/LoginModal';
 
 export interface SharedPageProps {
   token: string

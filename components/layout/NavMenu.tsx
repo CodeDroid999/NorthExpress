@@ -1,147 +1,57 @@
-/* eslint-disable react/jsx-no-undef */
 import { UserAuth } from 'context/AuthContext';
 import Link from 'next/link';
-import React, { useState } from 'react';
+import React from 'react';
 
-const NavigationMenu: React.FC = (props: any) => {
-  const { user, logOut } = UserAuth();
-  const userRole = user?.role;
-  const userId = user?.userId;
-  const handleLogOut = () => {
-    logOut();
-  };
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [isMainDropdownOpen, setIsMainDropdownOpen] = useState(false);
-  const toggleDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen);
-  };
-  const toggleMainDropdown = () => {
-    setIsMainDropdownOpen(!isMainDropdownOpen);
-  };
+const NavigationMenu: React.FC = () => {
+  const user = UserAuth();
   return (
-    <div className=" w-100">
-      <div className="absolute right-0 top-8 mt-2 z-50 min-w-[15rem] rounded-lg bg-white p-2 shadow-md ">
-        <div className="rounded bg-gray-100 pt-2 pb-2 border">
-          <Link href={`/public-profile/${user?.userId}`}>
-            <span className="flex items-center gap-x-3.5 px-3 pt-1 text-sm text-blue-900 hover:bg-neutral-100 ">
-              Hello {user?.firstName} {user?.lastName}
-            </span>
+    <div className="absolute w-100">
+      <ul className="navbar-nav p-1 bg-blue-100">
+        <li className="nav-item active p-2 ">
+          <Link href="/" passHref>
+            <span className="nav-link  pl-3  pr-2  text-blue-950 font-bold ">Home <span className="sr-only">(current)</span></span>
           </Link>
-        </div>
-        <div className="flex ">
+        </li>
+
+        <li className="nav-item shadow bg-gray-300 ">
           {!user ? (
-            <Link
-              href="/signup"
-              className="bg-white- 500 flex items-center gap-x-3.5 rounded-md px-3 mb-1 mt-1 py-2 text-sm text-gray-800 hover:bg-neutral-100 border w-100"
-            >
-              Sign Up
+            <Link href="/signup" passHref>
+              <span className="nav-link  pl-3 pt-2 pr-2 pb-2 mb-2">Sign Up</span>
             </Link>
           ) : (
-            <Link
-              href="/login"
-              className="bg-white- 500 flex items-center gap-x-3.5 rounded-md px-3 mb-1 mt-1 py-2 text-sm text-gray-800 hover:bg-neutral-100 border w-100"
-            >
-              Sign In
+            <Link href="/login" passHref>
+              <span className="nav-link  pl-3 pt-2 pr-2 pb-2 mb-2">Sign In</span>
             </Link>
           )}
-        </div>
-        <Link
-          href={`/add-booking`}
-        >
-          Make Booking
-        </Link>
-        <Link
-          href="bus-hire"
-        >
-          Hire a bus
-        </Link>
-        <Link
-          href="/parcel"
-        >
-          Parcels
-        </Link>
-        <div className="flex ">
+        </li>
+        <li className="nav-item shadow bg-gray-300 ">
+          <Link href="/add-booking" passHref>
+            <span className="nav-link pl-3">Book a ticket</span>
+          </Link>
+        </li>
+        <li className="nav-item shadow bg-gray-300 ">
+          <Link href="/add-hire" passHref>
+            <span className="nav-link pl-3">Hire a bus +</span>
+          </Link>
+        </li>
+
+        <li className="nav-item shadow bg-gray-300 ">
           {!user ? (
-            <Link
-              href="/login"
-              className="bg-white- 500 flex items-center gap-x-3.5 rounded-md px-3 mb-1 mt-1 py-2 text-sm text-gray-800 hover:bg-neutral-100 border w-100"
-            >
-              Bus Hire
+            <Link href="/signup" passHref>
+              <span className="nav-link  pl-3 pt-2 pr-2 pb-2 mb-2">About Us</span>
             </Link>
           ) : (
-            <Link
-              href="/browse-bookings"
-              className="bg-white- 500 flex items-center gap-x-3.5 rounded-md px-3 mb-1 mt-1 py-2 text-sm text-gray-800 hover:bg-neutral-100 border w-100"
-            >
-              Sign Up
+            <Link href="/login" passHref>
+              <span className="nav-link  pl-3 pt-2 pr-2 pb-2 mb-2">Sign In</span>
             </Link>
           )}
-        </div>
-        <div className="flex ">
-          {!user ? (
-            <Link
-              href="/login"
-              className="bg-white- 500 flex items-center gap-x-3.5 rounded-md px-3 mb-1 mt-1 py-2 text-sm text-gray-800 hover:bg-neutral-100 border w-100"
-            >
-              About Us
-            </Link>
-          ) : (
-            <>
-              <Link
-                href={`/profile/${user?.userId}`}
-              >
-                My Profile
-              </Link>
-              <Link
-                href={`/payment-history/${user?.userId}`}
-              >
-                Payment History
-              </Link>
-              <Link
-                href={`/payment-methods/${user?.userId}`}
-              >
-                Payment Methods
-              </Link>
-              <div className="bg-white- 500 flex items-center gap-x-3.5 rounded-md px-3 mb-1 py-2 text-sm text-gray-800 hover:bg-neutral-100 border w-100 ">
-                <div
-                  onClick={toggleDropdown}
-                  className="mt-1 flex cursor-pointer items-center text-sm text-gray-800 hover:bg-gray-100 "
-                >
-                  Settings
-                </div>
-              </div>
-              {isDropdownOpen && (
-                <div className="flex flex-col rounded p-1 text-sm text-gray-800 w-100 bg-gray-200">
-                  <Link
-                    className="bg-white- 500 flex items-center gap-x-3.5 rounded-md px-3 mb-1 py-2 text-sm text-gray-800 hover:bg-neutral-100 border w-100 "
-                    href={`/settings/mobile-number/${user?.userId}`}
-                  >
-                    Mobile
-                  </Link>
-                  <Link
-                    className="bg-white- 500 flex items-center gap-x-3.5 rounded-md px-3 mb-1 py-2 text-sm text-gray-800 hover:bg-neutral-100 border w-100 "
-                    href={`/settings/email/${user?.userId}`}
-                  >
-                    Email
-                  </Link>
-                  <Link
-                    className="bg-white- 500 flex items-center gap-x-3.5 rounded-md px-3 mb-1 py-2 text-sm text-gray-800 hover:bg-neutral-100 border w-100 "
-                    href="/forgot-password"
-                  >
-                    Change password
-                  </Link>
-                </div>
-              )}
-              <div
-                onClick={handleLogOut}
-                className="bg-white- 500 flex items-center gap-x-3.5 rounded-md px-3 mb-1 py-2 text-sm text-gray-800 hover:bg-neutral-100 border w-100 "
-              >
-                Log out
-              </div>
-            </>
-          )}
-        </div>
-      </div>
+        </li>
+        <li className="nav-item shadow bg-gray-300 ">
+          <Link href="/contact-us" passHref>
+            <span className="nav-link  pl-3 pt-2 pr-2 pb-2 mb-2">Contact us</span>
+          </Link>
+        </li>
+      </ul>
     </div>
   );
 };

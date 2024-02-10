@@ -1,4 +1,3 @@
-import AuthLayout from 'components/layout/AuthLayout'
 import {
   GoogleAuthProvider,
   onAuthStateChanged,
@@ -20,6 +19,7 @@ import {
   serverTimestamp,
 } from 'firebase/firestore'
 import Head from 'next/head'
+import AuthLayout from 'components/layout/AuthLayout'
 
 export default function LogIn() {
   const [passwordVisible, setPasswordVisible] = useState(false)

@@ -1,8 +1,8 @@
 import React from 'react';
-import CustomNavbar from 'components/unAuthed/Navbar';
-import SideNav from 'components/layout/SideNav';
-import Footer from 'components/unAuthed/Footer';
+import CustomNavbar from 'components/layout/Navbar';
+import Footer from 'components/layout/Footer';
 import Steps from 'components/howitworks/Steps';
+import SideNav from 'components/layout/SideNav';
 
 const About: React.FC = () => {
     return (

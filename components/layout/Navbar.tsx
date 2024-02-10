@@ -1,334 +1,73 @@
-import React, { useEffect, useState } from 'react'
-import Link from 'next/link'
-import { UserAuth } from 'context/AuthContext'
-import Image from 'next/image'
-import airtaskalogo from 'public/QualityUnitedWritersLogo.png'
-import Avatar from './Avatar'
-import Avartar from './MobileAvatar'
-import RedDot from 'components/messaging/RedDot'
-import { db } from '../../firebase'
-import {
-  doc,
-  collection,
-  query,
-  where,
-  onSnapshot,
-  getDocs,
-  updateDoc,
-} from 'firebase/firestore'
-import { useRouter } from 'next/router'
-import Dropdown from './DropDown'
+import Link from 'next/link';
+import React from 'react';
+import { useState } from 'react';
 
-type Notification = {
-  id: string
-  content: string
-  createdAt: any // Use the appropriate type for timestamp
-  read: boolean
-  receiverId: string
-  senderId: string
-  assignmentId: string
-  assignmentTitle: string
-  type: string
-}
+import MobileNavbar from './MobileNav';
+import Avatar from './Avatar';
+import { UserAuth } from 'context/AuthContext';
+import AuthedAvatar from 'components/AuthedLayout/AuthedAvatar';
 
-function Navbar() {
-  const [nav, setNav] = useState(false)
-  const { user, logOut } = UserAuth()
-  const userId = user?.userId
 
-  {
-    /**Handle RedDOt */
-  }
-  const [unReadNotifications, setUnreadNotifications] = useState([])
-  const [unReadMessages, setUnreadMessages] = useState([])
-  const [loading, setLoading] = useState(false)
+const CustomNavbar = () => {
+  const [isMenuOpen, setMenuOpen] = useState(false);
+  const { user } = UserAuth();
 
-  const userRole = user?.role
-
-  useEffect(() => {
-    if (userId) {
-      setLoading(true)
-      const notificationsRef = collection(db, 'notifications')
-
-      // Fetch user's notifications
-      const notificationsQuery = query(
-        notificationsRef,
-        where('receiverId', '==', userId)
-      )
-
-      const unsubscribe = onSnapshot(
-        notificationsQuery,
-        async (querySnapshot) => {
-          const notificationsData = await Promise.all(
-            querySnapshot.docs.map(async (doc) => {
-              return {
-                id: doc.id,
-                ...doc.data(),
-              }
-            })
-          )
-
-          // Mark unread notifications as read
-          const unread = notificationsData.filter(
-            (notification: any) => notification.read === false
-          )
-
-          setUnreadNotifications(unread)
-
-          setLoading(false)
-        }
-      )
-
-      return () => {
-        unsubscribe()
-      }
-    }
-  }, [userId])
-
-  useEffect(() => {
-    if (userId) {
-      setLoading(true)
-
-      // Fetch chats where the user is a participant
-      const chatsRef = collection(db, 'chats')
-      const chatsQuery = query(
-        chatsRef,
-        where('participants', 'array-contains', userId)
-      )
-
-      const unsubscribe = onSnapshot(chatsQuery, async (querySnapshot) => {
-        const chatIds = querySnapshot.docs.map((doc) => doc.id)
-
-        const allMessagesPromises = chatIds.map(async (chatId) => {
-          const messagesRef = collection(db, 'chats', chatId, 'messages')
-          const messagesSnapshot = await getDocs(messagesRef)
-          const messages = messagesSnapshot.docs.map((doc) => {
-            return {
-              chatId: chatId,
-              messageId: doc.id,
-              ...doc.data(),
-            }
-          })
-
-          return messages
-        })
-
-        const allMessages = await Promise.all(allMessagesPromises)
-        const flattenedMessages = allMessages.flat()
-        const unread = flattenedMessages.filter(
-          (message: any) =>
-            message.receiverId === userId && message.read === false
-        )
-
-        setUnreadMessages(unread)
-
-        setLoading(false)
-      })
-
-      return () => {
-        unsubscribe()
-      }
-    }
-  }, [userId])
-
-  {
-    /**handle Navigation */
-  }
-  const handleNav = () => {
-    setNav(!nav)
-  }
-  {
-    /**Handle Logout */
-  }
-  const handleLogOut = () => {
-    logOut()
-  }
-
+  const toggleMenu = () => {
+    setMenuOpen(!isMenuOpen);
+  };
   return (
-    <div className="fixed left-0 top-0 z-20 w-full  border border-x-transparent bg-white duration-300 ease-in">
-      <div className="m-auto flex  items-center justify-between p-2 lg:p-3">
-        {/**Mobile Nav */}
-        <div className=" flex items-center justify-between  lg:hidden w-100">
-          {/* Left div */}
-          <div className="flex flex-row items-center space-x-1">
-            <Link href="/" className="text-gray-700">
-              <div className="ml-2">
-                <Image
-                  src={airtaskalogo}
-                  alt="booking"
-                  className="h-[40px] w-[100%] md:h-[50px] lg:h-[60px] lg:w-[50px]"
-                  id="customfontsize"
-                />
-              </div>
-            </Link>
-
+    <div className="m-auto flex w-11/12 items-center justify-between p-2 lg:p-3 ">
+      <MobileNavbar />
+      {/**Desktop */}
+      <div className="md:flex flex-grow  w-full  justify-between font-semibold lg:flex hidden">
+        <div className="flex flex-row items-center">
+          <div className="mr-1">
+            <h1 className="text-4xl font-bold">
+              <Link href="/" className="text-gray-700">
+                <div className="mb-1">
+                  <span className="text-2xl text-gray-100 px-1 font-extrabold w-full border-2 rounded border-gray-100 hidden md:inline"> NorthExpress </span>
+                  <span className="text-2xl text-blue-700 px-1 font-extrabold w-full border-2 rounded border-blue-700 inline md:hidden"> NE </span>
+                </div>
+              </Link>
+            </h1>
           </div>
 
-          {/*buffer div*/}
 
-          {/* Right div */}
-          <div className="flex justify-end lg:hidden">
-            <div className="rounded-full p-3 text-white ">
-              {!user ? (
-                <div className="flex flex-row items-center space-x-1">
-                  <Link
-                    href="/signup"
-                    className="text-gray-700 hover:text-green-500"
-                    style={{ whiteSpace: 'nowrap' }}
-                    id="customfontsize"
-                  >
-                    Sign Up
-                  </Link>
-                  <Link
-                    href="/login"
-                    className="text-gray-700 hover:text-green-500"
-                    style={{ whiteSpace: 'nowrap' }}
-                    id="customfontsize"
-                  >
-                    Log In
-                  </Link>
-                  <Link
-                    href="/become-a-tutor"
-                    className="rounded-2xl bg-blue-50 px-2 py-[3px] text-blue-700 hover:bg-blue-100 hover:text-green-900"
-                    style={{ whiteSpace: 'nowrap' }}
-                    id="customfontsize"
-                  >
-                    Become a Tutor
-                  </Link>
-                </div>
-              ) : (
-                <div className="flex flex-row items-center space-x-1">
-
-                  <div className="flex">
-                    {userRole === 'Student' && (
-                      <Link href="/browse-bookings" className=" text-gray-700 hover:text-green-500 text-sm">
-                        Browse
-                      </Link>
-                    )}
-                    {userRole === 'Tutor' && (
-                      <Link
-                        href="/boost-earnings"
-                        className="text-gray-700 hover:text-green-500 text-sm whitespace-nowrap"
-                        id="customfontsize"
-                      >
-                        Boost Earnings
-                      </Link>
-                    )}
-                  </div>
-                  <div className="flex">
-                    {userRole === 'Student' && (
-                      <Link href="/post-booking" className=" text-gray-700 hover:text-green-500 text-sm">
-                        Post
-                      </Link>
-                    )}
-                    {userRole === 'Tutor' && (
-                      <Link
-                        href="/bid-bookings"
-                        className="text-gray-700 hover:text-green-500 text-sm whitespace-nowrap"
-                        id="customfontsize"
-                      >
-                        Bid
-                      </Link>
-                    )}
-                  </div>
-                  <div className="flex">
-                    {userRole === 'Student' && (
-                      <Link href={`/my-bookings/${user.userId}`} className="text-gray-700  hover:text-green-500 text-sm">
-                        Assignments
-                      </Link>
-                    )}
-
-                    {userRole === 'Tutor' && (
-                      <Link
-                        href={`/orders/${user.userId}`}
-                        className="text-gray-700 hover:text-green-500 text-sm"
-                        style={{ whiteSpace: 'nowrap' }}
-                        id="customfontsize"
-                      >My Orders
-                      </Link>
-                    )}
-                  </div>
-                  <div className="flex">
-                    <Link
-                      href={`/notifications/${user.userId}`}
-                      className="text-gray-700 hover:text-green-500"
-                      style={{ whiteSpace: 'nowrap' }}
-                      id="customfontsize"
-                    >
-                      <Image
-                        src="https://i.postimg.cc/Z5RLK0WK/notification-bell.png"
-                        alt="booking" width="200" height="200"
-                        className="h-[25px] w-[100%]"
-                        id="customfontsize"
-                      />
-                    </Link>
-                    {unReadNotifications.length > 0 && <RedDot />}
-                  </div>
-                  <div className="flex">
-                    <Link
-                      href={`/messages/${user.userId}`}
-                      className="text-gray-700 hover:text-green-500"
-                      style={{ whiteSpace: 'nowrap' }}
-                      id="customfontsize"
-                    >
-                      <Image
-                        src="https://i.postimg.cc/0NGGVS3n/messages-icon.png"
-                        alt="booking" width="200" height="200"
-                        className="h-[25px] w-[100%]"
-                        id="customfontsize"
-                      />
-                    </Link>
-                    {unReadMessages.length > 0 && <RedDot />}
-                  </div>
-                  <div className="flex">
-                    <Link
-                      href={`/alerts/${user.userId}`}
-                      className="text-gray-700 hover:text-green-500"
-                      style={{ whiteSpace: 'nowrap' }}
-                      id="customfontsize"
-                    >
-                      <Image
-                        src="https://i.postimg.cc/25LMy016/alert-icon-removebg-preview.png"
-                        alt="booking" width="200" height="200"
-                        className="h-[25px] w-[100%]"
-                        id="customfontsize"
-                      />
-
-                    </Link>
-                    {unReadNotifications.length > 0 && <RedDot />}
-                  </div>
-                  <div className="flex justify-center align-middle">
-                    <Avatar />
-                  </div>
-                </div>
-              )}
-            </div>
-          </div>
         </div>
 
-        {/**Desktop */}
-        <div className="hidden w-full items-center justify-between font-semibold lg:flex">
-          <div className="flex flex-row items-center">
-            <div className="mr-10">
-              <h1 className="text-4xl font-bold">
-                <Link href="/" className="text-gray-700">
-                  <div className="mb-1">
-                    <Image
-                      src={airtaskalogo}
-                      alt="booking"
-                      className="h-[50px] w-[100%] md:h-[50px] lg:h-[60px] lg:w-[50px] "
-                    />
-                  </div>
-                </Link>
-              </h1>
-            </div>
-          </div>
+        {/* Right-side links */}
+        <div className="flex items-center space-x-3">
+          <Link
+            href="/"
+            className="md:text-lg font-medium text-xs text-white hover:text-green-500"
+          >
+            Home
+          </Link>
 
+          <Link
+            href="/bus-hire"
+            className="md:text-lg font-medium text-xs text-white hover:text-green-500 whitespace-nowrap"
+          >
+            Bus Hire
+          </Link>
+          <Link
+            href="/parcels"
+            className="md:text-lg font-medium text-xs text-white hover:text-green-500"
+          >
+            Parcels
+          </Link>
 
+          {!user ? (
+
+            <Avatar />
+          ) : (
+            <AuthedAvatar />
+          )}
         </div>
       </div>
-    </div >
-  )
-}
 
-export default Navbar
+    </div>
+  );
+};
+
+export default CustomNavbar;

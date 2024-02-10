@@ -2,12 +2,12 @@ import HighestEarners from 'components/Become-a-tutor/HighestEarnersSection'
 import HowItWorksSection from 'components/Become-a-tutor/HowITWorksSection'
 import StatsCounter from 'components/Become-a-tutor/StatsCounter'
 import TasksTable from 'components/BrowseTasks/TasksTable'
-import Footer from 'components/layout/Footer'
 import Head from 'next/head'
 import React, { } from 'react'
 import PopularCountries from 'components/Become-a-tutor/PopularCountriesSection'
 import Features from 'components/home/Features'
-import HeroArea from 'components/unAuthed/HomeSection'
+import HeroArea from 'components/layout/HomeSection'
+import Footer from 'components/layout/Footer'
 
 
 export default function Home() {

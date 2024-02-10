@@ -1,4 +1,4 @@
-import Layout from "components/layout/Layout";
+import Layout from "components/layout/layout";
 import Accordion from "components/support/FAQAccordion";
 import Head from "next/head";
 

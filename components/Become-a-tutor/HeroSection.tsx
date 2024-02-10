@@ -1,4 +1,4 @@
-import Home from 'components/unAuthed/HomeSection';
+import Home from 'components/layout/HomeSection';
 import Image from 'next/image'
 import Link from 'next/link';
 import React from 'react';
