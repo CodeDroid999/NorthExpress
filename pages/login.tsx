@@ -49,7 +49,7 @@ export default function LogIn() {
               } else if (role === 'SuperAdmin') {
                 router.push('/admin-login');
               } else if (role === 'Customer') {
-                router.push('/booking');
+                router.push(`/booking/${currentDate}`);
               } else {
                 router.push(redirect || '/');
               }
