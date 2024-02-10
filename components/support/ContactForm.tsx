@@ -93,7 +93,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit }) => {
         <div className="isolate bg-transparent px-6 py-24 sm:py-32 lg:px-8">
             <div className="bg-gray-100 pt-4 rounded pb-4">
                 <div className="mx-auto max-w-2xl text-center">
-                    <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Get in touch</h2>
+                    <h2 className="text-3xl font-bold tracking-tight text-blue-900 sm:text-4xl">Get in touch</h2>
 
                 </div>
                 <form action="#" onSubmit={handleSubmit} className="mx-auto mt-16 max-w-xl  sm:mt-20">
