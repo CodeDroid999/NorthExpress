@@ -22,25 +22,6 @@ const HomeArea: React.FC = () => {
                 <Alert />
             </div>
             <CustomNavbar />
-            <div className="overText mx-auto max-w-c-1390 my-12 z-3">
-                <div className="container flex lg:items-center lg:gap-8 xl:gap-32.5 pl-10">
-                    <div className=" md:w-2/3">
-                        <h4 className="mb-4.5 text-lg font-medium text-white">
-                            🔥 North Express - Travel with comfort.
-                        </h4>
-                        <h1 className="mb-1 pr-16 text-3xl font-bold text-white xl:text-hero ">
-                            Comfortable. Efficient. Affordable .
-                        </h1>
-                        <p className="text-white">
-                            Welcome to North Express, the brainchild of a group
-                            of veteran logisticians redefining luxury transport on the
-                            "Kenyan Landscape"; with unmatched customer experience and top-tier services.
-                            At North Express, we are redefining the luxury transport, and setting new standards of excellence and reliability.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <PostYourBooking />
         </header>
     );
 };

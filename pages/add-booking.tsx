@@ -9,6 +9,7 @@ import LoginModal from 'components/layout/LoginModal';
 import toast from 'react-hot-toast';
 import { useSearchParams } from 'react-router-dom';
 import { useRouter } from 'next/router';
+import HomeArea from 'components/layout/HomeSectionBluse';
 
 interface Query {
   [key: string]: string;
@@ -54,17 +55,17 @@ export default function Home(props) {
 
   return (
     <>
-      <Home
-        {/* Login Modal */}
-        {!user ? (
-          <>
-            <LoginModal />
-          </>
-        ) : (
-          <>
-            {toast.success("Welcome Back!")}
-          </>
-        )}
+      <HomeArea />
+      {/* Login Modal */}
+      {!user ? (
+        <>
+          <LoginModal />
+        </>
+      ) : (
+        <>
+          {toast.success("Welcome Back!")}
+        </>
+      )}
 
       <Footer />
     </>
