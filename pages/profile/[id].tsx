@@ -18,6 +18,8 @@ import EditProfilePicture from 'components/profile/EditProfilePicture'
 import Bio from 'components/profile/BioTab'
 import SkillsAndEducation from 'components/profile/SkillsTab'
 import Navbar from 'components/layout/Navbar'
+import Alert from 'components/layout/Alert'
+import CustomNavbar from 'components/layout/Navbar'
 
 export const formatDate = (dateString) => {
   const date = new Date(dateString)
@@ -149,7 +151,13 @@ export default function ProfilePage({
   )
   return (
     <div>
-      <Navbar />
+
+      <div className="">
+        <Alert />
+      </div>
+      <div className="header_bottom sticky bg-blue-600">
+        <CustomNavbar />
+      </div>
       {loading ? (
         <div className="flex h-screen items-center justify-center">
           <div
@@ -161,143 +169,38 @@ export default function ProfilePage({
           </div>
         </div>
       ) : (
-        <div className="mt-20 bg-gray-100 pt-10 antialiased">
+        <div className=" bg-gray-100 pt-10 antialiased">
           <div className="container mx-auto">
             <div className="flex flex-row p-3 ">
               <div className="flex w-full rounded bg-blue-100 p-3 ">
-                <div
-                  className="flex flex-col justify-center "
-                  style={{ width: '20vw' }}
-                >
+                <div className="flex flex-col justify-center border-1 border-blue-600" style={{ width: '20vw' }}                >
                   <div className="flex justify-center">
                     <Image
                       src={user?.profilePicture || profile}
                       alt="profile picture"
                       height={200}
                       width={200}
-                      className="mr-2 h-[120px] w-[120px] rounded-full object-cover"
+                      className="mr-2 h-[120px] w-[120px] rounded-full object-cover border-1 border-blue-600"
                     />
                   </div>
                   <div>
                     <EditProfilePicture />
                   </div>
                 </div>
-                <div className="justify-right flex min-h-full w-full flex-col p-3">
-                  <p className="text-left text-xl font-bold text-blue-900">
-                    {user?.firstName} {user?.lastName}
+                <div className="justify-right flex min-h-full w-full flex-col p-3 border-1 border-blue-600">
+                  <label htmlFor="DisplayName" className="text-md">Full Name</label>
+                  <p className="text-left pl-1 rounded text-md text-gray-900 bg-gray-100">
+                    {user?.displayName}
                   </p>
-                  <p className="mt-2 rounded  p-1 text-left text-sm font-medium text-gray-400">
+                  <label htmlFor="Email" className="text-md mt-1">Email</label>
+                  <p className="text-left pl-1 rounded text-md text-gray-900 bg-gray-100">
                     {user?.email}
                   </p>
                 </div>
               </div>
             </div>
 
-            <div className="mt-1">
-              <div className="my-1">
-                <div className="flex items-center justify-center">
-                  <div className="mx-3  mb-2 w-full justify-center rounded-lg bg-blue-100 text-white">
-                    <h3 className="p-3 text-lg text-gray-900 md:text-2xl lg:text-2xl">
-                      Stats
-                    </h3>
-                    {/* ... (user stats content) */}
-                    <div className="flex flex-wrap items-center  justify-center gap-2 p-5 pt-1">
-                      <div className="w-42 h-42  flex-auto rounded-lg  bg-gradient-to-r from-gray-800    to-gray-700    shadow-lg">
-                        <div className="p-4 md:p-7">
-                          <h2 className="text-center text-xl capitalize text-gray-200">
-                            {completedAssignments.length}
-                          </h2>
-                          <h3 className="text-center  text-sm  text-gray-400">
-                            completed
-                          </h3>
-                        </div>
-                      </div>
-                      <div className="w-42 h-42 flex-auto rounded-lg  bg-gradient-to-r from-gray-800    to-gray-700    shadow-lg">
-                        <div className="p-4 md:p-7">
-                          <h2 className="text-center text-xl capitalize text-gray-200">
-                            {bookings.length}
-                          </h2>
-                          <h3 className="text-center  text-sm  text-gray-400">
-                            Homeworks Assigned
-                          </h3>
-                        </div>
-                      </div>
 
-                      <div className="w-42 h-42  flex-auto rounded-lg  bg-gradient-to-r from-gray-800    to-gray-700    shadow-lg">
-                        <div className="p-4 md:p-7">
-                          <h2 className="text-center text-lg capitalize text-gray-200">
-                            {myTutorReviews.length}
-                          </h2>
-                          <h3 className="text-center  text-sm  text-gray-400">
-                            Reviews
-                          </h3>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="my-5 flex items-center justify-between space-x-1 px-6">
-                  <button
-                    className={`${activeTab === 'basic' ? 'bg-gray-200' : ''
-                      } w-full whitespace-nowrap border-2 rounded hover:shadow-2xl py-3 text-center text-sm font-medium text-green-950 transition duration-150 ease-in hover:text-gray-900`}
-                    onClick={() => handleTabClick('basic')}
-                  >
-                    Personal Info
-                  </button>
-                  <button
-                    className={`${activeTab === 'skills' ? 'bg-gray-100' : ''
-                      } w-full whitespace-nowrap border-2 rounded hover:shadow-2xl py-3 text-center text-sm font-medium text-green-950 transition duration-150 ease-in hover:text-gray-900`}
-                    onClick={() => handleTabClick('skills')}
-                  >
-                    Skills & Education
-                  </button>
-                  <button
-                    className={`${activeTab === 'bio' ? 'bg-gray-100' : ''
-                      } w-full whitespace-nowrap border-2 rounded hover:shadow-2xl py-3 text-center text-sm font-medium text-green-950 transition duration-150 ease-in hover:text-gray-900`}
-                    onClick={() => handleTabClick('bio')}
-                  >
-                    Bio
-                  </button>
-                  <button
-                    className={`${activeTab === 'reviews' ? 'bg-gray-100' : ''
-                      } w-full whitespace-nowrap border-2 rounded hover:shadow-2xl py-3 text-center text-sm font-medium text-green-950 transition duration-150 ease-in hover:text-gray-900`}
-                    onClick={() => handleTabClick('reviews')}
-                  >
-                    Reviews
-                  </button>
-                </div>
-
-                {activeTab === 'basic' && (
-                  <div className="w-full p-4">
-                    {/* Content for the Personal Info tab */}
-                    <PersonalInfoTab />
-                  </div>
-                )}
-
-                {activeTab === 'skills' && (
-                  <div className="w-full p-4">
-                    {/* Content for the Skills & Education tab */}
-                    <SkillsAndEducation />
-                  </div>
-                )}
-
-                {activeTab === 'bio' && (
-                  <div className="w-full p-4">
-                    {/* Content for the Languages tab */}
-                    <Bio />
-                  </div>
-                )}
-
-                {activeTab === 'reviews' && (
-                  <div className="w-full p-4">
-                    {/* Content for the Reviews tab */}
-                    <ReviewsTab reviews={myTutorReviews} />
-                  </div>
-                )}
-
-                {/* ... (other code) */}
-              </div>
-            </div>
           </div>
         </div>
       )}

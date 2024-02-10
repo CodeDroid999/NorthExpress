@@ -4,7 +4,7 @@ import Link from 'next/link';
 import React, { useState } from 'react';
 import profile from 'public/profile.jpeg';
 
-export default function AuthedAvatar() {
+export default function MobileAuthedAvatar() {
     const { user, logOut } = UserAuth();
     const userRole = user?.role;
     const userId = user?.userId;
