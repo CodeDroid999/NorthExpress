@@ -57,23 +57,7 @@ export default function AuthedAvatar() {
                             </span>
                         </Link>
                     </div>
-                    <div className="flex ">
-                        {!user ? (
-                            <Link
-                                href="/signup"
-                                className="bg-white- 500 flex items-center gap-x-3.5 rounded-md px-3 mb-1 mt-1 py-2 text-sm text-gray-800 hover:bg-neutral-100 border w-100"
-                            >
-                                Sign Up
-                            </Link>
-                        ) : (
-                            <Link
-                                href="/login"
-                                className="bg-white- 500 flex items-center gap-x-3.5 rounded-md px-3 mb-1 mt-1 py-2 text-sm text-gray-800 hover:bg-neutral-100 border w-100"
-                            >
-                                Sign In
-                            </Link>
-                        )}
-                    </div>
+
                     <Link
                         className="bg-white- 500 flex items-center gap-x-3.5 rounded-md px-3 mb-1 py-2 text-sm text-gray-800 hover:bg-neutral-100 border w-100"
                         href={`/add-booking`}
@@ -92,23 +76,7 @@ export default function AuthedAvatar() {
                     >
                         Parcels
                     </Link>
-                    <div className="flex ">
-                        {!user ? (
-                            <Link
-                                href="/login"
-                                className="bg-white- 500 flex items-center gap-x-3.5 rounded-md px-3 mb-1 mt-1 py-2 text-sm text-gray-800 hover:bg-neutral-100 border w-100"
-                            >
-                                Bus Hire
-                            </Link>
-                        ) : (
-                            <Link
-                                href="/browse-bookings"
-                                className="bg-white- 500 flex items-center gap-x-3.5 rounded-md px-3 mb-1 mt-1 py-2 text-sm text-gray-800 hover:bg-neutral-100 border w-100"
-                            >
-                                Sign Up
-                            </Link>
-                        )}
-                    </div>
+
                     <div className="flex ">
                         {!user ? (
                             <Link
@@ -129,14 +97,9 @@ export default function AuthedAvatar() {
                                     className="bg-white- 500 flex items-center gap-x-3.5 rounded-md px-3 mb-1 py-2 text-sm text-gray-800 hover:bg-neutral-100 border w-100"
                                     href={`/payment-history/${user?.userId}`}
                                 >
-                                    Payment History
+                                    Booking History
                                 </Link>
-                                <Link
-                                    className="bg-white- 500 flex items-center gap-x-3.5 rounded-md px-3 mb-1 py-2 text-sm text-gray-800 hover:bg-neutral-100 border w-100"
-                                    href={`/payment-methods/${user?.userId}`}
-                                >
-                                    Payment Methods
-                                </Link>
+
                                 <div className="bg-white- 500 flex items-center gap-x-3.5 rounded-md px-3 mb-1 py-2 text-sm text-gray-800 hover:bg-neutral-100 border w-100 ">
                                     <div
                                         onClick={toggleDropdown}

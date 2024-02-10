@@ -42,8 +42,10 @@ const MobileNavbar = () => {
         <div className="flex items-center justify-end mr-3">
           <div className="flex flex-col items-center "
             onClick={toggleMenu} >
-            <MobileAvatar />
+            Heyy
           </div>
+          <MobileAvatar />
+
         </div>
       </div>
 
