@@ -25,7 +25,7 @@ const NavigationMenu: React.FC = () => {
           )}
         </li>
         <li className="nav-item shadow bg-gray-300 ">
-          <Link href="/add-booking" passHref>
+          <Link href="/booking" passHref>
             <span className="nav-link pl-3">Book a ticket</span>
           </Link>
         </li>

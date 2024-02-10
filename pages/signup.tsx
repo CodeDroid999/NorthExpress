@@ -26,7 +26,7 @@ export default function Signup() {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
-        router.push('/add-booking');
+        router.push('/booking');
       }
     });
     return () => unsubscribe();

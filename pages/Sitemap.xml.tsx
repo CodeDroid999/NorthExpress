@@ -105,7 +105,7 @@ export async function getServerSideProps({ res }) {
       priority: 0.6,
     },
     {
-      url: '/payment-history',
+      url: '/booking-history',
       priority: 0.6,
     },
     {
