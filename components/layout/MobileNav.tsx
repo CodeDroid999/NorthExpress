@@ -40,25 +40,27 @@ const MobileNavbar = () => {
 
         {/* Right div (Sticky bar) */}
         <div className="flex items-center justify-end mr-3">
-          <Link
-            href="/"
-            className="md:text-lg font-medium text-xs text-white hover:text-blue-600"
-          >
-            Home
-          </Link>
+          <div className="flex space-x-2 pr-2">
+            <Link
+              href="/"
+              className="md:text-lg font-medium text-xs text-white hover:text-blue-600"
+            >
+              Home
+            </Link>
 
-          <Link
-            href="/bus-hire"
-            className="md:text-lg font-medium text-xs text-white hover:text-blue-600 whitespace-nowrap"
-          >
-            Bus Hire
-          </Link>
-          <Link
-            href="/parcels"
-            className="md:text-lg font-medium text-xs text-white hover:text-blue-600"
-          >
-            Parcels
-          </Link>
+            <Link
+              href="/bus-hire"
+              className="md:text-lg font-medium text-xs text-white hover:text-blue-600 whitespace-nowrap"
+            >
+              Bus Hire
+            </Link>
+            <Link
+              href="/parcels"
+              className="md:text-lg font-medium text-xs text-white hover:text-blue-600"
+            >
+              Parcels
+            </Link>
+          </div>
 
           {!user ? (
             <>

@@ -54,24 +54,17 @@ export default function Home(props) {
 
   return (
     <>
-
-      <div className="">
-        <Alert />
-      </div>
-      <div className="header_bottom sticky bg-blue-600">
-        <CustomNavbar />
-      </div>
-      <FAQAccordion />
-      {/* Login Modal */}
-      {!user ? (
-        <>
-          <LoginModal />
-        </>
-      ) : (
-        <>
-          {toast.success("Welcome Back!")}
-        </>
-      )}
+      <Home
+        {/* Login Modal */}
+        {!user ? (
+          <>
+            <LoginModal />
+          </>
+        ) : (
+          <>
+            {toast.success("Welcome Back!")}
+          </>
+        )}
 
       <Footer />
     </>
