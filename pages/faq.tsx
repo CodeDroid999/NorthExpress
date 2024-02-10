@@ -1,10 +1,9 @@
-import Layout from "components/layout/layout";
 import Accordion from "components/support/FAQAccordion";
 import Head from "next/head";
 
 const FAQ = () => {
     return (
-        <Layout>
+        <>
             <Head>
                 <title>
                     NorthExpress | Travel with comfort.
@@ -44,7 +43,7 @@ const FAQ = () => {
             <div className="container mx-auto p-4">
                 <Accordion />
             </div>
-        </Layout>
+        </>
     );
 };
 
