@@ -5,7 +5,6 @@ import React, { useEffect } from 'react'
 import Footer from 'components/layout/Footer'
 import { UserAuth } from 'context/AuthContext'
 import Alert from 'components/unAuthed/Alert'
-import CustomNavbar from 'components/unAuthed/Navbar'
 
 
 interface Query {
