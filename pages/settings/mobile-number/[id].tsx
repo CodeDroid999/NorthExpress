@@ -1,4 +1,3 @@
-import Navbar from 'components/layout/Navbar'
 import { UserAuth } from 'context/AuthContext'
 import { db } from '../../../firebase'
 import {
@@ -11,6 +10,7 @@ import {
 } from 'firebase/firestore'
 import React, { useState } from 'react'
 import { toast } from 'react-hot-toast'
+import Navbar from 'components/layout/Navbar'
 
 export default function MobileNumber() {
   const { user } = UserAuth()

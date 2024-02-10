@@ -1,4 +1,3 @@
-import Navbar from 'components/layout/Navbar'
 import { auth, db } from '../../firebase'
 import {
   collection,
@@ -18,6 +17,7 @@ import ReviewsTab from 'components/profile/Reviews/ReviewTab'
 import EditProfilePicture from 'components/profile/EditProfilePicture'
 import Bio from 'components/profile/BioTab'
 import SkillsAndEducation from 'components/profile/SkillsTab'
+import Navbar from 'components/layout/Navbar'
 
 export const formatDate = (dateString) => {
   const date = new Date(dateString)
