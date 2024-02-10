@@ -3,7 +3,7 @@ import React from 'react';
 import Alert from './Alert';
 import CustomNavbar from './Navbar';
 import Image from 'next/image';
-import PostYourBooking from 'components/Homepage/PostYourBooking';
+import PostYourBooking from 'components/Homepage/MakeYourBooking';
 
 const HeroArea: React.FC = () => {
     return (

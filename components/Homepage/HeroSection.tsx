@@ -3,7 +3,7 @@ import Alert from 'components/layout/Alert';
 import CustomNavbar from 'components/layout/Navbar';
 import Image from 'next/image'
 import React from 'react';
-import PostYourBooking from './PostYourBooking';
+import PostYourBooking from './MakeYourBooking';
 
 const HeroArea = () => {
     return (

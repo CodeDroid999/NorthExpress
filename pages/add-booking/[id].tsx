@@ -10,6 +10,8 @@ import toast from 'react-hot-toast';
 import { useSearchParams } from 'react-router-dom';
 import { useRouter } from 'next/router';
 import HomeArea from 'components/layout/HomeSectionBluse';
+import addBookingForm from '../../components/Booking/AddBookingForm';
+import AddBookingForm from '../../components/Booking/AddBookingForm';
 
 interface Query {
   [key: string]: string;
@@ -56,6 +58,8 @@ export default function Home(props) {
   return (
     <>
       <HomeArea />
+      <AddBookingForm />
+
       {/* Login Modal */}
       {!user ? (
         <>

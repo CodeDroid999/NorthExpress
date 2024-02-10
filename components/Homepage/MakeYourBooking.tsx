@@ -17,23 +17,22 @@ interface Props {
     handleNextStep: () => void;
 }
 
-export default function PostYourBooking() {
+export default function MakeYourBooking() {
     const { user } = UserAuth();
     const currentDate = new Date().toISOString().split('T')[0];
     const auth = getAuth();
     const [userId, setUserId] = useState<string | null>(null);
-    const [selectedFromCounty, setSelectedFromCounty] = useState('Eldoret');
-    const [selectedToCounty, setSelectedToCounty] = useState('Kisumu');
-    const [departureDate, setDepartureDate] = useState(`${currentDate}`);
-    const [showLoginModal, setShowLoginModal] = useState(false);
+    const [pickup, setPickup] = useState('Eldoret');
+    const [dropoff, setDropoff] = useState('Kisumu');
+    const [travelDate, setTravelDate] = useState(`${currentDate}`);
 
 
-    const handleFromCountyChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-        setSelectedFromCounty(e.target.value);
+    const handlePickupChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+        setPickup(e.target.value);
     };
 
-    const handleToCountyChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-        setSelectedToCounty(e.target.value);
+    const handleDropoffChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+        setDropoff(e.target.value);
     };
 
     const handleMakeBooking = async () => {
@@ -46,18 +45,15 @@ export default function PostYourBooking() {
 
             // Add data to Firestore
             const bookingData = {
-                fromCounty: selectedFromCounty,
-                toCounty: selectedToCounty,
-                departureDate: departureDate,
+                pickup: pickup,
+                dropoff: dropoff,
+                travelDate: travelDate,
                 userId: currentUserId,
                 timestamp: serverTimestamp(),
             };
 
             // Replace 'YOUR_COLLECTION_NAME' with the actual collection name
             const docRef = await addDoc(collection(db, 'bookings'), bookingData);
-
-            // Redirect to make-booking-page
-            router.push('/make-booking');
         } catch (error) {
             console.error('Error creating booking:', error);
             toast.error('Failed to make booking. Please try again.');
@@ -100,11 +96,11 @@ export default function PostYourBooking() {
                         </label>
                         <div className="mb-1">
                             <select
-                                value={selectedFromCounty}
-                                onChange={handleFromCountyChange}
+                                value={pickup}
+                                onChange={handlePickupChange}
                                 className="rounded border p-1 text-blue-950 w-full"
                             >
-                                <option value="">{selectedFromCounty}</option>
+                                <option value="">{pickup}</option>
                                 <option value="baringo">Baringo</option>
                                 <option value="bomet">Bomet</option>
                                 <option value="bungoma">Bungoma</option>
@@ -167,11 +163,11 @@ export default function PostYourBooking() {
                         </label>
                         <div className="mb-1">
                             <select
-                                value={selectedToCounty}
-                                onChange={handleToCountyChange}
+                                value={dropoff}
+                                onChange={handleDropoffChange}
                                 className="rounded border p-1 text-blue-950 w-full"
                             >
-                                <option value="">{selectedToCounty}</option>
+                                <option value="">{dropoff}</option>
                                 <option value="baringo">Baringo</option>
                                 <option value="bomet">Bomet</option>
                                 <option value="bungoma">Bungoma</option>
@@ -228,18 +224,19 @@ export default function PostYourBooking() {
                     </div>
                     <div className="flex flex-col col-md-3 col-sm-6 pb-2">
                         <label
-                            htmlFor="departureDate"
+                            htmlFor="travelDate"
                             className="mb-2 text-lg font-medium text-blue-950 text-left  whitespace-nowrap"
                         >
-                            Departure
+                            Date
                         </label>
                         <input
                             type="date"
-                            id="DepartureDate"
+                            id="travelDate"
                             required
                             placeholder="Enter date"
                             min={currentDate}
-                            onChange={(e) => setDepartureDate(e.target.value)}
+                            value={travelDate}
+                            onChange={(e) => setTravelDate(e.target.value)}
                             className="border rounded p-1 sm:w-full text-blue-950"
                         />
 
@@ -247,7 +244,7 @@ export default function PostYourBooking() {
                     <div className="col-md-3 col-sm-6 pt-2 sm:pb-3 flex flex-col flex-items-end">
                         <Link
                             className="btn-1 bg-yellow-600 p-2 rounded text-gray-100 text-center"
-                            href="/add-booking"
+                            href={`/add-booking/${travelDate}`}
                         >
                             Make Booking
                         </Link>
