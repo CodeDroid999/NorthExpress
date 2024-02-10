@@ -239,7 +239,6 @@ export default function AddBookingForm() {
                             onChange={(e) => setTravelDate(e.target.value)}
                             className="border rounded p-1 sm:w-full text-blue-950"
                         />
-
                     </div>
                     <div className="col-md-3 col-sm-6 pt-2 sm:pb-3 flex flex-col flex-items-end">
                         <Link
