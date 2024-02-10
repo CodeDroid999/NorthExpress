@@ -3,6 +3,7 @@ import React from 'react';
 import axios from 'axios'; // Import axios for making HTTP requests
 import Head from 'next/head';
 import Layout from 'components/layout/layout';
+import AuthLayout from 'components/layout/AuthLayout';
 
 const Contact = () => {
   const handleFormSubmit = async (formData) => {
@@ -17,7 +18,7 @@ const Contact = () => {
   };
 
   return (
-    <Layout>
+    <AuthLayout>
       <Head>
         <title>
           NorthExpress | Travel with comfort.
@@ -57,7 +58,7 @@ const Contact = () => {
       <div className="container mx-auto flex justify-center items-center ">
         <ContactForm onSubmit={handleFormSubmit} />
       </div>
-    </Layout>
+    </AuthLayout>
   );
 };
 
