@@ -2,8 +2,9 @@
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
 
-const LoginModal = ({ onClose }) => {
+const LoginModal = () => {
     const router = useRouter();
+
 
     return (
         <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50">
@@ -12,7 +13,6 @@ const LoginModal = ({ onClose }) => {
                 <div className="flex">
                     <div
                         onClick={() => {
-                            onClose();
                             router.push('/login');
                         }}
                         className="bg-green-500 text-white border-none p-2 rounded cursor-pointer text-center w-full"
@@ -26,7 +26,7 @@ const LoginModal = ({ onClose }) => {
                 <div className="flex flex-col gap-4">
                     <div
                         onClick={() => {
-                            onClose();
+                            router.push('/')
                         }}
                         className="bg-gray-100 text-red-500 border-none p-2 rounded cursor-pointer border-2 border-red-500 text-center hover:text-white hover:bg-red-500"
                     >
@@ -38,7 +38,6 @@ const LoginModal = ({ onClose }) => {
                         <p
                             className="font-medium text-green-900"
                             onClick={() => {
-                                onClose();
                                 router.push('/');
                             }}
                         >
