@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import AuthLayout from 'components/layout/AuthLayout';
-import { GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithPopup, sendEmailVerification } from 'firebase/auth';
+import { GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, sendEmailVerification, signInWithPopup } from 'firebase/auth';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { FcGoogle } from 'react-icons/fc';
 import { BsEyeFill, BsEyeSlashFill } from 'react-icons/bs';
@@ -9,7 +9,6 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import toast from 'react-hot-toast';
 import Head from 'next/head';
-import axios from 'axios';
 
 export default function Signup() {
   const [passwordVisible, setPasswordVisible] = useState(false);
@@ -33,35 +32,41 @@ export default function Signup() {
     return () => unsubscribe();
   }, [router, redirect]);
 
+
   const handleGoogleSignIn = async () => {
     const provider = new GoogleAuthProvider();
-
-    // Set the prompt option to force account selection
-    provider.setCustomParameters({
-      prompt: 'select_account',
-    });
+    provider.setCustomParameters({ prompt: 'select_account' });
 
     try {
       const result = await signInWithPopup(auth, provider);
       const user = result.user;
-      const userRef = await addDoc(collection(db, 'users'), {
+      await addDoc(collection(db, 'users'), {
         userId: user.uid,
         displayName: user.displayName,
-        phoneNumber: user.phoneNumber,
-        profilePicture: '',
-        role: 'Customer',
         email: user.email,
+        profilePicture: user.photoURL || '', // Add profilePicture field with user's photo URL or empty string if not available
+        phoneNumber: user.phoneNumber || '',
+        role: 'customer',
         createdAt: serverTimestamp(),
       });
+      await sendEmailVerification(user);
+      toast.success('Verification email has been sent. Please check your inbox.');
     } catch (error) {
-      const errorCode = error.code;
-      const errorMessage = error.message;
+      console.error(error);
     }
   };
 
-  const handleSignUp = async (event: any) => {
+  const handleSignUp = async (event) => {
     event.preventDefault();
     let hasError = false;
+
+    if (!displayName) {
+      setDisplayNameError('Full Name is required');
+      hasError = true;
+    } else {
+      setDisplayNameError('');
+    }
+
     if (!email) {
       setEmailError('Email is required');
       hasError = true;
@@ -85,22 +90,26 @@ export default function Signup() {
     if (hasError) {
       return;
     }
+
     try {
+      // Create user in authentication
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
+
+      // Add user data to Firestore
+      await addDoc(collection(db, 'users'), {
+        userId: user.uid,
+        displayName: displayName,
+        email: email,
+        profilePicture: '', // Add empty profilePicture field for email sign-up users
+        createdAt: serverTimestamp(),
+      });
+
       // Send verification email
       await sendEmailVerification(user);
+
       // Display success message to user
       toast.success('Verification email has been sent. Please check your inbox.');
-      //send welcome message to user
-      // Create user data for the HTTP request
-      const userData = {
-        displayName: user.displayName, // Fill in the user's display name
-        email: user.email, // Use the user's email
-        phoneNumber: user.phoneNumber,
-      };
-
-      // Make the HTTP request to the api/welcomeuser route
     } catch (error) {
       console.log(error);
     }
@@ -124,47 +133,42 @@ export default function Signup() {
       {/* OR separator */}
       <div className="text-center text-xs font-medium text-gray-700 pt-2 pb-2">OR</div>
 
-
       <form onSubmit={handleSignUp} className="flex flex-col gap-4">
         <div className="flex flex-col">
           <div className="flex flex-col">
-            <label htmlFor="Display Name" className="mb-1 font-medium text-gray-700">
+            <label htmlFor="displayName" className="mb-1 font-medium text-gray-700">
               Full Name
             </label>
-
             <input
               type="text"
-              id="Full Name"
-              name="Full Name"
+              id="displayName"
+              name="displayName"
               placeholder="Full Name"
               onChange={(e) => setDisplayName(e.target.value)}
               className={`h-full w-full rounded-lg border bg-gray-50 p-2
                 outline-none focus:border-blue-500`}
             />
-            {setDisplayNameError && <span className="text-red-500">{displayNameError}</span>}
+            {displayNameError && <span className="text-red-500">{displayNameError}</span>}
           </div>
-          <label htmlFor="Email" className="mb-1 font-medium text-gray-700">
+          <label htmlFor="email" className="mb-1 font-medium text-gray-700">
             Email
           </label>
-
           <input
             type="email"
-            id="Email"
-            name="Full Name"
-            placeholder="johndoe@example,com"
+            id="email"
+            name="email"
+            placeholder="Email"
             onChange={(e) => setEmail(e.target.value)}
             className={`h-full w-full rounded-lg border bg-gray-50 p-2
-                outline-none focus:border-blue-500`}
+              outline-none focus:border-blue-500`}
           />
-          {setEmailError && <span className="text-red-500">{emailError}</span>}
+          {emailError && <span className="text-red-500">{emailError}</span>}
         </div>
-
 
         <div className="relative flex flex-col">
           <label htmlFor="password" className="mb-1 font-medium text-gray-700">
             Password
           </label>
-
           <div className="flex items-center">
             <input
               id="password"
@@ -187,9 +191,7 @@ export default function Signup() {
               )}
             </button>
           </div>
-          {passwordError && (
-            <span className="text-red-500">{passwordError}</span>
-          )}
+          {passwordError && <span className="text-red-500">{passwordError}</span>}
         </div>
 
         <button
@@ -205,7 +207,6 @@ export default function Signup() {
             <Link href="/login">Log in</Link>
           </p>
         </div>
-
       </form>
     </AuthLayout>
   );
