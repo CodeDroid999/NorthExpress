@@ -196,6 +196,9 @@ export default function ProfilePage({
                   <p className="text-left pl-1 rounded text-md text-gray-900 bg-gray-100">
                     {user?.email}
                   </p>
+                  <label htmlFor="Email" className="text-md mt-1">PhoneNumber</label>
+                  <p className="text-left pl-1 rounded text-md text-gray-900 bg-gray-100">
+                    {user?.phonenumber}                  </p>
                 </div>
               </div>
             </div>

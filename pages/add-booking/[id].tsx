@@ -1,17 +1,12 @@
-import FAQAccordion from 'components/FAQaccordions';
-import Head from 'next/head';
 import React, { useEffect, useState } from 'react';
 import { UserAuth } from 'context/AuthContext';
-import Alert from 'components/layout/Alert';
-import CustomNavbar from 'components/layout/Navbar';
 import Footer from 'components/layout/Footer';
 import LoginModal from 'components/layout/LoginModal';
 import toast from 'react-hot-toast';
-import { useSearchParams } from 'react-router-dom';
 import { useRouter } from 'next/router';
 import HomeArea from 'components/layout/HomeSectionBluse';
-import addBookingForm from '../../components/Booking/AddBookingForm';
 import AddBookingForm from '../../components/Booking/AddBookingForm';
+import TripsDisplay from 'components/Booking/ScheduleDisplay';
 
 interface Query {
   [key: string]: string;
@@ -59,7 +54,7 @@ export default function Home(props) {
     <>
       <HomeArea />
       <AddBookingForm />
-
+      <TripsDisplay travelDate="2024-02-10" />
       {/* Login Modal */}
       {!user ? (
         <>
