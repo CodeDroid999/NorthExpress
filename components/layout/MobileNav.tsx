@@ -42,20 +42,20 @@ const MobileNavbar = () => {
         <div className="flex items-center justify-end mr-3">
           <Link
             href="/"
-            className="md:text-lg font-medium text-xs text-white hover:text-green-500"
+            className="md:text-lg font-medium text-xs text-white hover:text-blue-600"
           >
             Home
           </Link>
 
           <Link
             href="/bus-hire"
-            className="md:text-lg font-medium text-xs text-white hover:text-green-500 whitespace-nowrap"
+            className="md:text-lg font-medium text-xs text-white hover:text-blue-600 whitespace-nowrap"
           >
             Bus Hire
           </Link>
           <Link
             href="/parcels"
-            className="md:text-lg font-medium text-xs text-white hover:text-green-500"
+            className="md:text-lg font-medium text-xs text-white hover:text-blue-600"
           >
             Parcels
           </Link>
