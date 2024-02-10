@@ -7,25 +7,24 @@ import '../styles/Navbar.css';
 import '../styles/responsive.css';
 import '../styles/sidenavigation.css';
 import '../styles/style.css';
-import 'tailwindcss/tailwind.css'
-import { AppProps } from 'next/app'
-import { lazy, useEffect, useState } from 'react'
-import { AuthContextProvider, UserAuth } from 'context/AuthContext'
-import toast, { Toaster } from 'react-hot-toast'
-
-import '../styles/custom.css'
+import 'tailwindcss/tailwind.css';
+import { AppProps } from 'next/app';
+import { AuthContextProvider, UserAuth } from 'context/AuthContext';
+import toast, { Toaster } from 'react-hot-toast';
 import LoginModal from 'components/layout/LoginModal';
+import { useRouter } from 'next/router';
 
 export interface SharedPageProps {
-  token: string
+  token: string;
 }
-
 
 export default function App({
   Component,
   pageProps,
 }: AppProps<SharedPageProps>) {
   const { user } = UserAuth();
+  const router = useRouter();
+
 
 
   return (
@@ -33,13 +32,7 @@ export default function App({
       <AuthContextProvider>
         <Toaster position="bottom-center" />
         <Component {...pageProps} />
-        {/* Login Modal */}
-        {!user ? (
-          <LoginModal />
-        ) : (
-          toast.success("Welcome Back!")
-        )};
-      </AuthContextProvider >
+      </AuthContextProvider>
     </>
-  )
+  );
 }

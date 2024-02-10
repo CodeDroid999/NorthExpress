@@ -1,7 +1,7 @@
 // components/UserAssignmentTab.js
 import React, { useState, useEffect } from 'react';
 import { collection, getDocs, orderBy, query, where } from 'firebase/firestore';
-import { formatDate } from 'pages/public-profile/[id]';
+import { formatDate } from 'pages/settings/[id]';
 import router from 'next/router';
 import { db } from '../../firebase';
 

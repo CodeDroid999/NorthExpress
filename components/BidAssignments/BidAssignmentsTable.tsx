@@ -11,7 +11,7 @@ import {
 import { auth, db } from '../../firebase';
 import router from 'next/router';
 import { onAuthStateChanged } from 'firebase/auth';
-import { formatDate } from 'pages/public-profile/[id]';
+import { formatDate } from 'pages/settings/[id]';
 
 const BidAssignmentsTable: React.FC = (props: any) => {
     const { bookings } = props;
