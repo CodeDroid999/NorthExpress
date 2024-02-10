@@ -1,69 +1,40 @@
-import AuthLayout from 'components/layout/AuthLayout'
-
-import {
-  GoogleAuthProvider,
-  createUserWithEmailAndPassword,
-  onAuthStateChanged,
-  signInWithPopup,
-  sendEmailVerification,
-} from 'firebase/auth'
-import { collection, addDoc, serverTimestamp } from 'firebase/firestore'
-import React, { useEffect, useState } from 'react'
-import { FcGoogle } from 'react-icons/fc'
-import { BsEyeFill, BsEyeSlashFill } from 'react-icons/bs'
-import { auth, db } from '../firebase'
-import { useRouter, useSearchParams } from 'next/navigation'
-import Link from 'next/link'
-import toast from 'react-hot-toast'
-import Head from 'next/head'
+import React, { useState, useEffect } from 'react';
+import AuthLayout from 'components/layout/AuthLayout';
+import { GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithPopup, sendEmailVerification } from 'firebase/auth';
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import { FcGoogle } from 'react-icons/fc';
+import { BsEyeFill, BsEyeSlashFill } from 'react-icons/bs';
+import { auth, db } from '../firebase';
+import { useRouter, useSearchParams } from 'next/navigation';
+import Link from 'next/link';
+import toast from 'react-hot-toast';
+import Head from 'next/head';
 import axios from 'axios';
 
-
 export default function Signup() {
-  const [passwordVisible, setPasswordVisible] = useState(false)
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [emailError, setEmailError] = useState('')
-  const [passwordError, setPasswordError] = useState('')
+  const [passwordVisible, setPasswordVisible] = useState(false);
+  const [displayName, setDisplayName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [emailError, setEmailError] = useState('');
+  const [passwordError, setPasswordError] = useState('');
+  const [displayNameError, setDisplayNameError] = useState('');
 
-  const router = useRouter()
-  const searchParams = useSearchParams()
-  const redirect = searchParams.get('redirect')
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const redirect = searchParams.get('redirect');
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
-        updateUserObject(user); // Update user object here
-        router.push(`/setup-profile`)
+        router.push('/add-booking');
       }
-    })
-    return () => unsubscribe()
-  }, [router, redirect])
-  const updateUserObject = async (user) => {
-    // Your code to update the user object in the database
-    try {
-      const userRef = await addDoc(collection(db, 'users'), {
-        userId: user.uid,
-        firstName: '',
-        lastName: '',
-        phoneNumber: '',
-        profilePicture: '',
-        role: 'Customer',
-        email: user.email,
-        createdAt: serverTimestamp(),
-      });
-      // Add additional fields or data as needed
-      console.log('User object updated successfully:', userRef.id);
-      router.push(`/setup-profile`)
-    } catch (error) {
-      console.error('Error updating user object:', error);
-      // Handle error, show toast, or log it as needed
-    }
-  };
-
+    });
+    return () => unsubscribe();
+  }, [router, redirect]);
 
   const handleGoogleSignIn = async () => {
-    const provider = new GoogleAuthProvider()
+    const provider = new GoogleAuthProvider();
 
     // Set the prompt option to force account selection
     provider.setCustomParameters({
@@ -71,94 +42,72 @@ export default function Signup() {
     });
 
     try {
-      const result = await signInWithPopup(auth, provider)
-      const user = result.user
+      const result = await signInWithPopup(auth, provider);
+      const user = result.user;
       const userRef = await addDoc(collection(db, 'users'), {
         userId: user.uid,
-        firstName: '',
-        lastName: '',
-        phoneNumber: '',
+        displayName: user.displayName,
+        phoneNumber: user.phoneNumber,
         profilePicture: '',
         role: 'Customer',
         email: user.email,
         createdAt: serverTimestamp(),
-      })
+      });
     } catch (error) {
-      const errorCode = error.code
-      const errorMessage = error.message
+      const errorCode = error.code;
+      const errorMessage = error.message;
     }
-  }
+  };
+
   const handleSignUp = async (event: any) => {
-    event.preventDefault()
-    let hasError = false
+    event.preventDefault();
+    let hasError = false;
     if (!email) {
-      setEmailError('Email is required')
-      hasError = true
+      setEmailError('Email is required');
+      hasError = true;
     } else if (!email.includes('@')) {
-      setEmailError('Email entered is not valid')
-      hasError = true
+      setEmailError('Enter a valid email!');
+      hasError = true;
     } else {
-      setEmailError('')
+      setEmailError('');
     }
 
     if (!password) {
-      setPasswordError('Password is required')
-      hasError = true
+      setPasswordError('Password is required');
+      hasError = true;
     } else if (password.length < 6) {
-      setPasswordError('Password must be at least 6 characters')
-      hasError = true
+      setPasswordError('Password must be at least 6 characters');
+      hasError = true;
     } else {
-      setPasswordError('')
+      setPasswordError('');
     }
 
     if (hasError) {
-      return
+      return;
     }
     try {
-      const userCredential = await createUserWithEmailAndPassword(
-        auth,
-        email,
-        password
-      )
-      const user = userCredential.user
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
       // Send verification email
-      await sendEmailVerification(user)
+      await sendEmailVerification(user);
       // Display success message to user
-      toast.success(
-        'Verification email has been sent. Please check your inbox.'
-      )
+      toast.success('Verification email has been sent. Please check your inbox.');
       //send welcome message to user
       // Create user data for the HTTP request
       const userData = {
-        firstName: '', // Fill in the user's first name
-        lastName: '',  // Fill in the user's last name
+        displayName: user.displayName, // Fill in the user's display name
         email: user.email, // Use the user's email
+        phoneNumber: user.phoneNumber,
       };
 
       // Make the HTTP request to the api/welcomeuser route
-      await axios.post('/api/welcomeuser', userData);
-      const userRef = await addDoc(collection(db, 'users'), {
-        userId: user.uid,
-        firstName: '',
-        lastName: '',
-        phoneNumber: '',
-        profilePicture: '',
-        role: 'Customer',
-        email: user.email,
-        createdAt: serverTimestamp(),
-      })
-      router.push(`/setup-profile`)
     } catch (error) {
-      const errorCode = error.code
-      const errorMessage = error.message
-      if (errorCode === 'auth/email-already-in-use') {
-        toast.error('User already exists. Please log in.')
-      } else {
-        toast.error('Error occurred:', errorMessage)
-      }
+      console.log(error);
     }
-  }
+  };
+
   return (
+    // JSX code for the component
     <AuthLayout>
       {/* Google Sign In button */}
       <div className="flex justify-center align-center pt-1 pb-2">
@@ -178,21 +127,38 @@ export default function Signup() {
 
       <form onSubmit={handleSignUp} className="flex flex-col gap-4">
         <div className="flex flex-col">
-          <label htmlFor="email" className="mb-1 font-medium text-gray-700">
+          <div className="flex flex-col">
+            <label htmlFor="Display Name" className="mb-1 font-medium text-gray-700">
+              Full Name
+            </label>
+
+            <input
+              type="text"
+              id="Full Name"
+              name="Full Name"
+              placeholder="Full Name"
+              onChange={(e) => setDisplayName(e.target.value)}
+              className={`h-full w-full rounded-lg border bg-gray-50 p-2
+                outline-none focus:border-blue-500`}
+            />
+            {setDisplayNameError && <span className="text-red-500">{displayNameError}</span>}
+          </div>
+          <label htmlFor="Email" className="mb-1 font-medium text-gray-700">
             Email
           </label>
 
           <input
             type="email"
-            id="email"
-            name="email"
-            placeholder="Email"
+            id="Email"
+            name="Full Name"
+            placeholder="johndoe@example,com"
             onChange={(e) => setEmail(e.target.value)}
             className={`h-full w-full rounded-lg border bg-gray-50 p-2
-                  outline-none focus:border-blue-500`}
+                outline-none focus:border-blue-500`}
           />
-          {emailError && <span className="text-red-500">{emailError}</span>}
+          {setEmailError && <span className="text-red-500">{emailError}</span>}
         </div>
+
 
         <div className="relative flex flex-col">
           <label htmlFor="password" className="mb-1 font-medium text-gray-700">
@@ -207,7 +173,7 @@ export default function Signup() {
               type={passwordVisible ? 'text' : 'password'}
               onChange={(e) => setPassword(e.target.value)}
               className="h-full w-full rounded-lg border bg-gray-50 p-2
-                  outline-none focus:border-blue-500 "
+                outline-none focus:border-blue-500 "
             />
             <button
               type="button"
@@ -242,5 +208,5 @@ export default function Signup() {
 
       </form>
     </AuthLayout>
-  )
+  );
 }
