@@ -79,7 +79,7 @@ const Dashboard: React.FC = (props: any) => {
         />
         <meta name="og:image" property="og:image" content="public/sync-my-socials-logo.png" />
 
-        <meta name="og:url" property="og:url" content="https://www.QualityUnited Writers.com" />
+        <meta name="og:url" property="og:url" content="https://www.northexpresskenya.com" />
       </Head>
       <Navbar />
       <div className="mx-auto w-full">

@@ -38,7 +38,7 @@ const FAQ = () => {
                 />
                 <meta name="og:image" property="og:image" content="public/sync-my-socials-logo.png" />
 
-                <meta name="og:url" property="og:url" content="https://www.QualityUnited Writers.com" />
+                <meta name="og:url" property="og:url" content="https://www.northexpresskenya.com" />
             </Head>
 
             <div className="container mx-auto p-4">

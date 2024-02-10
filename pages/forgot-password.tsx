@@ -76,7 +76,7 @@ export default function ForgotPassword() {
         />
         <meta name="og:image" property="og:image" content="public/sync-my-socials-logo.png" />
 
-        <meta name="og:url" property="og:url" content="https://www.QualityUnited Writers.com" />
+        <meta name="og:url" property="og:url" content="https://www.northexpresskenya.com" />
       </Head>
 
       <div className="align-center flex flex-col justify-center md:bg-white bg-gray-100 sm:h-screen w-100">

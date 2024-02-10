@@ -29,23 +29,23 @@ export default async function handler(
           <body>
             <h1>Welcome to NorthExpress!</h1>
             <p className="pt-1 pb-2 text-lg">Dear ${firstName} ${lastName},</p>
-            <p className="pt-1 pb-2 text-lg">Thank you for joining NorthExpress, your one-stop destination for finding the right bookings and talented taskers. We're excited to have you on board and want to express our gratitude for choosing <Link href="https://www.QualityUnited Writers.com">NorthExpress</a>.</p>
+            <p className="pt-1 pb-2 text-lg">Thank you for joining NorthExpress, your one-stop destination for finding the right bookings and talented taskers. We're excited to have you on board and want to express our gratitude for choosing <Link href="https://www.northexpresskenya.com">NorthExpress</a>.</p>
             
             <!-- For AssignmentPosters -->
             <h2>For AssignmentPosters:</h2>
             <ul>
-              <li><Link href="https://www.QualityUnited Writers.com/post-booking">Post your bookings for free</a> and connect with skilled taskers.</li>
-              <li>Ready to get started? <Link href="https://www.QualityUnited Writers.com/signup">Create your account</a>, <Link href="https://www.QualityUnited Writers.com/browse-bookings">browse bookings</a>, and unlock a world of opportunities on NorthExpress.</li>
+              <li><Link href="https://www.northexpresskenya.com/post-booking">Post your bookings for free</a> and connect with skilled taskers.</li>
+              <li>Ready to get started? <Link href="https://www.northexpresskenya.com/signup">Create your account</a>, <Link href="https://www.northexpresskenya.com/browse-bookings">browse bookings</a>, and unlock a world of opportunities on NorthExpress.</li>
               <li>Find the perfect candidates to get your work done efficiently.</li>
-              <li>Enjoy the flexibility to <Link href="https://www.QualityUnited Writers.com/how-it-works">manage projects your way</a>.</li>
+              <li>Enjoy the flexibility to <Link href="https://www.northexpresskenya.com/how-it-works">manage projects your way</a>.</li>
               <li>Pay as you use with no subscription or credit fees.</li>
             </ul>
             
             <!-- For Taskers -->
             <h2>For Taskers:</h2>
             <ul>
-              <li><Link href="https://www.QualityUnited Writers.com/become-a-tutor">Earn money</a> doing what you're good at.</li>
-              <li><Link href="https://www.QualityUnited Writers.com/become-a-tutor">Expand your clientele</a> and grow your business.</li>
+              <li><Link href="https://www.northexpresskenya.com/become-a-tutor">Earn money</a> doing what you're good at.</li>
+              <li><Link href="https://www.northexpresskenya.com/become-a-tutor">Expand your clientele</a> and grow your business.</li>
               <li>Access thousands of job opportunities with no hidden costs.</li>
               <li>Enjoy the freedom to work on your schedule.</li>
             </ul>
@@ -53,19 +53,19 @@ export default async function handler(
             <!-- Why Choose NorthExpress -->
             <h2>Why Choose NorthExpress:</h2>
             <ul>
-              <li>We prioritize your <Link href="https://www.QualityUnited Writers.com/how-it-works">privacy</a> and <Link href="https://www.QualityUnited Writers.com/how-it-works">data security</a>.</li>
-              <li>Benefit from a diverse pool of professionals with <Link href="https://www.QualityUnited Writers.com/how-it-works">verified credentials</a>.</li>
-              <li>Our platform is <Link href="https://www.QualityUnited Writers.com/how-it-works">safe and secure</a>, backed by around-the-clock support.</li>
+              <li>We prioritize your <Link href="https://www.northexpresskenya.com/how-it-works">privacy</a> and <Link href="https://www.northexpresskenya.com/how-it-works">data security</a>.</li>
+              <li>Benefit from a diverse pool of professionals with <Link href="https://www.northexpresskenya.com/how-it-works">verified credentials</a>.</li>
+              <li>Our platform is <Link href="https://www.northexpresskenya.com/how-it-works">safe and secure</a>, backed by around-the-clock support.</li>
             </ul>
             
             <!-- Additional Links -->
             <h2>Additional Links:</h2>
             <ul>
-              <li>Explore our <Link href="https://www.QualityUnited Writers.com/blog">blog</a> for valuable insights and tips on working online.</li>
-              <li>Be sure to check out our <Link href="https://www.QualityUnited Writers.com/faq">frequently asked questions</a> for more information.</li>
+              <li>Explore our <Link href="https://www.northexpresskenya.com/blog">blog</a> for valuable insights and tips on working online.</li>
+              <li>Be sure to check out our <Link href="https://www.northexpresskenya.com/faq">frequently asked questions</a> for more information.</li>
             </ul>
             
-            <p className="pt-1 pb-2 text-lg">Ready to get started? <Link href="https://www.QualityUnited Writers.com/signup">Create your account</a>, <Link href="https://www.QualityUnited Writers.com/browse-bookings">browse bookings</a>, and unlock a world of opportunities on NorthExpress.</p>
+            <p className="pt-1 pb-2 text-lg">Ready to get started? <Link href="https://www.northexpresskenya.com/signup">Create your account</a>, <Link href="https://www.northexpresskenya.com/browse-bookings">browse bookings</a>, and unlock a world of opportunities on NorthExpress.</p>
             <p className="pt-1 pb-2 text-lg">Thank you again for choosing NorthExpress. We look forward to helping you achieve your goals and find the best solutions for your bookings.</p>
             
             <p className="pt-1 pb-2 text-lg">Best regards,<br>The NorthExpress Team</p>
