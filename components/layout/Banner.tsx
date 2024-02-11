@@ -26,10 +26,10 @@ const Banner = ({ preview }: Props) => {
                             Call : (+254) 719 230590
                         </span>
                     </a>
-                    <a href="mailto:sscholy@gmail.com" className="contact_link3">
+                    <a href="mailto:northexpresskenya@gmail.com" className="contact_link3">
                         <FontAwesomeIcon icon={faEnvelope} size="2x" style={{ color: '#e8b602' }} />
                         <span className="pl-2">
-                            sscholy@gmail.com
+                            northexpresskenya@gmail.com
                         </span>
                     </a>
                 </div>
