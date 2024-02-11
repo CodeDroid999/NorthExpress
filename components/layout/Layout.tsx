@@ -10,8 +10,16 @@ export default function Layout({ children }) {
     <div>
       <Head>
         <title>
-          NorthExpress | Get More Done | Post any booking. Pick the best person. Get it
-          done. | Post your booking for free Earn money as a tutor
+          NorthExpress | Travel with comfort.
+          Comfortable. Efficient. Affordable .
+          At North Express, we are redefining the luxury transport, and setting new standards of excellence and reliability.
+
+          | Post any booking. Pick the best person. Get it
+          done. |Travel with comfort.
+          Comfortable. Efficient. Affordable .
+          At North Express, we are redefining the luxury transport, and setting new standards of excellence and reliability.
+
+
         </title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
